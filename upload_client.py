@@ -15,9 +15,10 @@ from config import *
 
 class UploadClient(object):
 
-    def __init__(self):
-        self.s3_publisher = MQPublisher(queue="s3_success", exchange="tupu_exchange", exchange_type="fanout", is_backup=True)
-        self.s3_failed_publisher = MQPublisher(queue="s3_failed")
+    def __init__(self, queue="", exchange="", exchange_type="", is_backup=False):
+
+        self.s3_publisher = MQPublisher(queue=queue, exchange=exchange, exchange_type=exchange_type, is_backup=is_backup)
+        # self.s3_failed_publisher = MQPublisher(queue="s3_failed")
         self.s3_operator = S3Operator()
         log.info('init upload client successfully!')
 
@@ -29,7 +30,7 @@ class UploadClient(object):
             if is_success:
                 self.publish_msg_to_queue(self.s3_publisher, file_path, cloud_path)
                 return True
-        self.publish_msg_to_queue(self.s3_failed_publisher, file_path, cloud_path)
+        # self.publish_msg_to_queue(self.s3_failed_publisher, file_path, cloud_path)
         return False
 
 
@@ -49,11 +50,13 @@ class UploadClient(object):
             log.error('Publisher is not correct, drop msg:%s' % msg)
 
 
+
 if __name__ == '__main__':
 
+    upload_client = UploadClient(queue="s3_uploaded", exchange="tupu_exchange", exchange_type="fanout", is_backup=True)
+
     root_dir = "/opt/python_projects/resources/"
-    cloud_paths = ['/docs/computer_interface.doc', '/docs/good_job.doc', '/docs/notes_1.doc']
-    upload_client = UploadClient()
+    cloud_paths = ['/docs/computer_interface.doc', '/docs/good_job.doc', '/docs/notes_1.doc', '/docs/info_kaoyan.xlsx','/docs/admin.docx' ]
     for cloud_path in cloud_paths:
         file_path = root_dir[:-1] + cloud_path
         upload_client.upload_file_to_s3(file_path, cloud_path)

@@ -81,9 +81,9 @@ class MQPublisher(object):
                                        body=body,
                                        properties=properties
                                        )
-            log.info('Publish msg successfuly,body:%s' % body)
+            log.info('================Publish a msg successfuly, msg_content: %s' % body)
         except Exception as e:
-            log.exception("Publish msg failed, error:%s" % e)
+            log.exception("Publish msg failed, error: %s" % e)
 
 
     def publish_msg(self, **msg):

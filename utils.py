@@ -4,27 +4,44 @@
 # Author: Wakesy
 # Email : chenxi@szsandstone.com
 
-
-import time
 import commands
 import os
+import hashlib
+import magic
 from config import log
+from constant import IMG_TYPES, DOCUMENT_TYPES
 
 
-def get_formated_time(timestamp=time.time()):
 
-    return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(timestamp))
+def GetFileMd5(filename):
+    '''根据文件内容生成md5值'''
+    if not os.path.isfile(filename):
+        return
+    myhash = hashlib.md5()
+    f = file(filename,'rb')
+    while True:
+        b = f.read(8096)
+        if not b :
+            break
+        myhash.update(b)
+    f.close()
+    return myhash.hexdigest()
 
+
+def get_file_type(file_path):
+    '''返回文件类型'''
+    file_type = magic.from_file(file_path, mime=True)
+    log.debug(u'file_type:【%s】,file_path:%s' % (file_type, file_path))
+    return file_type
 
 
 def is_word_file(file_path):
     '''判断文件是否是word文档类型'''
-    # todo:目前只是简单检查文件名后缀，实际需要检查文件内容来判断类型
     if not os.path.isfile(file_path):
-        log.error('file not exists: %s' % file_path)
         return False
-
-    if file_path.endswith('.doc') or file_path.endswith('.docx'):
+    file_type = get_file_type(file_path)
+    if file_type in DOCUMENT_TYPES:
+        log.info(u'file_type:【%s】,file_path:%s' % (file_type, file_path))
         return True
     else:
         return False
@@ -51,16 +68,44 @@ def word_to_pdf(word_path, pdf_path=''):
         is_succeed, output = proc_cmd(trans_cmd)
         SUCCESS_TAG = "writer_pdf_Export" # 执行成功，输出结果会带这个字段
         if is_succeed and SUCCESS_TAG in output:
+            log.info("Transfer Micro Word to Pdf successfully.file")
             return True
     return False
 
 
+def iterate_over_directory_process(source_path, process_method):
+    '''遍历某个文件夹'''
+    if os.path.isfile(source_path):
+        process_method(source_path)
+
+    elif os.path.isdir(source_path):
+        for file_name in os.listdir(source_path):
+            new_path = os.path.join(source_path, file_name)
+            iterate_over_directory_process(new_path, process_method)
+
+
 if __name__ == '__main__':
-    word_path = '/opt/python_projects/resources/docs/good_job.doc'
-    pdf_path = '/opt/python_projects/resources/docs/'
-    is_success = word_to_pdf(word_path, pdf_path)
-    if is_success:
-        log.info("word_to_pdf succeed!")
-    else:
-        log.info("word_to_pdf failed!")
+
+    # file_path = '/opt/python_projects/resources/docs/good_job.doc'
+    # pdf_path = '/opt/python_projects/resources/docs/'
+    # is_success = word_to_pdf(file_path, pdf_path)
+    source_path = '/opt/python_projects/resources/common_files'
+    iterate_over_directory_process(source_path, is_word_file)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

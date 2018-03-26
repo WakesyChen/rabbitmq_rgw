@@ -11,6 +11,7 @@ import boto.s3
 import boto.s3.connection
 from multiupload import upload_file_multipart
 from config import *
+from utils import GetFileMd5
 
 
 class S3Operator(object):
@@ -52,16 +53,16 @@ class S3Operator(object):
                 log.error("FAILURE UPLOAD: S3 connection is not builded.")
                 return False
 
-            md5id = self.GetFileMd5(file_path)
+            md5id = GetFileMd5(file_path)
             bucket = self.s3_conn.get_bucket(self.bucket, validate=False)
             object_path = cloud_path.replace("\\", "/")
             if object_path[0] == '/':
                 object_path = BUCKET_PREF + object_path
             else:
                 object_path = BUCKET_PREF + '/' + object_path
-
             kobject = bucket.new_key(object_path)
             filesize = os.stat(file_path).st_size
+
             if filesize >= MULTI_UPLOAD_THRESHOLD_SIZE:
                 upload_file_multipart(file_path, object_path, bucket, md5id)
                 log.info("SUCCESS to S3: multipart way,  uploading file path: %s " % file_path)
@@ -69,24 +70,9 @@ class S3Operator(object):
                 kobject.set_contents_from_filename(file_path, headers={'CONTENT-MD5' : md5id})
                 log.info("SUCCESS to S3: singlefile way, uploading file path: %s" % file_path)
         except Exception, e:
-            # self.s3_conn.close()
             log.error("FAILURE to S3: error: %s, uploading file path: %s" % (e, file_path))
             return False
         return True
-
-
-    def GetFileMd5(self, filename):
-        if not os.path.isfile(filename):
-            return
-        myhash = hashlib.md5()
-        f = file(filename,'rb')
-        while True:
-            b = f.read(8096)
-            if not b :
-                break
-            myhash.update(b)
-        f.close()
-        return myhash.hexdigest()
 
 
     def download_from_s3(self, object_key, download_dir):
@@ -106,7 +92,7 @@ class S3Operator(object):
             if len(object_key.split('/')) < 2:
                 file_name = object_key
             else:
-                file_name = object_key.split('/')[-1]
+                file_name = object_key.split('/')[-1] #取出文件名
             local_path = os.path.join(download_dir, file_name)
             log.info("File will be download: %s" % local_path)
             bucket = self.s3_conn.get_bucket(S3_BUCKET, validate=False)
@@ -116,18 +102,6 @@ class S3Operator(object):
         except Exception as error:
             log.error("Download file from s3_operator failed, object_key:%s , error:%s" % (object_key, error))
         return local_path
-
-
-# 递归遍历目录上传的方式，暂时不使用
-# def iterate_over_directory_process(source_path, processor):
-#     if os.path.isfile(source_path):
-#         cloud_path = source_path[len(UPLOAD_DIR):]
-#         processor(cloud_path, source_path)
-#
-#     elif os.path.isdir(source_path):
-#         for subfile in os.listdir(source_path):
-#             new_path = os.path.join(source_path, subfile)
-#             iterate_over_directory_process(new_path, processor)
 
 
 if __name__ == '__main__':
