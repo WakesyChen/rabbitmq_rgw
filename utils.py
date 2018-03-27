@@ -7,18 +7,18 @@
 import commands
 import os
 import hashlib
-import magic
 from config import log
-from constant import IMG_TYPES, DOCUMENT_TYPES
+import imghdr
+from constant import *
 
 
 
-def GetFileMd5(filename):
+def GetFileMd5(file_path):
     '''根据文件内容生成md5值'''
-    if not os.path.isfile(filename):
+    if not os.path.isfile(file_path):
         return
     myhash = hashlib.md5()
-    f = file(filename,'rb')
+    f = file(file_path,'rb')
     while True:
         b = f.read(8096)
         if not b :
@@ -28,23 +28,27 @@ def GetFileMd5(filename):
     return myhash.hexdigest()
 
 
-def get_file_type(file_path):
-    '''返回文件类型'''
-    file_type = magic.from_file(file_path, mime=True)
-    log.debug(u'file_type:【%s】,file_path:%s' % (file_type, file_path))
-    return file_type
+def get_img_type(file_path):
+    '''智能识别图片，其他的返回None'''
+    file_type = imghdr.what(file_path)
+    if file_type in IMG_TYPES:
+        log.info('file_type: %s,file_path:%s' % (file_type, file_path))
+        return file_type
+    return None
 
 
 def is_word_file(file_path):
     '''判断文件是否是word文档类型'''
     if not os.path.isfile(file_path):
         return False
-    file_type = get_file_type(file_path)
-    if file_type in DOCUMENT_TYPES:
-        log.info(u'file_type:【%s】,file_path:%s' % (file_type, file_path))
+    # import magic
+    # file_type = magic.from_file(file_path, mime=True)  # 根据文件内容得到类型, 不准
+    has_doc_tag = file_path.endswith('.doc') or file_path.endswith('.docx') # 根据后缀判断类型
+    if has_doc_tag:
+        log.info('file_type:[%s],file_path:%s' % ('ms_word', file_path))
         return True
-    else:
-        return False
+
+    return False
 
 
 def proc_cmd(cmd):
@@ -61,7 +65,7 @@ def proc_cmd(cmd):
 
 def word_to_pdf(word_path, pdf_path=''):
     '''将doc, docx转换为pdf，但需要提供window下的字体，否则可能会出现乱码
-       不指定pdf_path， 则在执行脚本的地方生成
+       若不指定pdf_path， 则在执行脚本的地方生成
     '''
     if is_word_file(word_path):
         trans_cmd = "soffice --headless --convert-to pdf  {0} --outdir  {1}".format(word_path, pdf_path)
@@ -84,13 +88,11 @@ def iterate_over_directory_process(source_path, process_method):
             iterate_over_directory_process(new_path, process_method)
 
 
+
 if __name__ == '__main__':
 
-    # file_path = '/opt/python_projects/resources/docs/good_job.doc'
-    # pdf_path = '/opt/python_projects/resources/docs/'
-    # is_success = word_to_pdf(file_path, pdf_path)
     source_path = '/opt/python_projects/resources/common_files'
-    iterate_over_directory_process(source_path, is_word_file)
+    iterate_over_directory_process(source_path, get_img_type)
 
 
 

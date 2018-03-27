@@ -57,11 +57,8 @@ class MQConsumer(object):
     def call_back(self, channel, method, properties, body):
         '''用来接收消息的函数'''
         body = json.loads(body)
-        time.sleep(3)
-        # if method.delivery_tag % 2 == 0:
         channel.basic_ack(delivery_tag=method.delivery_tag) # 告诉生成者，消息处理完成
         log.info("Consumer recieved a message: %s" % str(body))
-
 
 
     def start_recieve(self):

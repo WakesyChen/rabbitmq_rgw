@@ -44,10 +44,10 @@ class ProcessServer(MQConsumer):
         '''
         try:
             s3_args = {}
-            s3_args['rgw_host'] = msg_args.get('rgw_host', '')
-            s3_args['rgw_port'] = msg_args.get('rgw_port', '')
             s3_args['s3_ak'] = msg_args.get('s3_ak', '')
             s3_args['s3_sk'] = msg_args.get('s3_sk', '')
+            s3_args['rgw_host']  = msg_args.get('rgw_host', '')
+            s3_args['rgw_port']  = msg_args.get('rgw_port', '')
             s3_args['s3_bucket'] = msg_args.get('s3_bucket', '')
             obj_key = msg_args['obj_key']
             s3_operator = S3Operator(**s3_args)
@@ -57,8 +57,7 @@ class ProcessServer(MQConsumer):
             # 1、格式转换word to pdf
             if self.process_word2pdf(s3_operator, local_file_path, msg_args):
                 return True
-
-        except Exception as e:
+        except:
             self.stop_recieve()
             log.critical("Back process failed, error: %s, stop consuming." % traceback.format_exc())
         return False
@@ -84,7 +83,6 @@ class ProcessServer(MQConsumer):
         return False
 
 
-
     def get_new_path(self, obj_key, local_file_path):
         '''
         :param obj_key: 当前的对象在s3中的key值
@@ -103,8 +101,6 @@ class ProcessServer(MQConsumer):
             new_key = obj_key
             new_file_path = local_file_path
         return new_key, new_file_path
-
-
 
 
 if __name__ == '__main__':
