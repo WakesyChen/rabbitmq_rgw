@@ -13,7 +13,7 @@ sys.path.append(os.path.abspath('../'))
 from random import randint
 from config import log
 from config import MQ_CONN_URL
-
+from constant import *
 class MQPublisher(object):
 
     def __init__(self, queue='', exchange='direct_exchange', exchange_type='direct', routing_key='', is_backup=False):
@@ -53,17 +53,24 @@ class MQPublisher(object):
         try:
             content['start_time'] = str(time.time())  # 产生时间
             content['event_id'] = str(uuid.uuid1())  # 事件的唯一标识
-            content['call_method'] = kwargs.get('call_method', '')  # 需要调用的方法
-            content['call_args'] = kwargs.get('call_args', '') # 方法需要的参数
-            # 文件上传到s3的信息
-            content['rgw_host'] = kwargs.get('rgw_host', '')
-            content['rgw_port'] = kwargs.get('rgw_port', '')
-            content['s3_ak'] = kwargs.get('s3_ak', '')
-            content['s3_sk'] = kwargs.get('s3_sk', '')
-            content['s3_bucket'] = kwargs.get('s3_bucket', '')
-            content['bucket_pref'] = kwargs.get('bucket_pref', '')
-            content['obj_key'] = kwargs.get('obj_key', '')
-            content['file_path'] = kwargs.get('file_path', '')
+            content['action_type'] = CONVERT_PROCESS  # 处理类型（check or transfer）
+            content['notify_url'] = '' # 审核结果通知地址 ## 发送审核结果到APP队列，让APP执行相应策略
+            check_type = {} # 审核类型相关参数
+            check_type['action_list'] = [CHECK_SEXY, CHECK_TERRORIST] # 具体动作（check:, transfer:[”to_gif“， ”resize“，”to_pdf“，“rotate”]
+            check_type['hit_action'] = HIT_ACTION_NOTHING # 审核命中（比如黄图或者恐怖活动），对存到MOS的源文件处理方式，比如“delete”，“hide”，“nothing”
+            content['check_type'] = check_type
+            convert_type = {} # 转换类型相关参数
+            convert_type['action_list'] = [CONVERT_TO_PDF, CONVERT_TO_JPEG]
+            convert_type['newname_list'] = ['filename.pdf', 'filename.gif']  # transfer后的文件名(作为新的key)
+            content['convert_type'] = convert_type
+            # 对象存储s3的信息
+            content['object_key'] = ''
+            content['bucket_name'] = ''
+            content['access_key'] = ''
+            content['secret_key'] = ''
+            content['rgw_host'] = ''
+            content['rgw_port'] = 0
+            content.update(kwargs)
             message = json.dumps(content)
         except Exception as e:
             log.error("formt message failed: %s" % e)
@@ -93,6 +100,7 @@ class MQPublisher(object):
             return
         body = self.formated_content(**msg)
         self.publish(body)
+
 
     def close(self):
         if self.mq_connection:

@@ -7,6 +7,7 @@
 from s3_operator.s3_operator import S3Operator
 from mq.publisher import MQPublisher
 from config import *
+from constant import *
 from utils import iterate_over_directory_process
 
 '''
@@ -24,30 +25,30 @@ class UploadClient(object):
 
 
     def upload_file_to_s3(self, file_path):
-
         cloud_path = '/'.join(file_path.split('/')[3:]) # for test
+
         if self.s3_operator:
             is_success = self.s3_operator.upload_to_s3(cloud_path, file_path)
             if is_success:
-                self.publish_msg_to_queue(self.s3_publisher, file_path, cloud_path)
+                self.publish_msg_to_queue(self.s3_publisher, cloud_path)
                 return True
         return False
 
 
-    def publish_msg_to_queue(self, publisher, file_path, cloud_path):
-        msg = {}
+
+    def publish_msg_to_queue(self, publisher, cloud_path):
+        '''推送消息到s3上传的队列'''
         if publisher and isinstance(publisher, MQPublisher):
-            msg['file_path'] = file_path
-            msg['obj_key'] = cloud_path
-            msg['rgw_host'] = RGW_HOST
-            msg['rgw_port'] = RGW_PORT
-            msg['s3_ak'] = S3_AK
-            msg['s3_sk'] = S3_SK
-            msg['s3_bucket'] = S3_BUCKET
-            msg['bucket_pref'] = BUCKET_PREF
+            msg = {}
+            msg['object_key']  = cloud_path
+            msg['bucket_name'] = S3_BUCKET
+            msg['access_key']  = S3_AK
+            msg['secret_key']  = S3_SK
+            msg['rgw_host']    = RGW_HOST
+            msg['rgw_port']    = RGW_PORT
+            msg['action_type'] =  CONVERT_PROCESS
             publisher.publish_msg(**msg)
-        else:
-            log.error('Publisher is not correct, drop msg:%s' % msg)
+
 
 
 if __name__ == '__main__':
