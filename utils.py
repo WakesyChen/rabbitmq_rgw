@@ -73,8 +73,6 @@ def proc_cmd2(logfunc, module, args, timeout=20, shell=False):
         raise
 
 
-
-
 def iterate_over_directory_process(source_path, process_method):
     '''遍历某个文件夹'''
     if os.path.isfile(source_path):
@@ -84,7 +82,6 @@ def iterate_over_directory_process(source_path, process_method):
         for file_name in os.listdir(source_path):
             new_path = os.path.join(source_path, file_name)
             iterate_over_directory_process(new_path, process_method)
-
 
 
 if __name__ == '__main__':

@@ -5,20 +5,16 @@
 # Email : chenxi@szsandstone.com
 
 import json
-import os
-from config import log
 import traceback
 from constant import *
 from config import *
 from s3_operator.s3_operator import S3Operator
 from mq.consumer import MQConsumer
 from background_process.convert_processer import ConvertProcesser
-'''
-从rabbitmq队列里面获取消息，然后访问s3获取文件；-----consumer
-拿到文件后进行后处理，若处理成功，则推到另一队列 -----publisher
-'''
+
 
 class ProcessServer(MQConsumer):
+
 
     def  __init__(self, input_queue=''):
 
@@ -26,6 +22,7 @@ class ProcessServer(MQConsumer):
         self.back_processer  = None  # 根据消息中的后处理类型确定
         self.check_processer = ConvertProcesser()
         self.convert_proccesser = ConvertProcesser()
+
 
 
     def call_back(self, channel, method, properties, body):
@@ -43,7 +40,6 @@ class ProcessServer(MQConsumer):
     def process(self, msg_args):
         try:
             s3_args = {}
-
             s3_args['access_key']  = msg_args['access_key']
             s3_args['secret_key']  = msg_args['secret_key']
             s3_args['bucket_name'] = msg_args['bucket_name']
@@ -51,17 +47,16 @@ class ProcessServer(MQConsumer):
             s3_args['rgw_port']    = msg_args['rgw_port']
             action_type = msg_args['action_type']
             object_key  = msg_args['object_key']
-
             # 1、从s3下载，默认存放到DOWNLOAD_DIR中
             s3_operator = S3Operator(**s3_args)
             local_file_path = s3_operator.download_from_s3(object_key, DOWNLOAD_DIR)
+
             # 2、根据消息中的处理类型，进行对应的后处理
             if action_type == CHECK_PROCESS:
                 self.back_processer = self.check_processer
             elif action_type == CONVERT_PROCESS:
                 self.back_processer = self.convert_proccesser
-            else:
-                self.back_processer = None
+
             # 搭便车，多传两个参数过去
             msg_args['local_file_path'] = local_file_path
             msg_args['s3_operator'] = s3_operator
@@ -72,8 +67,6 @@ class ProcessServer(MQConsumer):
             self.stop_recieve()
             log.critical("Back process failed, error: %s, stop consuming." % traceback.format_exc())
         return False
-
-
 
 
 if __name__ == '__main__':

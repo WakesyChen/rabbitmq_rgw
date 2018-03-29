@@ -35,7 +35,6 @@ class UploadClient(object):
         return False
 
 
-
     def publish_msg_to_queue(self, publisher, cloud_path):
         '''推送消息到s3上传的队列'''
         if publisher and isinstance(publisher, MQPublisher):
@@ -50,10 +49,9 @@ class UploadClient(object):
             publisher.publish_msg(**msg)
 
 
-
 if __name__ == '__main__':
 
-    upload_client = UploadClient(queue="s3_uploaded", exchange="tupu_exchange", exchange_type="fanout", is_backup=True)
+    upload_client = UploadClient(queue=S3_UPLOADED_MQ, exchange=S3_EXCHANGE, exchange_type=S3_EXCHANGE_TYPE, is_backup=S3_BACKUP)
     upload_dir = "/opt/python_projects/resources/common_files"
     iterate_over_directory_process(upload_dir, upload_client.upload_file_to_s3)
 

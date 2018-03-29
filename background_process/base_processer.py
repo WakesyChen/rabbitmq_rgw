@@ -14,3 +14,6 @@ class BaseProcesser(object):
     def back_process(self, *args, **kwargs):
         '''必须指定转化类型'''
         pass
+
+if __name__ == '__main__':
+    BaseProcesser().back_process()

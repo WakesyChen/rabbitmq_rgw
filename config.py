@@ -44,6 +44,10 @@ CHUNK_SIZE = 4*1024*1024
 # 大于50M分片上传
 MULTI_UPLOAD_THRESHOLD_SIZE = 50*1024*1024
 
+
+#从s3上下载的文件，存放目录
+DOWNLOAD_DIR = '/opt/python_projects/resources/download'
+
 #===========================MQ配置=================================
 
 RABBITMQ_CONF = {'host': '10.10.7.151',
@@ -59,11 +63,12 @@ MQ_CONN_URL = "amqp://{user}:{password}@{host}:{port}/{vhost}?socket_timeout={ti
 # s3上传的文件队列
 S3_UPLOADED_MQ = 's3_uploaded'
 S3_BACKUP = True  # 设置备份队列，保存接收到的所有消息
-S3_EXCHANGE = "tupu_exchange" # 上传的路由exchange
+S3_EXCHANGE = "multi_exchange" # 上传的路由exchange
 S3_EXCHANGE_TYPE = "fanout"  # 绑定相同exchange队列都会接收到消息
 
 # 后处理成功的队列back_processed
 BACK_PROCESSED_MQ = 'back_processed'
+
 
 
 

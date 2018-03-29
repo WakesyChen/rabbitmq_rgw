@@ -51,25 +51,25 @@ class MQPublisher(object):
         content = {}
         message = ''
         try:
-            content['start_time'] = str(time.time())  # 产生时间
-            content['event_id'] = str(uuid.uuid1())  # 事件的唯一标识
-            content['action_type'] = CONVERT_PROCESS  # 处理类型（check or transfer）
-            content['notify_url'] = '' # 审核结果通知地址 ## 发送审核结果到APP队列，让APP执行相应策略
+            content['start_time']  = str(time.time())  # 产生时间
+            content['event_id']    = str(uuid.uuid1())  # 事件的唯一标识
+            content['action_type'] = 'transfer'  # 处理类型（check or transfer）
+            content['notify_url']  = '' # 审核结果通知地址 ## 发送审核结果到APP队列，让APP执行相应策略
             check_type = {} # 审核类型相关参数
-            check_type['action_list'] = [CHECK_SEXY, CHECK_TERRORIST] # 具体动作（check:, transfer:[”to_gif“， ”resize“，”to_pdf“，“rotate”]
-            check_type['hit_action'] = HIT_ACTION_NOTHING # 审核命中（比如黄图或者恐怖活动），对存到MOS的源文件处理方式，比如“delete”，“hide”，“nothing”
-            content['check_type'] = check_type
+            check_type['action_list'] = ['is_sexy','is_terrorist'] # 具体动作（check:, transfer:[”to_gif“， ”resize“，”to_pdf“，“rotate”]
+            check_type['hit_action']  = 'nothing' # 审核命中（比如黄图或者恐怖活动），对存到MOS的源文件处理方式，比如“delete”，“hide”，“nothing”
+            content['check_type']     = check_type
             convert_type = {} # 转换类型相关参数
-            convert_type['action_list'] = [CONVERT_TO_PDF, CONVERT_TO_JPEG]
+            convert_type['action_list']  = ['to_pdf', 'to_gif']
             convert_type['newname_list'] = ['filename.pdf', 'filename.gif']  # transfer后的文件名(作为新的key)
-            content['convert_type'] = convert_type
+            content['convert_type']      = convert_type
             # 对象存储s3的信息
-            content['object_key'] = ''
+            content['object_key']  = ''
             content['bucket_name'] = ''
-            content['access_key'] = ''
-            content['secret_key'] = ''
-            content['rgw_host'] = ''
-            content['rgw_port'] = 0
+            content['access_key']  = ''
+            content['secret_key']  = ''
+            content['rgw_host']    = ''
+            content['rgw_port']    = 0
             content.update(kwargs)
             message = json.dumps(content)
         except Exception as e:
@@ -109,6 +109,7 @@ class MQPublisher(object):
 
     def __del__(self):
         self.close()
+
 
 if __name__ == '__main__':
 

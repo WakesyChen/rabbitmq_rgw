@@ -1,10 +1,7 @@
 # -*- coding:utf-8 -*-
 
-
-import hashlib
 import os
 import sys
-
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 import boto
 import boto.s3
@@ -16,12 +13,12 @@ from utils import GetFileMd5
 
 class S3Operator(object):
 
-    def __init__(self, s3_ak=S3_AK, s3_sk=S3_SK, rgw_host=RGW_HOST, rgw_port=RGW_PORT, s3_bucket=S3_BUCKET):
-        self.access_key = s3_ak
-        self.secret_key = s3_sk
+    def __init__(self, access_key=S3_AK, secret_key=S3_SK, rgw_host=RGW_HOST, rgw_port=RGW_PORT, bucket_name=S3_BUCKET):
+        self.access_key = access_key
+        self.secret_key = secret_key
         self.host = rgw_host
         self.port = rgw_port
-        self.bucket = s3_bucket
+        self.bucket = bucket_name
         self.s3_conn = None
         self.init_s3_connection()
 
