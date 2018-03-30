@@ -16,12 +16,11 @@ class S3Operator(object):
     def __init__(self, access_key=S3_AK, secret_key=S3_SK, rgw_host=RGW_HOST, rgw_port=RGW_PORT, bucket_name=S3_BUCKET):
         self.access_key = access_key
         self.secret_key = secret_key
-        self.host = rgw_host
-        self.port = rgw_port
-        self.bucket = bucket_name
+        self.host    = rgw_host
+        self.port    = rgw_port
+        self.bucket  = bucket_name
         self.s3_conn = None
         self.init_s3_connection()
-
 
     def init_s3_connection(self):
         self.s3_conn = self.get_s3_connection()
@@ -49,6 +48,9 @@ class S3Operator(object):
             if not self.get_s3_connection():
                 log.error("FAILURE UPLOAD: S3 connection is not builded.")
                 return False
+            if self.check_from_s3(cloud_path):
+                log.info("S3 object already exists: %s" % cloud_path)
+                return False
 
             md5id = GetFileMd5(file_path)
             bucket = self.s3_conn.get_bucket(self.bucket, validate=False)
@@ -70,6 +72,13 @@ class S3Operator(object):
             log.error("FAILURE to S3: error: %s, uploading file path: %s" % (e, file_path))
             return False
         return True
+
+    def check_from_s3(self, object_key):
+        '''检查s3中是否已经存在'''
+        bucket = self.s3_conn.get_bucket(S3_BUCKET, validate=False)
+        kobject = bucket.get_key(object_key)
+        return True if kobject else False
+
 
 
     def download_from_s3(self, object_key, download_dir):

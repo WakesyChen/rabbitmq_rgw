@@ -8,9 +8,7 @@ import commands
 import os
 import hashlib
 from config import log
-import imghdr
 import gevent, gevent.subprocess
-from constant import *
 
 
 def GetFileMd5(file_path):
@@ -26,15 +24,6 @@ def GetFileMd5(file_path):
         myhash.update(b)
     f.close()
     return myhash.hexdigest()
-
-
-def get_img_type(file_path):
-    '''智能识别图片，其他的返回None'''
-    file_type = imghdr.what(file_path)
-    if file_type in IMG_TYPES:
-        log.info('file_type: %s,file_path:%s' % (file_type, file_path))
-        return file_type
-    return None
 
 
 def proc_cmd(cmd):

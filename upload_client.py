@@ -8,6 +8,8 @@ from s3_operator.s3_operator import S3Operator
 from mq.publisher import MQPublisher
 from config import *
 from constant import *
+from random import randint
+import re
 from utils import iterate_over_directory_process
 
 '''
@@ -39,20 +41,29 @@ class UploadClient(object):
         '''推送消息到s3上传的队列'''
         if publisher and isinstance(publisher, MQPublisher):
             msg = {}
-            msg['object_key']  = cloud_path
-            msg['bucket_name'] = S3_BUCKET
-            msg['access_key']  = S3_AK
-            msg['secret_key']  = S3_SK
-            msg['rgw_host']    = RGW_HOST
-            msg['rgw_port']    = RGW_PORT
-            msg['action_type'] =  CONVERT_PROCESS
+            file_name = (cloud_path.split('/'))[-1]
+            doc_file  = re.sub(r'.doc[x]{0,1}', '.pdf', file_name)
+            img_file  = re.sub((file_name.split('.'))[-1], 'gif', file_name)
+
+            convert_type = {}
+            convert_type['action_list']  = ['to_pdf', 'to_gif']
+            convert_type['newname_list'] = [doc_file, img_file]
+            msg['convert_type'] = convert_type
+            msg['object_key']   = cloud_path
+            msg['bucket_name']  = S3_BUCKET
+            msg['access_key']   = S3_AK
+            msg['secret_key']   = S3_SK
+            msg['rgw_host']     = RGW_HOST
+            msg['rgw_port']     = RGW_PORT
+            msg['action_type']  =  CONVERT_PROCESS
+            msg['newname_list'] =  CONVERT_PROCESS
             publisher.publish_msg(**msg)
 
 
 if __name__ == '__main__':
 
     upload_client = UploadClient(queue=S3_UPLOADED_MQ, exchange=S3_EXCHANGE, exchange_type=S3_EXCHANGE_TYPE, is_backup=S3_BACKUP)
-    upload_dir = "/opt/python_projects/resources/common_files"
+    upload_dir = "/opt/python_projects/resources/temp"
     iterate_over_directory_process(upload_dir, upload_client.upload_file_to_s3)
 
 

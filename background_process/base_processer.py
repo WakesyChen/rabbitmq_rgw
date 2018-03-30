@@ -5,7 +5,7 @@
 # Email : chenxi@szsandstone.com
 
 from config import log
-from constant import DEFAULT_PROCESS
+
 
 class BaseProcesser(object):
     '''后处理'''
@@ -16,4 +16,10 @@ class BaseProcesser(object):
         pass
 
 if __name__ == '__main__':
-    BaseProcesser().back_process()
+
+    test = {'a':1,'b':2,'c':3}
+    for i in test:
+        print i ,test[i]
+        test.pop(i)
+        print test
+    pass

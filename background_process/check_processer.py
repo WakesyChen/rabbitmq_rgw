@@ -20,7 +20,6 @@ class CheckProcesser(BaseProcesser):
     def __repr__(self):
         return 'instance of class: <CheckProcess>'
 
-
 if __name__ == '__main__':
     check_proc = CheckProcesser()
     check_proc.back_process('123','231', pp=CheckProcesser())

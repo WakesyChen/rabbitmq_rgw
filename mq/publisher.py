@@ -8,6 +8,7 @@ import time
 import uuid
 import json
 import os, sys
+import re
 sys.path.append(os.path.abspath('../'))
 
 from random import randint
@@ -17,12 +18,12 @@ from constant import *
 class MQPublisher(object):
 
     def __init__(self, queue='', exchange='direct_exchange', exchange_type='direct', routing_key='', is_backup=False):
-        self.queue = queue  # 目前需求必须指定queue
-        self.exchange = exchange
+        self.queue         = queue    # 目前需求必须指定queue
+        self.exchange      = exchange
         self.exchange_type = exchange_type
-        self.routing_key = routing_key or queue
-        self.is_backup = is_backup # 是否备份当前队列消息
-        self.channel = None
+        self.routing_key   = routing_key or queue
+        self.is_backup     = is_backup # 是否备份当前队列消息
+        self.channel       = None
         self.mq_connection = None
         self.build_connection()
 
@@ -55,13 +56,13 @@ class MQPublisher(object):
             content['event_id']    = str(uuid.uuid1())  # 事件的唯一标识
             content['action_type'] = 'transfer'  # 处理类型（check or transfer）
             content['notify_url']  = '' # 审核结果通知地址 ## 发送审核结果到APP队列，让APP执行相应策略
-            check_type = {} # 审核类型相关参数
+            check_type = {}             # 审核类型相关参数
             check_type['action_list'] = ['is_sexy','is_terrorist'] # 具体动作（check:, transfer:[”to_gif“， ”resize“，”to_pdf“，“rotate”]
             check_type['hit_action']  = 'nothing' # 审核命中（比如黄图或者恐怖活动），对存到MOS的源文件处理方式，比如“delete”，“hide”，“nothing”
             content['check_type']     = check_type
             convert_type = {} # 转换类型相关参数
             convert_type['action_list']  = ['to_pdf', 'to_gif']
-            convert_type['newname_list'] = ['filename.pdf', 'filename.gif']  # transfer后的文件名(作为新的key)
+            convert_type['newname_list'] = ['doc_file.pdf', 'img_file.gif']  # transfer后的文件名(作为新的key)
             content['convert_type']      = convert_type
             # 对象存储s3的信息
             content['object_key']  = ''

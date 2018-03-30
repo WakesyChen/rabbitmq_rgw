@@ -24,15 +24,13 @@ IMG_TYPES = [IMG_JPEG, IMG_GIF, IMG_PNG, IMG_RGB, IMG_PGM, IMG_PBM,
 
 #===========================后处理类型========================
 
-# 默认类型
-DEFAULT_PROCESS = 'default_process'
-
 # 审核类型
 CHECK_PROCESS  = 'check'
-CHECK_SEXY     = 'is_sexy'  # 黄色
-CHECK_POLICY   = 'is_policy' # 政治相关
+CHECK_SEXY     = 'is_sexy'       # 黄色
+CHECK_POLICY   = 'is_policy'     # 政治相关
 CHECK_TERRORIST = 'is_terrorist' # 暴力恐怖
 CHECK_TYPES = [CHECK_SEXY, CHECK_TERRORIST, CHECK_POLICY]
+
 # 审核完成后的操作
 HIT_ACTION_DELETE  = 'delete'
 HIT_ACTION_NOTHING = 'nothing'
@@ -40,11 +38,15 @@ HIT_ACTION_HIDE    = 'hide'
 HIT_ACTIONS = [HIT_ACTION_DELETE, HIT_ACTION_HIDE, HIT_ACTION_NOTHING]
 
 # 转换类型
-CONVERT_PROCESS  = 'transfer'
-CONVERT_TO_PDF   = 'to_pdf'   # word转pdf
-CONVERT_TO_GIF   = 'to_gif'   # 图片转为gif格式
-CONVERT_TO_JPEG  = 'to_jpeg' # 图片转为gif格式
-CONVERT_RESIZE   = 'resize'   # 重新调整尺寸
-CONVERT_TYPES    = [CONVERT_TO_PDF, CONVERT_TO_GIF, CONVERT_TO_JPEG, CONVERT_RESIZE]
+CONVERT_PROCESS = 'transfer'
+CONVERT_TO_PDF  = 'to_pdf'   # word转pdf
+CONVERT_TO_GIF  = 'to_gif'   # 图片转为gif格式
+CONVERT_TO_JPEG = 'to_jpeg'  # 图片转为gif格式
+CONVERT_RESIZE  = 'resize'   # 重新调整尺寸
+CONVERT_IMG_TYPES  = [CONVERT_TO_GIF, CONVERT_TO_JPEG]  # 图片格式转换
+CONVERT_TYPES   = [CONVERT_TO_PDF, CONVERT_RESIZE] + CONVERT_IMG_TYPES
+
+# 支持的所有后处理类型
+ALL_PROCESS_SUPPORT = CHECK_TYPES + CONVERT_TYPES
 
 
