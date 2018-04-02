@@ -15,6 +15,7 @@ class BaseProcesser(object):
         '''必须指定转化类型'''
         pass
 
+
 if __name__ == '__main__':
 
     test = {'a':1,'b':2,'c':3}

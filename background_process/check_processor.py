@@ -6,8 +6,9 @@
 
 import os
 from config import log
-from base_processer import BaseProcesser
+from base_processor import BaseProcesser
 from constant import *
+
 
 class CheckProcesser(BaseProcesser):
 
@@ -21,6 +22,7 @@ class CheckProcesser(BaseProcesser):
         return 'instance of class: <CheckProcess>'
 
 if __name__ == '__main__':
-    check_proc = CheckProcesser()
-    check_proc.back_process('123','231', pp=CheckProcesser())
-    # check_proc.back_process(app='juice',ove='jack')
+    import sys
+    reload(sys)
+    sys.setdefaultencoding("utf-8")
+    pass

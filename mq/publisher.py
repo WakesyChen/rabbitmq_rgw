@@ -48,59 +48,50 @@ class MQPublisher(object):
             raise Exception, e
 
 
-    def formated_content(self, **kwargs):
-        content = {}
-        message = ''
-        try:
-            content['start_time']  = str(time.time())  # 产生时间
-            content['event_id']    = str(uuid.uuid1())  # 事件的唯一标识
-            content['action_type'] = 'transfer'  # 处理类型（check or transfer）
-            content['notify_url']  = '' # 审核结果通知地址 ## 发送审核结果到APP队列，让APP执行相应策略
-            check_type = {}             # 审核类型相关参数
-            check_type['action_list'] = ['is_sexy','is_terrorist'] # 具体动作（check:, transfer:[”to_gif“， ”resize“，”to_pdf“，“rotate”]
-            check_type['hit_action']  = 'nothing' # 审核命中（比如黄图或者恐怖活动），对存到MOS的源文件处理方式，比如“delete”，“hide”，“nothing”
-            content['check_type']     = check_type
-            convert_type = {} # 转换类型相关参数
-            convert_type['action_list']  = ['to_pdf', 'to_gif']
-            convert_type['newname_list'] = ['doc_file.pdf', 'img_file.gif']  # transfer后的文件名(作为新的key)
-            content['convert_type']      = convert_type
-            # 对象存储s3的信息
-            content['object_key']  = ''
-            content['bucket_name'] = ''
-            content['access_key']  = ''
-            content['secret_key']  = ''
-            content['rgw_host']    = ''
-            content['rgw_port']    = 0
-            content.update(kwargs)
-            message = json.dumps(content)
-        except Exception as e:
-            log.error("formt message failed: %s" % e)
-        return message
-
-
     def publish(self, body):
         if not self.mq_connection:
             log.error('mq_connection is not builded, publish failed!')
             return 0
         try:
             properties = pika.BasicProperties(delivery_mode=2)  # 队列持久化，防止宕机消失
-            self.channel.basic_publish(exchange=self.exchange,
+            publish_success = self.channel.basic_publish(exchange=self.exchange,
                                        routing_key=self.routing_key,
                                        body=body,
                                        properties=properties
                                        )
-            log.info('================Publish a msg successfuly, msg_content: %s' % body)
+            if publish_success:
+                log.info('=== Publish message success, msg_content: %s' % body)
+            else:
+                log.error("=== Publish message failed, msg_content: %s" % body)
         except Exception as e:
-            log.exception("Publish msg failed, error: %s" % e)
+            publish_success = False
+            log.error("=== Error happenned when publish msg,  error: %s, body: %s" % (e, body))
+        return publish_success
 
 
     def publish_msg(self, **msg):
         '''对外提供的发送消息的方法'''
-        if not msg:
-            log.info('message is empty, cannot be published!')
-            return
         body = self.formated_content(**msg)
         self.publish(body)
+
+
+    def formated_content(self, **kwargs):
+        content = {}
+        message = ''
+        try:
+            content['start_time']   = str(time.time())  # 产生时间
+            content['event_id']     = str(uuid.uuid1())  # 事件的唯一标识
+            content['notify_url']   = '' # 审核结果通知地址
+            content['action_type']  = 'convert_to_pdf' # 后处理类型，转换类型如："convert_to_pdf";审核类型如："check_is_sexy"
+            content['hit_action']   = 'nothing'        # 审核处理需要，鉴定为黄色，或者暴恐等后要执行的操作；如果是转换类型，则为空
+            content['newname_list'] = 'doc_file.pdf'  # 转换处理需要，规定文件转换之后的名字；如果是审核类型，则为空
+            content['object_key']   = ''
+            content['bucket_name']  = ''
+            content.update(kwargs)
+            message = json.dumps(content)
+        except Exception as e:
+            log.error("formt message failed: %s" % e)
+        return message
 
 
     def close(self):

@@ -11,7 +11,9 @@ from constant import *
 from random import randint
 import re
 from utils import iterate_over_directory_process
-
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 '''
 上传文件到s3，并记录到rabbitmq队列------消息publisher
 '''
@@ -63,7 +65,7 @@ class UploadClient(object):
 if __name__ == '__main__':
 
     upload_client = UploadClient(queue=S3_UPLOADED_MQ, exchange=S3_EXCHANGE, exchange_type=S3_EXCHANGE_TYPE, is_backup=S3_BACKUP)
-    upload_dir = "/opt/python_projects/resources/temp"
+    upload_dir = "/opt/python_projects/resources/common_files"
     iterate_over_directory_process(upload_dir, upload_client.upload_file_to_s3)
 
 
