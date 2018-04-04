@@ -8,9 +8,9 @@ from filechunkio import FileChunkIO
 import threading
 import Queue
 
-from config import CHUNK_SIZE
-from config import MULTI_THREAD_NUM
 
+CHUNK_SIZE = 4*1024*1024
+MULTI_THREAD_NUM = 5
 
 class Chunk:
     num = 0

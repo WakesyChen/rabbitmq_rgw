@@ -11,19 +11,19 @@ sys.setdefaultencoding("utf-8")
 sys.path.append('../')
 from copy import deepcopy
 from base_processor import BaseProcesser
-from mq.publisher import MQPublisher
+from rabbit_mq.publisher import MQPublisher
 from constant import *
 from config import *
 from utils import get_img_type, is_word_type
-from tools.image_converter import convert_img2gif, convert_img2jpeg, convert_image_common
+from tools.image_converter import convert_image_common
 from tools.other_converter import convert_word2pdf
-
 
 class ConvertProcesser(BaseProcesser):
     '''进行相关的转换处理'''
 
     def __init__(self):
-        self.mq_publisher = MQPublisher(BACK_PROCESSED_MQ)
+        self.process_success_mq = MQPublisher(PROCESS_SUCCESS_MQ)
+        # self.process_failed_mq = MQPublisher(PROCESS_FAILED_MQ)
 
 
     def back_process(self, *args, **kwargs):
@@ -39,28 +39,24 @@ class ConvertProcesser(BaseProcesser):
         local_dir      = '/'.join(s3_local_file.split('/')[:-1])   # 本地保存的目录
         generate_path  = os.path.join(local_dir, new_file_name)    # 转换生成的文件路径
         new_object_key = os.path.join(object_dir, new_file_name)   # 生成的文件对应s3上的key
-        log.info('NOTICE: start to  %s' % action_type)
 
-        if is_word_file and action_type == CONVERT_TO_PDF:
-            # word文档转化为pdf
-            generate_path = convert_word2pdf(s3_local_file, local_dir)
-            if os.path.isfile(generate_path):
-                if self.process_after_convert(action_type, new_object_key, generate_path, **kwargs):
-                    return True
+        if is_word_file:
+            if action_type == CONVERT_TO_PDF:
+                # word文档转化为pdf
+                generate_path = convert_word2pdf(s3_local_file, local_dir)
+                if os.path.isfile(generate_path):
+                    if self.process_after_convert(action_type, new_object_key, generate_path, **kwargs):
+                        return True
 
-        if is_img_file and action_type == CONVERT_TO_GIF:
-            # 图片类型转化为gif
-            if convert_img2gif(s3_local_file, generate_path):
-                if self.process_after_convert(action_type, new_object_key, generate_path, **kwargs):
-                    return True
+        if is_img_file:
+            if action_type in CONVERT_IMAGES:
+                # 根据action_type, 图片类型转化为支持的图片格式
+                if convert_image_common(s3_local_file, generate_path):
+                    if self.process_after_convert(action_type, new_object_key, generate_path, **kwargs):
+                        return True
 
-        if is_img_file and action_type == CONVERT_TO_JPEG:
-            # 图片类型转化为jpeg
-            if convert_img2jpeg(s3_local_file, generate_path):
-                if self.process_after_convert(action_type, new_object_key, generate_path, **kwargs):
-                    return True
-
-        log.warn('NOTICE: %s  failed.' % action_type)
+        log.warn("convert failed, convert type: %s, file_path: %s" % (action_type, s3_local_file))
+        # self.process_failed_mq.publish_msg(**kwargs)  # 上传新消息到处理失败的的队列
         return False
 
 
@@ -71,11 +67,13 @@ class ConvertProcesser(BaseProcesser):
         :param generate_path:  生成的文件对应s3上的key
         :param kwargs: 发送到mq的消息内容
         '''
-        log.info('NOTICE: convert %s success, start to upload to s3 and publish msg...' % action)
+        log.info("Convert %s success, start to upload to s3 and publish msg..." % action)
         if self.s3_operator.upload_to_s3(new_object_key, generate_path):  # 上传到s3中
             msg_args = deepcopy(kwargs)
             msg_args['object_key'] = new_object_key
-            self.mq_publisher.publish_msg(**msg_args)  # 上传新消息到处理成功的队列
+            self.process_success_mq.publish_msg(**msg_args)  # 上传新消息到处理成功的队列
+            return True
+        return False
 
 
 

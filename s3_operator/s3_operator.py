@@ -7,9 +7,10 @@ import boto
 import boto.s3
 import boto.s3.connection
 from multiupload import upload_file_multipart
-from config import *
+from config import log
 import hashlib
 
+MULTI_UPLOAD_THRESHOLD_SIZE = 50*1024*1024 # 大于50M分片上传
 
 class S3Operator(object):
 
@@ -49,16 +50,16 @@ class S3Operator(object):
                 log.error("FAILURE UPLOAD: S3 connection is not builded.")
                 return False
             if self.check_from_s3(cloud_path):
-                log.warn("S3 object already exists: %s" % cloud_path)
-                return False
+                log.debug("S3 object already exists: %s" % cloud_path)
+                return True
 
             md5id = self.GetFileMd5(file_path)
             bucket = self.s3_conn.get_bucket(self.bucket, validate=False)
             object_path = cloud_path.replace("\\", "/")
             if object_path[0] == '/':
-                object_path = BUCKET_PREF + object_path
+                object_path = object_path
             else:
-                object_path = BUCKET_PREF + '/' + object_path
+                object_path = '/' + object_path
             kobject = bucket.new_key(object_path)
             filesize = os.stat(file_path).st_size
 
@@ -75,7 +76,7 @@ class S3Operator(object):
 
     def check_from_s3(self, object_key):
         '''检查s3中是否已经存在'''
-        bucket = self.s3_conn.get_bucket(S3_BUCKET, validate=False)
+        bucket = self.s3_conn.get_bucket(self.bucket, validate=False)
         kobject = bucket.get_key(object_key)
         return True if kobject else False
 
@@ -101,12 +102,12 @@ class S3Operator(object):
                 file_name = object_key.split('/')[-1] #取出文件名
             local_path = os.path.join(download_dir, file_name)
             log.info("File will be download: %s" % local_path)
-            bucket = self.s3_conn.get_bucket(S3_BUCKET, validate=False)
+            bucket = self.s3_conn.get_bucket(self.bucket, validate=False)
             kobject = bucket.get_key(object_key)
             kobject.get_contents_to_filename(local_path)
-            log.info("Download file from s3_operator successfully, object_key: %s" % object_key)
+            log.info("Download file from s3_operator successfully" )
         except Exception as error:
-            log.error("Download file from s3_operator failed, object_key:%s , error:%s" % (object_key, error))
+            log.error("Download file from s3_operator failed, error:%s" % error)
         return local_path
 
     def GetFileMd5(self, file_path):

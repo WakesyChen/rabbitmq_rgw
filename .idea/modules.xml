@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/tupu_process.iml" filepath="$PROJECT_DIR$/.idea/tupu_process.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/background_process.iml" filepath="$PROJECT_DIR$/.idea/background_process.iml" />
     </modules>
   </component>
 </project>

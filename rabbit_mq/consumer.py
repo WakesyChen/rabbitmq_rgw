@@ -6,12 +6,11 @@
 
 import pika
 import json
-import time
 import sys
 import os
 
 sys.path.append(os.path.abspath('../'))
-from config import *
+from config import MQ_CONN_URL, log
 
 class MQConsumer(object):
 

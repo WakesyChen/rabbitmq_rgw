@@ -8,13 +8,9 @@ import time
 import uuid
 import json
 import os, sys
-import re
 sys.path.append(os.path.abspath('../'))
 
-from random import randint
-from config import log
-from config import MQ_CONN_URL
-from constant import *
+from config import MQ_CONN_URL, log
 class MQPublisher(object):
 
     def __init__(self, queue='', exchange='direct_exchange', exchange_type='direct', routing_key='', is_backup=False):
@@ -30,6 +26,7 @@ class MQPublisher(object):
 
     def build_connection(self):
         try:
+
             self.mq_connection = pika.BlockingConnection(pika.URLParameters(MQ_CONN_URL))
             self.channel = self.mq_connection.channel()
             self.channel.exchange_declare(self.exchange, exchange_type=self.exchange_type, durable=True)
@@ -60,12 +57,12 @@ class MQPublisher(object):
                                        properties=properties
                                        )
             if publish_success:
-                log.info('=== Publish message success, msg_content: %s' % body)
+                log.info('Publish message success, msg_content:%s' % body)
             else:
-                log.error("=== Publish message failed, msg_content: %s" % body)
+                log.error("Publish message failed, msg_content:%s" % body)
         except Exception as e:
             publish_success = False
-            log.error("=== Error happenned when publish msg,  error: %s, body: %s" % (e, body))
+            log.error("Error happenned when publish msg,  error: %s, body: %s" % (e, body))
         return publish_success
 
 
@@ -79,12 +76,12 @@ class MQPublisher(object):
         content = {}
         message = ''
         try:
-            content['start_time']   = str(time.time())  # 产生时间
+            content['start_time']   = str(time.time())   # 产生时间
             content['event_id']     = str(uuid.uuid1())  # 事件的唯一标识
-            content['notify_url']   = '' # 审核结果通知地址
-            content['action_type']  = 'convert_to_pdf' # 后处理类型，转换类型如："convert_to_pdf";审核类型如："check_is_sexy"
-            content['hit_action']   = 'nothing'        # 审核处理需要，鉴定为黄色，或者暴恐等后要执行的操作；如果是转换类型，则为空
-            content['newname_list'] = 'doc_file.pdf'  # 转换处理需要，规定文件转换之后的名字；如果是审核类型，则为空
+            content['notify_url']   = ''                 # 审核结果通知地址
+            content['action_type']  = 'convert_to_pdf'   # 后处理类型，转换类型如："convert_to_pdf";审核类型如："check_is_sexy"
+            content['hit_action']   = 'nothing'          # 审核处理需要，鉴定为黄色，或者暴恐等后要执行的操作；如果是转换类型，则为空
+            content['new_name']     = 'doc_file.pdf'     # 转换处理需要，规定文件转换之后的名字；如果是审核类型，则为空
             content['object_key']   = ''
             content['bucket_name']  = ''
             content.update(kwargs)
@@ -102,12 +99,3 @@ class MQPublisher(object):
     def __del__(self):
         self.close()
 
-
-if __name__ == '__main__':
-
-    publisher = MQPublisher(queue="upload_history", exchange="tupu_exchange", exchange_type='fanout', is_backup=True)
-    for i in range(5):
-        msg = {}
-        msg['content'] = 'Hello world: %s' % randint(0, 1000)
-        publisher.publish_msg(**msg)
-    publisher.close()

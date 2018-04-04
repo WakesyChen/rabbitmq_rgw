@@ -53,11 +53,11 @@ def proc_cmd2(logfunc, module, args, timeout=20, shell=False):
 def is_word_type(file_path):
     '''判断文件是否是word文档类型'''
     if not os.path.isfile(file_path):
-        log.error('s3_local_file not exists: %s' % file_path)
+        log.warn('s3_local_file not exists: %s' % file_path)
         return False
     has_doc_tag = file_path.endswith('.doc') or file_path.endswith('.docx')  # 根据后缀判断类型
     if has_doc_tag:
-        log.info('file_type:ms_word,file_path:%s' %  file_path)
+        log.debug('file_type:ms_word,file_path:%s' %  file_path)
         return True
     return False
 
@@ -68,7 +68,7 @@ def get_img_type( file_path):
         if os.path.isfile(file_path):
             file_type = imghdr.what(file_path)
             if file_type in IMG_TYPES:
-                log.debug('file path: %s, file type: %s' % (file_path, file_type))
+                # log.debug('file path: %s, file type: %s' % (file_path, file_type))
                 return file_type
     except Exception as e:
         log.debug('get_img_type failed, error: %s' % e)

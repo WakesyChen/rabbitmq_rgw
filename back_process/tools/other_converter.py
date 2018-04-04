@@ -19,7 +19,7 @@ def convert_word2pdf(word_path, generate_dir):
     '''
     pdf_path = ''
     if not os.path.isfile(word_path):
-        log.error('NOTICE: convert_word2pdf, word_path not exists: %s' % word_path)
+        log.warn(" convert_word2pdf, word_path not exists: %s" % word_path)
         return pdf_path
     try:
         trans_cmd = CMD_WORD2PDF.format(word_path=word_path, generate_dir=generate_dir)
@@ -27,7 +27,7 @@ def convert_word2pdf(word_path, generate_dir):
         SUCCESS_TAG = "writer_pdf_Export"  # 执行成功，输出结果会带这个字段
         if is_succeed and SUCCESS_TAG in stdout:
             pdf_path = re.sub(r'.doc[x]{0,1}', '.pdf', word_path) # 生成的pdf路径
-            log.info('NOTICE: convert_word2pdf successfully, generate pdf: %s' % pdf_path)
+            log.debug("convert_word2pdf successfully, generate pdf: %s" % pdf_path)
     except Exception as error:
-        log.error("NOTICE: convert_word2pdf failed, file: %s , error:%s" % (word_path, error))
+        log.error("convert_word2pdf failed, file: %s , error:%s" % (word_path, error))
     return pdf_path
