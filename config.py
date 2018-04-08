@@ -4,76 +4,150 @@
 # Author: Wakesy
 # Email : chenxi@szsandstone.com
 import os
-import configobj
 import traceback
+import sys
+import configobj
+from constant import MQ_URL_FORMAT, CONFIG_FILE
 import logging
-#对外提供的log
-log = logging.getLogger('process')
 
-config_file = os.path.abspath('./back_process.conf')
-process_conf_obj = configobj.ConfigObj(config_file, encoding='utf-8')
+'''从配置文件中读取的配置信息，供全局使用'''
 
 
+log = None
+# S3配置
+S3_AK = ''
+S3_SK = ''
+S3_BUCKET = ''
+RGW_HOST  = ''
+RGW_PORT  = None
+DOWNLOAD_DIR = ''          # 从s3上下载的文件，存放目录
 
-def init_log(process_conf_obj):
-    log_conf = dict(process_conf_obj['logging'])
-    log_fmt = log_conf['LOG_FORMAT']
-    log_level = log_conf['LOG_LEVEL']
-    log_path = log_conf['LOG_PATH']
-    # 设置控制台日志输出
-    formatter = logging.Formatter(log_fmt)
-    console_handler = logging.StreamHandler()
-    console_handler.setFormatter(formatter)
-    # 设置文件日志输出
-    file_handler = logging.FileHandler(log_path)
-    file_handler.setFormatter(formatter)
-    log.setLevel(level=log_level)
-
-    log.addHandler(file_handler)
-    log.addHandler(console_handler)  # 测试加上console打印
-
-try:
-    '''从配置文件取出的信息'''
-
-    #==========================日志设置===============================
+# MQ配置
+MQ_CONN_URL        = ''    # MQ连接URL参数
+S3_UPLOADED_MQ     = ''    # s3上传的文件队列
+S3_BACKUP          = False # 设置备份队列，保存接收到的所有消息
+S3_EXCHANGE        = ''    # 上传的路由exchange
+S3_EXCHANGE_TYPE   = ''    # 绑定相同exchange队列都会接收到消息
+PROCESS_SUCCESS_MQ = ''    # 后处理成功的队列
+PROCESS_FAILED_MQ  = ''    # 后处理失败的队列
 
 
+# 后处理配置信息,back_process缩写BP
+ALL_PROCESS_INFO      = None    # 所有后处理信息
+ALL_PROCESS_SUPPORT = []        # 当前支持的后处理类型
 
-    #===========================S3配置=================================
-    s3_conf = process_conf_obj['s3']
 
-    S3_AK = s3_conf['S3_AK']
-    S3_SK = s3_conf['S3_SK']
-    S3_BUCKET = s3_conf['S3_BUCKET']
-    RGW_HOST  = s3_conf['RGW_HOST']
-    RGW_PORT  = int(s3_conf['RGW_PORT'])
-    DOWNLOAD_DIR = s3_conf['DOWNLOAD_DIR'] #从s3上下载的文件，存放目录
+'''初始化日志'''
+def init_log_config():
 
-    #===========================MQ配置=================================
-    rabbitmq_conf = process_conf_obj['rabbitmq']
-    mq_config     = {'host'    : rabbitmq_conf['MQ_HOST'],
-                     'port'    : int(rabbitmq_conf['MQ_PORT']),
-                     'user'    : rabbitmq_conf['MQ_USER'],
-                     'password': rabbitmq_conf['MQ_PWD'],
-                     'vhost'   : rabbitmq_conf['MQ_VHOST'],
-                     'timeout' : rabbitmq_conf['MQ_TIMEOUT']}
+    try:
+        global log
+        print "CONFIG_FILE: ", CONFIG_FILE
+        process_conf_obj = configobj.ConfigObj(CONFIG_FILE, encoding='utf-8')
+        log_conf = dict(process_conf_obj['logging'])
+        log_name = log_conf['log_name']
+        log_fmt = log_conf['log_format']
+        log_level = log_conf['log_level']
+        log_path = log_conf['log_path']
+        # 设置控制台日志输出
+        log = logging.getLogger(log_name)
+        formatter = logging.Formatter(log_fmt)
+        console_handler = logging.StreamHandler()
+        console_handler.setFormatter(formatter)
+        # 设置文件日志输出
+        file_handler = logging.FileHandler(log_path)
+        file_handler.setFormatter(formatter)
+        log.setLevel(level=log_level)
+        log.addHandler(file_handler)
+        # 加上console打印，测试用
+        log.addHandler(console_handler)
+        log.info('init_log_config success')
+        return True
+    except :
+        print "init_log_config failed, error:%s" % traceback.format_exc()
+    return  False
 
-    mq_conn_url = rabbitmq_conf['MQ_CONN_URL']
-    MQ_CONN_URL = mq_conn_url.format(**mq_config)
 
-    S3_UPLOADED_MQ     = rabbitmq_conf['S3_UPLOADED_MQ']       # s3上传的文件队列
-    S3_BACKUP          = bool(rabbitmq_conf['S3_BACKUP'])      # 设置备份队列，保存接收到的所有消息
-    S3_EXCHANGE        = rabbitmq_conf['S3_EXCHANGE']          # 上传的路由exchange
-    S3_EXCHANGE_TYPE   = rabbitmq_conf['S3_EXCHANGE_TYPE']     # 绑定相同exchange队列都会接收到消息
-    PROCESS_SUCCESS_MQ = rabbitmq_conf['PROCESS_SUCCESS_MQ']   # 后处理成功的队列
-    PROCESS_FAILED_MQ  = rabbitmq_conf['PROCESS_SUCCESS_MQ']   # 后处理失败的队列
-except:
-    print "Config file error: %s" % traceback.format_exc()
+'''获取mq配置'''
+def get_mq_config():
+
+    global MQ_CONN_URL, S3_UPLOADED_MQ, S3_BACKUP, S3_EXCHANGE
+    global S3_EXCHANGE_TYPE, PROCESS_SUCCESS_MQ, PROCESS_FAILED_MQ
+    try:
+        process_conf_obj = configobj.ConfigObj(CONFIG_FILE, encoding='utf-8')
+        rabbitmq_conf = process_conf_obj['rabbitmq']
+        mq_config     = {'host'    : rabbitmq_conf['mq_host'],
+                         'port'    : int(rabbitmq_conf['mq_port']),
+                         'user'    : rabbitmq_conf['mq_user'],
+                         'password': rabbitmq_conf['mq_pwd'],
+                         'vhost'   : rabbitmq_conf['mq_vhost'],
+                         'timeout' : rabbitmq_conf['mq_timeout']}
+
+        MQ_CONN_URL = MQ_URL_FORMAT.format(**mq_config)
+        S3_UPLOADED_MQ     = rabbitmq_conf['s3_uploaded_mq']       # s3上传的文件队列
+        S3_BACKUP          = bool(rabbitmq_conf['s3_backup'])      # 设置备份队列，保存接收到的所有消息
+        S3_EXCHANGE        = rabbitmq_conf['s3_exchange']          # 上传的路由exchange
+        S3_EXCHANGE_TYPE   = rabbitmq_conf['s3_exchange_type']     # 绑定相同exchange队列都会接收到消息
+        PROCESS_SUCCESS_MQ = rabbitmq_conf['process_success_mq']   # 后处理成功的队列
+        PROCESS_FAILED_MQ  = rabbitmq_conf['process_success_mq']   # 后处理失败的队列
+        log.info('get_mq_config success')
+        return True
+    except :
+        log.error("get_mq_config failed, error:%s" % traceback.format_exc())
+    return False
+
+
+'''获取s3配置'''
+def get_s3_config():
+
+    global S3_AK, S3_SK, S3_BUCKET, RGW_HOST, RGW_PORT, DOWNLOAD_DIR
+    try:
+        process_conf_obj = configobj.ConfigObj(CONFIG_FILE, encoding='utf-8')
+        s3_conf = process_conf_obj['s3']
+        S3_AK = s3_conf['access_key']
+        S3_SK = s3_conf['secret_key']
+        S3_BUCKET = s3_conf['bucket_name']
+        RGW_HOST = s3_conf['rgw_host']
+        RGW_PORT = int(s3_conf['rgw_port'])
+        DOWNLOAD_DIR = s3_conf['download_dir']  # 从s3上下载的文件，存放目录
+        log.info('get_s3_config success')
+        return True
+    except :
+        log.error("get_s3_config failed, error:%s" % traceback.format_exc())
+    return False
+
+
+'''获取back_process的信息'''
+def get_bp_config():
+    global ALL_PROCESS_INFO, ALL_PROCESS_SUPPORT
+    try:
+        process_conf_obj = configobj.ConfigObj(CONFIG_FILE, encoding='utf-8')
+        ALL_PROCESS_INFO = dict(process_conf_obj['back_process'])
+        ALL_PROCESS_SUPPORT = ALL_PROCESS_INFO.keys()
+        log.info('get_bp_config success')
+        log.info('ALL_PROCESS_SUPPORT:%s' % ALL_PROCESS_SUPPORT)
+        return True
+    except :
+        log.error("get back_process config failed, error: %s" % traceback.format_exc())
+    return False
+
+
+# 初始化配置
+if not init_log_config():
+    sys.exit(-1)
+
+if not get_mq_config():
+    sys.exit(-2)
+
+if not get_s3_config():
+    sys.exit(-3)
+
+if not get_bp_config():
+    sys.exit(-4)
 
 if __name__ == '__main__':
 
-
-
+    # print globals()
     pass
     log = logging.getLogger('process')
     log.info("hellowword")

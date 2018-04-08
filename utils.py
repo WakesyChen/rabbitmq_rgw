@@ -7,7 +7,7 @@
 import commands
 import os
 from config import log
-import gevent, gevent.subprocess
+# import gevent, gevent.subprocess
 import sys
 import imghdr
 reload(sys)
@@ -26,29 +26,29 @@ def proc_cmd(cmd):
     return  is_succeed, stdout
 
 
-def proc_cmd2(logfunc, module, args, timeout=20, shell=False):
-    logfunc("Module: %s, cmd: %s, begin", module, " ".join(args))
-    proc = gevent.subprocess.Popen(args, shell=shell, close_fds=True,
-                                   stdout=gevent.subprocess.PIPE,
-                                   stderr=gevent.subprocess.PIPE)
-    try:
-        with gevent.Timeout(timeout, False):
-            stdout, stderr = proc.communicate(input=None)
-
-        if proc.returncode == None:
-            raise Exception("Timeout %s" % timeout)
-
-        logfunc("Module: %s, cmd: %s, retcode: %s, stdout: %s, stderr: %s",
-                module, " ".join(args), proc.returncode, stdout, stderr)
-
-        return proc.returncode, stdout, stderr
-    except Exception, e:
-        logfunc("Module: %s, cmd: %s, Exception: %s ", module, " ".join(args), str(e))
-        if proc:
-            proc.kill()
-            proc.wait()
-        raise
-
+# def proc_cmd2(logfunc, module, args, timeout=20, shell=False):
+#     logfunc("Module: %s, cmd: %s, begin", module, " ".join(args))
+#     proc = gevent.subprocess.Popen(args, shell=shell, close_fds=True,
+#                                    stdout=gevent.subprocess.PIPE,
+#                                    stderr=gevent.subprocess.PIPE)
+#     try:
+#         with gevent.Timeout(timeout, False):
+#             stdout, stderr = proc.communicate(input=None)
+#
+#         if proc.returncode == None:
+#             raise Exception("Timeout %s" % timeout)
+#
+#         logfunc("Module: %s, cmd: %s, retcode: %s, stdout: %s, stderr: %s",
+#                 module, " ".join(args), proc.returncode, stdout, stderr)
+#
+#         return proc.returncode, stdout, stderr
+#     except Exception, e:
+#         logfunc("Module: %s, cmd: %s, Exception: %s ", module, " ".join(args), str(e))
+#         if proc:
+#             proc.kill()
+#             proc.wait()
+#         raise
+#
 
 def is_word_type(file_path):
     '''判断文件是否是word文档类型'''

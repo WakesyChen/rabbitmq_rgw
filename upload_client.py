@@ -45,14 +45,13 @@ class UploadClient(object):
             msg = {}
             file_name = (cloud_path.split('/'))[-1]
             # 转换之后的名字
-            # doc_file  = re.sub(r'.doc[x]{0,1}', '.pdf', file_name)
-            img_file  = re.sub((file_name.split('.'))[-1], 'bmp', file_name)
+            doc_file  = re.sub(r'.doc[x]{0,1}', '.pdf', file_name)
+            # img_file  = re.sub((file_name.split('.'))[-1], 'bmp', file_name)
 
             msg['object_key']  = cloud_path
             msg['bucket_name'] = S3_BUCKET
-            msg['action_type'] = CHECK_TERRORIST
-            msg['action_type'] = CONVERT_TO_BMP
-            msg['new_name']    = img_file
+            msg['action_type'] = 'convert_to_pdf'
+            msg['new_name']    = doc_file
             publisher.publish_msg(**msg)
 
 
@@ -60,7 +59,7 @@ class UploadClient(object):
 if __name__ == '__main__':
     try:
         upload_client = UploadClient(queue=S3_UPLOADED_MQ, exchange=S3_EXCHANGE, exchange_type=S3_EXCHANGE_TYPE, is_backup=S3_BACKUP)
-        upload_dir = "/opt/task_projects/resources/temp"
+        upload_dir = "/opt/task_projects/resources"
         iterate_over_directory_process(upload_dir, upload_client.upload_file_to_s3)
     except Exception as error:
         print error

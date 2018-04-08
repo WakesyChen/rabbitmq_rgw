@@ -23,6 +23,7 @@ class S3Operator(object):
         self.s3_conn = None
         self.init_s3_connection()
 
+
     def init_s3_connection(self):
         self.s3_conn = self.get_s3_connection()
         log.info("init_s3_connection succeed!")
@@ -109,6 +110,7 @@ class S3Operator(object):
         except Exception as error:
             log.error("Download file from s3_operator failed, error:%s" % error)
         return local_path
+
 
     def GetFileMd5(self, file_path):
         '''根据文件内容生成md5值'''
