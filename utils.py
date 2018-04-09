@@ -16,6 +16,7 @@ from constant import IMG_TYPES
 
 def proc_cmd(cmd):
     '''执行指令'''
+    #todo:设置超时，考虑完全
     is_succeed, stdout = False, ''
     try:
         ret_code, stdout = commands.getstatusoutput(cmd)
@@ -73,8 +74,6 @@ def get_img_type( file_path):
     except Exception as e:
         log.debug('get_img_type failed, error: %s' % e)
     return None
-
-
 
 
 def iterate_over_directory_process(source_path, process_method):

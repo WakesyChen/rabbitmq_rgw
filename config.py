@@ -12,7 +12,6 @@ import logging
 
 '''从配置文件中读取的配置信息，供全局使用'''
 
-
 log = None
 # S3配置
 S3_AK = ''
@@ -31,18 +30,17 @@ S3_EXCHANGE_TYPE   = ''    # 绑定相同exchange队列都会接收到消息
 PROCESS_SUCCESS_MQ = ''    # 后处理成功的队列
 PROCESS_FAILED_MQ  = ''    # 后处理失败的队列
 
-
-# 后处理配置信息,back_process缩写BP
-ALL_PROCESS_INFO      = None    # 所有后处理信息
-ALL_PROCESS_SUPPORT = []        # 当前支持的后处理类型
-
-
+# 后处理配置信息
+ALL_PROCESS_INFO    = None    # 所有后处理信息
+ALL_PROCESS_SUPPORT = []      # 当前支持的后处理类型
+CHECK_TYPES   = []            # 审核类型
+CONVERT_TYPES = []            # 转换类型
+OTHER_TYPES   = []            # 其他类型
 '''初始化日志'''
 def init_log_config():
 
     try:
         global log
-        print "CONFIG_FILE: ", CONFIG_FILE
         process_conf_obj = configobj.ConfigObj(CONFIG_FILE, encoding='utf-8')
         log_conf = dict(process_conf_obj['logging'])
         log_name = log_conf['log_name']
@@ -119,13 +117,21 @@ def get_s3_config():
 
 '''获取back_process的信息'''
 def get_bp_config():
-    global ALL_PROCESS_INFO, ALL_PROCESS_SUPPORT
+    global ALL_PROCESS_INFO, ALL_PROCESS_SUPPORT, CHECK_TYPES, CONVERT_TYPES, OTHER_TYPES
     try:
         process_conf_obj = configobj.ConfigObj(CONFIG_FILE, encoding='utf-8')
         ALL_PROCESS_INFO = dict(process_conf_obj['back_process'])
         ALL_PROCESS_SUPPORT = ALL_PROCESS_INFO.keys()
-        log.info('get_bp_config success')
-        log.info('ALL_PROCESS_SUPPORT:%s' % ALL_PROCESS_SUPPORT)
+        # 根据后处理操作的类型分类
+        for bp_name in ALL_PROCESS_SUPPORT:
+            bp_type = ALL_PROCESS_INFO[bp_name]["operate_type"]
+            if bp_type == 'check':
+                CHECK_TYPES.append(bp_name)
+            elif bp_type == 'convert':
+                CONVERT_TYPES.append(bp_name)
+            else:
+                OTHER_TYPES.append(bp_name)
+        log.info('get_bp_config success, support process:%s' % ALL_PROCESS_SUPPORT)
         return True
     except :
         log.error("get back_process config failed, error: %s" % traceback.format_exc())

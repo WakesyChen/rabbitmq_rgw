@@ -2,33 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0381c76-9128-4d5e-897f-f6ab37b15bbe" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/start_api.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/back_process.conf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/back_process/tools/image_converter.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/log/__init__.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/background_process/tools/image_converter.py" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/back_process_api.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/back_process/other_processor.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/back_process/tools/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/back_process/tools/image_converter.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/back_process/tools/other_converter.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/start_api.py" afterPath="$PROJECT_DIR$/api/start_api.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back_process.conf" afterPath="$PROJECT_DIR$/back_process.conf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back_process/check_processor.py" afterPath="$PROJECT_DIR$/back_process/check_processor.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back_process/convert_processor.py" afterPath="$PROJECT_DIR$/back_process/convert_processor.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.py" afterPath="$PROJECT_DIR$/config.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/constant.py" afterPath="$PROJECT_DIR$/constant.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/process_server.py" afterPath="$PROJECT_DIR$/process_server.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/s3_operator/multiupload.py" afterPath="$PROJECT_DIR$/s3_operator/multiupload.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/s3_operator/s3_operator.py" afterPath="$PROJECT_DIR$/s3_operator/s3_operator.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload_client.py" afterPath="$PROJECT_DIR$/upload_client.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils.py" afterPath="$PROJECT_DIR$/utils.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/tupu_process.iml" afterPath="$PROJECT_DIR$/.idea/background_process.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/background_process/__init__.py" afterPath="$PROJECT_DIR$/back_process/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/background_process/base_processor.py" afterPath="$PROJECT_DIR$/back_process/base_processor.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/background_process/check_processor.py" afterPath="$PROJECT_DIR$/back_process/check_processor.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/background_process/convert_processor.py" afterPath="$PROJECT_DIR$/back_process/convert_processor.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/background_process/tools/__init__.py" afterPath="$PROJECT_DIR$/back_process/tools/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/background_process/tools/other_converter.py" afterPath="$PROJECT_DIR$/back_process/tools/other_converter.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mq/__init__.py" afterPath="$PROJECT_DIR$/rabbit_mq/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mq/consumer.py" afterPath="$PROJECT_DIR$/rabbit_mq/consumer.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mq/manager.py" afterPath="$PROJECT_DIR$/rabbit_mq/manager.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mq/publisher.py" afterPath="$PROJECT_DIR$/rabbit_mq/publisher.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -48,6 +37,7 @@
     <SUITE FILE_PATH="coverage/tupu_process$manager.coverage" NAME="manager Coverage Results" MODIFIED="1521894548563" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mq" />
     <SUITE FILE_PATH="coverage/tupu_process$upload_files__1_.coverage" NAME="upload_files (1) Coverage Results" MODIFIED="1521898401835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/s3_operator" />
     <SUITE FILE_PATH="coverage/tupu_process$convert_process.coverage" NAME="convert_process Coverage Results" MODIFIED="1522216936867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/background_process" />
+    <SUITE FILE_PATH="coverage/background_process$start_api.coverage" NAME="start_api Coverage Results" MODIFIED="1523241807992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/api" />
     <SUITE FILE_PATH="coverage/tupu_process$base_processer.coverage" NAME="base_processer Coverage Results" MODIFIED="1522403824647" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/background_process" />
     <SUITE FILE_PATH="coverage/tupu_process$config.coverage" NAME="config Coverage Results" MODIFIED="1522822567874" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tupu_process$check_process.coverage" NAME="check_process Coverage Results" MODIFIED="1522217712436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/background_process" />
@@ -60,11 +50,9 @@
       <file leaf-file-name="s3_operator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/s3_operator/s3_operator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="65" column="27" lean-forward="false" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
-              <folding>
-                <element signature="e#24#33#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="279">
+              <caret line="107" column="22" lean-forward="true" selection-start-line="107" selection-start-column="22" selection-end-line="107" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -72,11 +60,33 @@
       <file leaf-file-name="process_server.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/process_server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="58" column="34" lean-forward="false" selection-start-line="58" selection-start-column="34" selection-end-line="58" selection-end-column="34" />
+            <state relative-caret-position="285">
+              <caret line="21" column="54" lean-forward="false" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
               <folding>
-                <element signature="e#122#133#0" expanded="true" />
+                <element signature="e#121#132#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="convert_processor.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/back_process/convert_processor.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-138">
+              <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+              <folding>
+                <element signature="e#122#131#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base_processor.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/back_process/base_processor.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -84,8 +94,8 @@
       <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+            <state relative-caret-position="-262">
+              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding>
                 <element signature="e#121#130#0" expanded="true" />
               </folding>
@@ -93,56 +103,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="multiupload.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/s3_operator/multiupload.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-              <folding>
-                <element signature="e#59#70#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="32" lean-forward="true" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="constant.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/constant.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+            <state relative-caret-position="209">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils.py">
+      <file leaf-file-name="check_processor.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/back_process/check_processor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="69" column="37" lean-forward="false" selection-start-line="69" selection-start-column="28" selection-end-line="69" selection-end-column="37" />
+            <state relative-caret-position="190">
+              <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
               <folding>
-                <element signature="e#122#137#0" expanded="true" />
+                <element signature="e#122#144#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="back_process.conf" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/back_process.conf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-329">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -150,11 +128,9 @@
       <file leaf-file-name="upload_client.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/upload_client.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
-              <folding>
-                <element signature="e#122#168#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="380">
+              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -162,8 +138,18 @@
       <file leaf-file-name="publisher.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rabbit_mq/publisher.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="18" column="4" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+            <state relative-caret-position="1216">
+              <caret line="68" column="8" lean-forward="false" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="back_process.conf" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/back_process.conf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="494">
+              <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -180,10 +166,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>path</find>
-      <find>channel</find>
-      <find>self.channel</find>
-      <find>close</find>
       <find>output_queue</find>
       <find>tests</find>
       <find>reject</find>
@@ -198,7 +180,6 @@
       <find>already exists</find>
       <find>cmd_word2pdf</find>
       <find>publish_msg</find>
-      <find>S3Operator</find>
       <find>back_processer</find>
       <find>process_success_mq</find>
       <find>routing_key</find>
@@ -210,6 +191,11 @@
       <find>upload_client</find>
       <find>IMG_TYPES</find>
       <find>s3_operator</find>
+      <find>CONVERT_TYPES</find>
+      <find>CHECK_TYPES</find>
+      <find>convert_word2pdf</find>
+      <find>S3Operator</find>
+      <find>get_contents_to_filename</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -241,11 +227,8 @@
         <option value="$PROJECT_DIR$/background_process/check_processer.py" />
         <option value="$PROJECT_DIR$/background_process/convert_processer.py" />
         <option value="$PROJECT_DIR$/api/back_process.py" />
-        <option value="$PROJECT_DIR$/constant.py" />
-        <option value="$PROJECT_DIR$/api/start_api.py" />
         <option value="$PROJECT_DIR$/back_process.conf.py" />
         <option value="$PROJECT_DIR$/background_process/base_processor.py" />
-        <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/mq/publisher.py" />
         <option value="$PROJECT_DIR$/mq/manager.py" />
         <option value="$PROJECT_DIR$/mq/consumer.py" />
@@ -253,12 +236,22 @@
         <option value="$PROJECT_DIR$/background_process/check_processor.py" />
         <option value="$PROJECT_DIR$/background_process/tools/other_converter.py" />
         <option value="$PROJECT_DIR$/background_process/tools/image_converter.py" />
-        <option value="$PROJECT_DIR$/s3_operator/s3_operator.py" />
         <option value="$PROJECT_DIR$/s3_operator/multiupload.py" />
-        <option value="$PROJECT_DIR$/process_server.py" />
+        <option value="$PROJECT_DIR$/s3_operator/s3_operator.py" />
+        <option value="$PROJECT_DIR$/template.conf" />
+        <option value="$PROJECT_DIR$/api/back_process_api.py" />
+        <option value="$PROJECT_DIR$/back_process/check_processor.py" />
+        <option value="$PROJECT_DIR$/back_process/other_processor.py" />
+        <option value="$PROJECT_DIR$/back_process/tools/image_converter.py" />
+        <option value="$PROJECT_DIR$/back_process/tools/other_converter.py" />
+        <option value="$PROJECT_DIR$/api/start_api.py" />
+        <option value="$PROJECT_DIR$/utils.py" />
+        <option value="$PROJECT_DIR$/back_process/convert_processor.py" />
         <option value="$PROJECT_DIR$/upload_client.py" />
-        <option value="$PROJECT_DIR$/config.py" />
+        <option value="$PROJECT_DIR$/process_server.py" />
+        <option value="$PROJECT_DIR$/constant.py" />
         <option value="$PROJECT_DIR$/back_process.conf" />
+        <option value="$PROJECT_DIR$/config.py" />
       </list>
     </option>
   </component>
@@ -268,11 +261,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="53" />
-    <option name="y" value="36" />
-    <option name="width" value="1600" />
-    <option name="height" value="1047" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="103" />
+    <option name="y" value="7" />
+    <option name="width" value="1292" />
+    <option name="height" value="687" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -292,6 +285,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -302,7 +296,17 @@
             <path>
               <item name="background_process" type="b2602c69:ProjectViewProjectNode" />
               <item name="background_process" type="462c0819:PsiDirectoryNode" />
-              <item name="log" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="background_process" type="b2602c69:ProjectViewProjectNode" />
+              <item name="background_process" type="462c0819:PsiDirectoryNode" />
+              <item name="back_process" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="background_process" type="b2602c69:ProjectViewProjectNode" />
+              <item name="background_process" type="462c0819:PsiDirectoryNode" />
+              <item name="rabbit_mq" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="background_process" type="b2602c69:ProjectViewProjectNode" />
@@ -313,26 +317,26 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\work_space\近期任务\后处理框架\background_process" />
+      <recent name="F:\work_space\近期任务\图谱后处理\tupu_process" />
+      <recent name="F:\work_space\近期任务\图谱后处理\tupu_process\s3_operator" />
+      <recent name="F:\work_space\近期任务\图谱后处理\tupu_process\s3" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\work_space\近期任务\图谱后处理\tupu_process" />
       <recent name="F:\work_space\近期任务\图谱后处理\tupu_process\s3_operator" />
       <recent name="F:\work_space\近期任务\图谱后处理\tupu_process\s3" />
       <recent name="F:\work_space\近期任务\图谱后处理\tupu_process\mq\s3" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\work_space\近期任务\图谱后处理\tupu_process" />
-      <recent name="F:\work_space\近期任务\图谱后处理\tupu_process\s3_operator" />
-      <recent name="F:\work_space\近期任务\图谱后处理\tupu_process\s3" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -347,7 +351,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.config">
+  <component name="RunManager" selected="Python.start_api">
     <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -507,24 +511,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="check_process" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/background_process" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tupu_process" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="F:\work_space\近期任务\图谱后处理\tupu_process\background_process\check_processor.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
     <configuration name="check_processer" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -579,20 +565,38 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
+    <configuration name="start_api" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/api" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="background_process" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/api/start_api.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.check_process" />
-      <item index="1" class="java.lang.String" itemvalue="Python.check_processer" />
-      <item index="2" class="java.lang.String" itemvalue="Python.base_processer" />
-      <item index="3" class="java.lang.String" itemvalue="Python.convert_processer" />
-      <item index="4" class="java.lang.String" itemvalue="Python.config" />
+      <item index="0" class="java.lang.String" itemvalue="Python.check_processer" />
+      <item index="1" class="java.lang.String" itemvalue="Python.base_processer" />
+      <item index="2" class="java.lang.String" itemvalue="Python.convert_processer" />
+      <item index="3" class="java.lang.String" itemvalue="Python.config" />
+      <item index="4" class="java.lang.String" itemvalue="Python.start_api" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.config" />
-        <item index="1" class="java.lang.String" itemvalue="Python.convert_processer" />
-        <item index="2" class="java.lang.String" itemvalue="Python.check_processer" />
-        <item index="3" class="java.lang.String" itemvalue="Python.base_processer" />
-        <item index="4" class="java.lang.String" itemvalue="Python.check_process" />
+        <item index="0" class="java.lang.String" itemvalue="Python.start_api" />
+        <item index="1" class="java.lang.String" itemvalue="Python.config" />
+        <item index="2" class="java.lang.String" itemvalue="Python.convert_processer" />
+        <item index="3" class="java.lang.String" itemvalue="Python.check_processer" />
+        <item index="4" class="java.lang.String" itemvalue="Python.base_processer" />
       </list>
     </recent_temporary>
   </component>
@@ -656,26 +660,32 @@
       <option name="project" value="LOCAL" />
       <updated>1522666044704</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="调整配置文件">
+      <created>1523195377516</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1523195377517</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="53" y="36" width="1600" height="1047" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18461539" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50109893" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22392975" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26545453" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22306855" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23721436" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18506494" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15405117" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -699,71 +709,16 @@
     <MESSAGE value="1、支持图片格式转换&#10;2、调整消息的内容" />
     <MESSAGE value="1、可以同时进行多种格式转换" />
     <MESSAGE value="1、修改消息的字段，做对应的调整；&#10;2、多支持了一些图片转换；&#10;3、调整了框架结构，准备加入审核功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="1、修改消息的字段，做对应的调整；&#10;2、多支持了一些图片转换；&#10;3、调整了框架结构，准备加入审核功能" />
+    <MESSAGE value="调整配置文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="调整配置文件" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/s3_operator/boto/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/s3_operator/boto/s3/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/s3_operator/boto/s3/connection.py" />
-    <entry file="file://$PROJECT_DIR$/boto/gs/acl.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/Python27/Lib/re.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="147" column="4" lean-forward="false" selection-start-line="147" selection-start-column="4" selection-end-line="147" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/s3_operator/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/boto/s3/connection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="167" column="8" lean-forward="false" selection-start-line="167" selection-start-column="8" selection-end-line="167" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/boto/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="128" column="4" lean-forward="false" selection-start-line="128" selection-start-column="4" selection-end-line="128" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2017.2/system/python_stubs/1713590963/nt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="209" column="4" lean-forward="false" selection-start-line="209" selection-start-column="4" selection-end-line="209" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python27/site-packages/filetype/filetype.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -789,14 +744,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="237" column="4" lean-forward="false" selection-start-line="237" selection-start-column="4" selection-end-line="237" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/Python27/Lib/imghdr.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -853,32 +800,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/back_process/tools/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/Python27/Lib/site-packages/flask/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="781" column="8" lean-forward="false" selection-start-line="781" selection-start-column="8" selection-end-line="781" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://F:/Python27/Lib/site-packages/flask/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/Python27/Lib/json/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="191" column="0" lean-forward="true" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -906,98 +831,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rabbit_mq/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back_process/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/s3_operator/filechunkio.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rabbit_mq/manager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rabbit_mq/consumer.py">
+    <entry file="file://$PROJECT_DIR$/s3_operator/multiupload.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
-          <caret line="12" column="32" lean-forward="false" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+          <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
           <folding>
-            <element signature="e#122#133#0" expanded="false" />
+            <element signature="e#59#70#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/back_process/convert_processor.py">
+    <entry file="file://F:/Python27/Lib/site-packages/flask/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="107">
+          <caret line="1046" column="33" lean-forward="false" selection-start-line="1046" selection-start-column="33" selection-end-line="1046" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/back_process/check_processor.py">
+    <entry file="file://F:/Python27/Lib/site-packages/flask/exthook.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        <state relative-caret-position="289">
+          <caret line="54" column="8" lean-forward="false" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/back_process/base_processor.py">
+    <entry file="file://F:/Python27/Lib/site-packages/flask/ext/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/back_process/tools/other_converter.py">
+    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python27/site-packages/flask_restful/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back_process/tools/image_converter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="61">
+          <caret line="369" column="8" lean-forward="false" selection-start-line="369" selection-start-column="8" selection-end-line="369" selection-end-column="8" />
           <folding>
-            <element signature="e#122#131#0" expanded="false" />
+            <element signature="e#0#38#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/start_api.py">
+    <entry file="file://F:/Python27/Lib/site-packages/werkzeug/local.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <element signature="e#121#132#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="-1356">
+          <caret line="291" column="8" lean-forward="false" selection-start-line="291" selection-start-column="8" selection-end-line="291" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/log/process_server.log">
+    <entry file="file://F:/Python27/Lib/site-packages/flask/globals.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="577">
+          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/Python27/Lib/json/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="192" column="4" lean-forward="false" selection-start-line="192" selection-start-column="4" selection-end-line="192" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/Python27/Lib/site-packages/werkzeug/wrappers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="537" column="8" lean-forward="false" selection-start-line="537" selection-start-column="8" selection-end-line="537" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back_process/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1013,76 +930,198 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/s3_operator/s3_operator.py">
+    <entry file="file://$PROJECT_DIR$/rabbit_mq/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="65" column="27" lean-forward="false" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
-          <folding>
-            <element signature="e#24#33#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="133">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="59" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/s3_operator/multiupload.py">
+    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python27/site-packages/flask_cors/extension.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="125" column="8" lean-forward="false" selection-start-line="125" selection-start-column="8" selection-end-line="125" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/Python27/Lib/imghdr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back_process/tools/other_converter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
-          <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back_process/tools/image_converter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back_process/tools/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/process_server.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/start_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/back_process_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
-            <element signature="e#59#70#0" expanded="true" />
+            <element signature="e#121#132#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rabbit_mq/publisher.py">
+    <entry file="file://$PROJECT_DIR$/back_process/other_processor.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
-          <caret line="18" column="4" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+          <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+          <folding>
+            <element signature="e#122#144#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rabbit_mq/consumer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="931">
+          <caret line="52" column="52" lean-forward="true" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rabbit_mq/manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-342">
+          <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="69" column="37" lean-forward="false" selection-start-line="69" selection-start-column="28" selection-end-line="69" selection-end-column="37" />
+        <state relative-caret-position="327">
+          <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
           <folding>
             <element signature="e#122#137#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/constant.py">
+    <entry file="file://$PROJECT_DIR$/back_process/base_processor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        <state relative-caret-position="133">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process_server.py">
+    <entry file="file://$PROJECT_DIR$/rabbit_mq/publisher.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="58" column="34" lean-forward="false" selection-start-line="58" selection-start-column="34" selection-end-line="58" selection-end-column="34" />
+        <state relative-caret-position="1216">
+          <caret line="68" column="8" lean-forward="false" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back_process/check_processor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
           <folding>
-            <element signature="e#122#133#0" expanded="true" />
+            <element signature="e#122#144#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back_process/convert_processor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-138">
+          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <element signature="e#122#131#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/upload_client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+        <state relative-caret-position="380">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/constant.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/s3_operator/s3_operator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="107" column="22" lean-forward="true" selection-start-line="107" selection-start-column="22" selection-end-line="107" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="21" column="54" lean-forward="false" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
           <folding>
-            <element signature="e#122#168#0" expanded="true" />
+            <element signature="e#121#132#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+        <state relative-caret-position="-262">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
             <element signature="e#121#130#0" expanded="true" />
           </folding>
@@ -1091,8 +1130,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/back_process.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-329">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="494">
+          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding />
         </state>
       </provider>

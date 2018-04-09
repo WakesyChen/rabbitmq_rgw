@@ -28,15 +28,10 @@ class UploadClient(object):
 
 
     def upload_file_to_s3(self, file_path):
-        cloud_path = '/'.join(file_path.split('/')[3:]) # for test
+
+        cloud_path = '/'.join(file_path.split('/')[3:])      # for test
         self.publish_msg_to_queue(self.s3_publisher, cloud_path)
         return True
-        # if self.s3_operator:
-        #     is_success = self.s3_operator.upload_to_s3(cloud_path, file_path)
-        #     if is_success:
-        #         self.publish_msg_to_queue(self.s3_publisher, cloud_path)
-        #         return True
-        # return False
 
 
     def publish_msg_to_queue(self, publisher, cloud_path):
@@ -44,22 +39,19 @@ class UploadClient(object):
         if publisher and isinstance(publisher, MQPublisher):
             msg = {}
             file_name = (cloud_path.split('/'))[-1]
-            # 转换之后的名字
-            doc_file  = re.sub(r'.doc[x]{0,1}', '.pdf', file_name)
-            # img_file  = re.sub((file_name.split('.'))[-1], 'bmp', file_name)
+            pdf_file  = re.sub(r'.doc[x]{0,1}', '.pdf', file_name)
 
             msg['object_key']  = cloud_path
             msg['bucket_name'] = S3_BUCKET
             msg['action_type'] = 'convert_to_pdf'
-            msg['new_name']    = doc_file
+            msg['new_name']    = pdf_file
             publisher.publish_msg(**msg)
-
 
 
 if __name__ == '__main__':
     try:
         upload_client = UploadClient(queue=S3_UPLOADED_MQ, exchange=S3_EXCHANGE, exchange_type=S3_EXCHANGE_TYPE, is_backup=S3_BACKUP)
-        upload_dir = "/opt/task_projects/resources"
+        upload_dir = "/opt/task_projects/temp"
         iterate_over_directory_process(upload_dir, upload_client.upload_file_to_s3)
     except Exception as error:
         print error

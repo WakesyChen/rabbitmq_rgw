@@ -4,29 +4,27 @@
 # Author: Wakesy
 # Email : chenxi@szsandstone.com
 
-import json
+
 import sys
 import os
 sys.path.append((os.path.abspath('../')))
 from flask import Flask
-from constant import ALL_PROCESS_SUPPORT, HIT_ACTIONS
+from flask_restful import Api
+from flask_cors import CORS
+from back_process_api import BackProcess
+
 app = Flask(__name__)
+CORS(app, resources=r'/*')  # 允许AJAX跨域
+api = Api(app)
 
-@app.route('/')
-def test():
-    return 'hello world'
+# '''提供查询当前支持的后处理功能'''
+# @app.route('api/back_process')
+# def get_support_process():
+#     back_process_info = {"support_actions": ALL_PROCESS_SUPPORT}  # 支持的后处理操作列表
+#     return json.dumps(back_process_info, ensure_ascii=False)
 
 
-back_process_url   = "/v1/api/back_process/support"
-back_process_info  = {"support_actions": ALL_PROCESS_SUPPORT, # 支持的后处理操作列表
-                      "hit_actions"    : HIT_ACTIONS,         # 审核类型需要用到，如鉴黄成功，可以选择删除，隐藏或者不处理
-  }
-
-'''提供'''
-@app.route(back_process_url)
-def get_support_process():
-    return json.dumps(back_process_info, ensure_ascii=False)
-
+api.add_resource(BackProcess, '/', '/api/back_process')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5050)

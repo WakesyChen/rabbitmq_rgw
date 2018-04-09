@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="192.168.12.12">
+  <component name="PublishConfigData" serverName="10.10.7.151" showNewOnSourceInSync="false">
     <serverData>
       <paths name="10.10.7.151">
         <serverdata>
           <mappings>
-            <mapping deploy="/opt/python_projects/background_process" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/opt/task_projects/background_process" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

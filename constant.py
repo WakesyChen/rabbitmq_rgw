@@ -4,9 +4,16 @@
 # Author: Wakesy
 # Email : chenxi@szsandstone.com
 import os
+import sys
+
+
+# 脚本的根目录
+ROOT_DIR = os.path.abspath(os.path.dirname(__file__))
+sys.path.append(ROOT_DIR)
 
 # 配置文件地址
-CONFIG_FILE = os.path.abspath('./back_process.conf')
+CONFIG_FILE = os.path.join(ROOT_DIR, "back_process.conf")
+print "CONFIG_FILE:%s" % CONFIG_FILE
 # MQ连接url格式
 MQ_URL_FORMAT = "amqp://{user}:{password}@{host}:{port}/{vhost}?socket_timeout={timeout}"
 
@@ -27,7 +34,11 @@ IMG_TYPES = [IMG_JPEG, IMG_GIF, IMG_PNG, IMG_RGB, IMG_PGM, IMG_PBM,
              IMG_PPM, IMG_TIFF, IMG_RAST,IMG_XBM, IMG_BMP]
 
 
+
+
 # #===========================后处理类型========================
+# 转换类型
+CONVERT_TO_PDF  = 'convert_to_pdf'   # word转pdf
 #
 # # 审核类型
 # CHECK_SEXY      = 'check_is_sexy'       # 黄色
@@ -43,8 +54,7 @@ IMG_TYPES = [IMG_JPEG, IMG_GIF, IMG_PNG, IMG_RGB, IMG_PGM, IMG_PBM,
 # HIT_ACTIONS = [HIT_ACTION_DELETE, HIT_ACTION_HIDE, HIT_ACTION_NOTHING]
 #
 #
-# # 转换类型
-# CONVERT_TO_PDF  = 'convert_to_pdf'   # word转pdf
+
 # CONVERT_TO_GIF  = 'convert_to_gif'   # 图片转为gif格式
 # CONVERT_TO_JPEG = 'convert_to_jpeg'  # 图片转为jpeg格式
 # CONVERT_TO_BMP  = 'convert_to_bmp'   # 图片转为bmp格式
