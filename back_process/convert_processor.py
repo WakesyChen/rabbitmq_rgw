@@ -5,23 +5,22 @@
 # Email : chenxi@szsandstone.com
 
 import os
-import sys
 import re
-reload(sys)
-sys.setdefaultencoding("utf-8")
-sys.path.append('../')
-from base_processor import BaseProcesser
+import traceback
+import configobj
+from base_processor import BaseProcessor
 from utils import get_img_type, is_word_type, proc_cmd
-from config import log, ALL_PROCESS_INFO
+from config import log
+from constant import CONVERT_TO_PDF, BACK_PROC_CONF
 
 
-class ConvertProcesser(BaseProcesser):
+class ConvertProcessor(BaseProcessor):
     '''进行相关的转换处理'''
 
     def back_process(self, *args, **kwargs):
 
-        super(ConvertProcesser, self).back_process(*args, **kwargs)
-        self.s3_operator = kwargs.pop('s3_operator')     # S3Operator实例,pop下车~~('_')~~
+        super(ConvertProcessor, self).back_process(*args, **kwargs)
+        s3_operator      = kwargs.pop('s3_operator')     # S3Operator实例,pop下车~~('_')~~
         s3_local_file    = kwargs.pop('s3_local_file')   # 文件从s3下载后，保存在本地文件的路径
         object_key       = kwargs['object_key']          # 对象的s3主键（基于本地路径的部分路径）
         action_type      = kwargs['action_type']         # 具体转换动作，如'convert_to_pdf', 'check_is_sexy'
@@ -34,10 +33,9 @@ class ConvertProcesser(BaseProcesser):
         generate_file_path = self.common_convert(action_type=action_type, source_path=s3_local_file,
                                                  generate_path=generate_path, generate_dir=local_dir)
         if os.path.isfile(generate_file_path):
-            if self.s3_operator.upload_to_s3(new_object_key, generate_file_path):  # 上传到s3中
+            if s3_operator.upload_to_s3(new_object_key, generate_file_path):  # 上传到s3中
                 return True
-        else:
-            log.warn("NOTICE: convert type: %s, file_path: %s" % (action_type, s3_local_file))
+
         return False
 
 
@@ -52,38 +50,34 @@ class ConvertProcesser(BaseProcesser):
         '''
         generate_file_path = ''
         try:
-            is_word_file = is_word_type(source_path)
-            is_img_file  = True if get_img_type(source_path) else False
-            operate_info = ALL_PROCESS_INFO['back_process'].get(action_type)   # 配置文件中获取，该处理类型的信息
-            operate_cmd  = operate_info.get("operate_cmd")                     # 处理执行的指令，如:"ffmpeg  -i  %s  %s"
-            convert_cmd = operate_cmd % (source_path, generate_path)
-            if is_word_file:
-                # word转pdf
-                convert_cmd = operate_cmd % (source_path, generate_dir)
-                SUCCESS_TAG = "writer_pdf_Export"                              # 执行成功，输出结果会带这个字段
-                is_succeed, stdout = proc_cmd(convert_cmd)
-                if is_succeed and SUCCESS_TAG in stdout:
-                    generate_file_path = re.sub(r'.doc[x]{0,1}', '.pdf', source_path)
-            elif is_img_file:
-                # 图片格式转换
-                is_succeed, stdout = proc_cmd(convert_cmd)
-                if is_succeed:
-                    generate_file_path = generate_path
+            is_word_file  = is_word_type(source_path)
+            is_img_file   = True if get_img_type(source_path) else False
+            bp_conf_obj   = configobj.ConfigObj(BACK_PROC_CONF)
+            all_back_proc = bp_conf_obj['back_process']
+            operate_info  = all_back_proc.get(action_type)                     # 配置文件中获取，该处理类型的信息
+            operate_cmd   = operate_info.get("operate_cmd")                    # 处理执行的指令，如:"ffmpeg  -i  %s  %s"
+            operate_file  = operate_info.get("operate_file")                   # 操作的文件类型
+            convert_cmd   = operate_cmd % (source_path, generate_path)
+            if action_type == CONVERT_TO_PDF:
+                if is_word_file and operate_file == 'doc':
+                    # word转pdf
+                    convert_cmd = operate_cmd % (source_path, generate_dir)
+                    SUCCESS_TAG = "writer_pdf_Export"                         # 执行成功，输出结果会带这个字段
+                    is_succeed, stdout = proc_cmd(convert_cmd)
+                    if is_succeed and SUCCESS_TAG in stdout:
+                        generate_file_path = re.sub(r'.doc[x]{0,1}', '.pdf', source_path)
             else:
-                # 转换目前只支持处理图片或者word文档类型
-                log.warn("NOTICE: can only convert images or word file, unexpected file :%s" % source_path)
-        except Exception as error :
-            log.error("Error happended when converting file, error:%s" % error)
+                if is_img_file and operate_file == 'image':
+                    # 图片格式转换
+                    is_succeed, stdout = proc_cmd(convert_cmd)
+                    if is_succeed:
+                        generate_file_path = generate_path
+        except:
+            log.error("Error happended when converting file, error:%s" % traceback.format_exc())
         return generate_file_path
 
-if __name__ == '__main__':
 
-    pass
-    # proc = ConvertProcesser()
-    # word_path = '/opt/python_projects/resources/common_files/中文的.doc'
-    # pdf_path = '/opt/python_projects/resources/common_files/'
-    # trans_cmd = CMD_WORD2PDF.format(word_path=word_path, generate_dir=pdf_path)
-    # print trans_cmd
+
 
 
 

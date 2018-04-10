@@ -7,7 +7,7 @@ import os
 import traceback
 import sys
 import configobj
-from constant import MQ_URL_FORMAT, CONFIG_FILE
+from constant import MQ_URL_FORMAT, COMMON_CONF, BACK_PROC_CONF
 import logging
 
 '''从配置文件中读取的配置信息，供全局使用'''
@@ -19,7 +19,7 @@ S3_SK = ''
 S3_BUCKET = ''
 RGW_HOST  = ''
 RGW_PORT  = None
-DOWNLOAD_DIR = ''          # 从s3上下载的文件，存放目录
+DOWNLOAD_DIR = ''          # 下载的文件，本地存放目录
 
 # MQ配置
 MQ_CONN_URL        = ''    # MQ连接URL参数
@@ -30,18 +30,13 @@ S3_EXCHANGE_TYPE   = ''    # 绑定相同exchange队列都会接收到消息
 PROCESS_SUCCESS_MQ = ''    # 后处理成功的队列
 PROCESS_FAILED_MQ  = ''    # 后处理失败的队列
 
-# 后处理配置信息
-ALL_PROCESS_INFO    = None    # 所有后处理信息
-ALL_PROCESS_SUPPORT = []      # 当前支持的后处理类型
-CHECK_TYPES   = []            # 审核类型
-CONVERT_TYPES = []            # 转换类型
-OTHER_TYPES   = []            # 其他类型
+
 '''初始化日志'''
 def init_log_config():
 
     try:
         global log
-        process_conf_obj = configobj.ConfigObj(CONFIG_FILE, encoding='utf-8')
+        process_conf_obj = configobj.ConfigObj(COMMON_CONF, encoding='utf-8')
         log_conf = dict(process_conf_obj['logging'])
         log_name = log_conf['log_name']
         log_fmt = log_conf['log_format']
@@ -59,7 +54,7 @@ def init_log_config():
         log.addHandler(file_handler)
         # 加上console打印，测试用
         log.addHandler(console_handler)
-        log.info('init_log_config success')
+        log.debug('init_log_config success')
         return True
     except :
         print "init_log_config failed, error:%s" % traceback.format_exc()
@@ -72,7 +67,7 @@ def get_mq_config():
     global MQ_CONN_URL, S3_UPLOADED_MQ, S3_BACKUP, S3_EXCHANGE
     global S3_EXCHANGE_TYPE, PROCESS_SUCCESS_MQ, PROCESS_FAILED_MQ
     try:
-        process_conf_obj = configobj.ConfigObj(CONFIG_FILE, encoding='utf-8')
+        process_conf_obj = configobj.ConfigObj(COMMON_CONF, encoding='utf-8')
         rabbitmq_conf = process_conf_obj['rabbitmq']
         mq_config     = {'host'    : rabbitmq_conf['mq_host'],
                          'port'    : int(rabbitmq_conf['mq_port']),
@@ -87,8 +82,8 @@ def get_mq_config():
         S3_EXCHANGE        = rabbitmq_conf['s3_exchange']          # 上传的路由exchange
         S3_EXCHANGE_TYPE   = rabbitmq_conf['s3_exchange_type']     # 绑定相同exchange队列都会接收到消息
         PROCESS_SUCCESS_MQ = rabbitmq_conf['process_success_mq']   # 后处理成功的队列
-        PROCESS_FAILED_MQ  = rabbitmq_conf['process_success_mq']   # 后处理失败的队列
-        log.info('get_mq_config success')
+        PROCESS_FAILED_MQ  = rabbitmq_conf['process_failed_mq']    # 后处理失败的队列
+        log.debug('get_mq_config success')
         return True
     except :
         log.error("get_mq_config failed, error:%s" % traceback.format_exc())
@@ -100,7 +95,7 @@ def get_s3_config():
 
     global S3_AK, S3_SK, S3_BUCKET, RGW_HOST, RGW_PORT, DOWNLOAD_DIR
     try:
-        process_conf_obj = configobj.ConfigObj(CONFIG_FILE, encoding='utf-8')
+        process_conf_obj = configobj.ConfigObj(COMMON_CONF, encoding='utf-8')
         s3_conf = process_conf_obj['s3']
         S3_AK = s3_conf['access_key']
         S3_SK = s3_conf['secret_key']
@@ -108,33 +103,10 @@ def get_s3_config():
         RGW_HOST = s3_conf['rgw_host']
         RGW_PORT = int(s3_conf['rgw_port'])
         DOWNLOAD_DIR = s3_conf['download_dir']  # 从s3上下载的文件，存放目录
-        log.info('get_s3_config success')
+        log.debug('get_s3_config success')
         return True
     except :
         log.error("get_s3_config failed, error:%s" % traceback.format_exc())
-    return False
-
-
-'''获取back_process的信息'''
-def get_bp_config():
-    global ALL_PROCESS_INFO, ALL_PROCESS_SUPPORT, CHECK_TYPES, CONVERT_TYPES, OTHER_TYPES
-    try:
-        process_conf_obj = configobj.ConfigObj(CONFIG_FILE, encoding='utf-8')
-        ALL_PROCESS_INFO = dict(process_conf_obj['back_process'])
-        ALL_PROCESS_SUPPORT = ALL_PROCESS_INFO.keys()
-        # 根据后处理操作的类型分类
-        for bp_name in ALL_PROCESS_SUPPORT:
-            bp_type = ALL_PROCESS_INFO[bp_name]["operate_type"]
-            if bp_type == 'check':
-                CHECK_TYPES.append(bp_name)
-            elif bp_type == 'convert':
-                CONVERT_TYPES.append(bp_name)
-            else:
-                OTHER_TYPES.append(bp_name)
-        log.info('get_bp_config success, support process:%s' % ALL_PROCESS_SUPPORT)
-        return True
-    except :
-        log.error("get back_process config failed, error: %s" % traceback.format_exc())
     return False
 
 
@@ -148,16 +120,8 @@ if not get_mq_config():
 if not get_s3_config():
     sys.exit(-3)
 
-if not get_bp_config():
-    sys.exit(-4)
 
-if __name__ == '__main__':
 
-    # print globals()
-    pass
-    log = logging.getLogger('process')
-    log.info("hellowword")
-    log.warn("ewqeqweq21312321weqe")
 
 
 

@@ -32,16 +32,15 @@ def init_queue(filesize):
         q.put(c)
     return q
 
+
 def upload_chunk_func(filepath, mp_handler, chunk_queue, id, md5id):
     while (not chunk_queue.empty()):
         chunk = chunk_queue.get()
-        #print "Thread id: %s, chunk offset: %s, len: %s" % (id, chunk.offset, chunk.len)
         fp = FileChunkIO(filepath, 'r', offset=chunk.offset, bytes=chunk.len)
         mp_handler.upload_part_from_file(fp, headers={'CONTENT-MD5' : md5id}, part_num=chunk.num)
         fp.close()
         chunk_queue.task_done()
 
-    #print "UPload thread: %s, done !" % id
 
 def upload_file_multipart(filepath, keyname, bucket, md5id, threadcnt=MULTI_THREAD_NUM):
     filesize = os.stat(filepath).st_size
@@ -52,29 +51,5 @@ def upload_file_multipart(filepath, keyname, bucket, md5id, threadcnt=MULTI_THRE
         t.setDaemon(True)
         t.start()
 
-    #block all upload thread until complete upload
     chunk_queue.join()
     mp_handler.complete_upload()
-
-
-'''
-access_key = "P1FR6AD7OYYIXQI3SQ8G"
-secret_key = "fNKtVpSd9W6cBUgN4YpjEuDOOIqswMKMSCMK1eQf"
-host = "192.168.4.42"
-port=3344
-
-filepath = "/root/sandstone-v3.1-installer.tar.gz.release.86"
-#filepath = "/root/installbuilder-professional-9.0.2-linux-x64-installer.run"
-keyname = "bigfile"
-conn = boto.connect_s3(
-    aws_access_key_id = access_key,
-    aws_secret_access_key = secret_key,
-    host = host,
-    port = port,
-    is_secure=False,
-    calling_format = boto.s3_operator.connection.OrdinaryCallingFormat(),
-    )
-
-bucket = conn.get_bucket("test")
-upload_file_multipart(filepath, keyname, bucket, MULTI_THREAD_NUM)
-'''

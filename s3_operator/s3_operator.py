@@ -51,7 +51,7 @@ class S3Operator(object):
                 log.error("FAILURE UPLOAD: S3 connection is not builded.")
                 return False
             if self.check_from_s3(cloud_path):
-                log.debug("S3 object already exists: %s" % cloud_path)
+                log.info("S3 object already exists: %s" % cloud_path)
                 return True
 
             md5id = self.GetFileMd5(file_path)

@@ -21,9 +21,9 @@ def proc_cmd(cmd):
     try:
         ret_code, stdout = commands.getstatusoutput(cmd)
         is_succeed = True
-        log.debug("Process cmd: [%s] successfully, ret_code: %s, ret_msg:%s" % (cmd, ret_code, stdout))
+        log.info("Process cmd: [%s] successfully, ret_code: %s, ret_msg:%s" % (cmd, ret_code, stdout))
     except Exception as e:
-        log.error("Process cmd: [%s] failed, error: %s" % (cmd, e))
+        log.info("Process cmd: [%s] failed, error: %s" % (cmd, e))
     return  is_succeed, stdout
 
 

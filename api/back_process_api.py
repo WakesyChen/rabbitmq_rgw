@@ -4,38 +4,95 @@
 # Author: Wakesy
 # Email : chenxi@szsandstone.com
 
-import json
+
 import os
+import configobj
 from flask_restful import Resource, request
-from config import log, DOWNLOAD_DIR, ALL_PROCESS_SUPPORT
-
-
-def result_formatter(data=None, message="default success message", success=1):
-    result = {"message": message,
-              "success": success,
-              "data":data}
-    # return json.dumps(result, ensure_ascii=False)
-    return json.dumps(result, ensure_ascii=False)
+from config import log
+from constant import BACK_PROC_CONF
 
 
 class BackProcess(Resource):
 
+
     def get(self):
-        data = {"support_process": ALL_PROCESS_SUPPORT}
+
+        support_process = get_support_process()
+        data = {"support_process": support_process}
         return result_formatter(data=data)
 
+
     def post(self):
-        try:
-            file = request.files.get('file')
-            if file:
-                file.save(os.path.join(DOWNLOAD_DIR, file.filename))  # 保存到DOWNLOAD_DIR中
-                message = "Upload file success, filename: %s" % file.filename
-                return result_formatter(message=message ,success=1)
-            else:
-                message = "Post request only except file uploading, no file found."
-                return result_formatter(message=message, success=0)
-        except Exception as error:
-            message = "Internal server error: %s" % error
-            return result_formatter(message=message, success=-1)
+
+        file = request.files.get('file')
+        if file:
+            log.info("Upload file success, filename: %s" % file.filename)
+            message, success = update_bp_config(file)
+        else:
+            message, success = "Only file is excepted, keyname:file", 0
+
+        return result_formatter(message=message, success=success)
+
+#=============================功能代码================================
+
+def update_bp_config(file):
+    '''更新后处理的配置文件'''
+    try:
+        # 接收文件，并保存
+        download_dir = os.path.join(os.path.abspath(os.path.dirname(__file__)), "file_recieved")
+        file_path = os.path.join(download_dir, file.filename)
+        file.save(file_path)
+
+        success, new_conf = get_new_conf(file_path)
+        if os.path.isfile(new_conf):
+            bp_obj_now  = configobj.ConfigObj(BACK_PROC_CONF)
+            bp_obj_new  = configobj.ConfigObj(new_conf)
+            bp_conf_new = bp_obj_new['back_process']     # 接收到的配置文件中的back_process配置
+            bp_conf_now = bp_obj_now['back_process']     # 当前back_process配置文件信息
+            bp_conf_now.clear()
+            bp_conf_now.update(bp_conf_new)
+            bp_obj_now.write()
+            message, success = "Update back process config SUCCESS!", 1
+        else:
+            message, success = "Update back process config FAILED!", 0
+    except Exception as error:
+        message, success = "Update back process config ERROR: %s" % error, -1
+
+    return message, success
+
+
+def get_new_conf(file_path):
+    '''从接收到的文件中，获取配置文件'''
+    # todo:从压缩包中解压
+    success, conf_path = False, ''
+    if os.path.isfile(file_path):
+        if file_path.endswith('.conf'):   # 先只考虑接收的是配置文件的情况
+            success, conf_path = True, file_path
+        else:
+            pass
+    return success, conf_path
+
+
+def get_support_process():
+    '''从后处理配置文件中，获取当前支持的功能'''
+    support_process = []
+    try:
+        bp_config = configobj.ConfigObj(BACK_PROC_CONF)
+        all_process_info = dict(bp_config['back_process'])
+        # 根据后处理操作的类型分类
+        support_process  = all_process_info.keys()
+        log.info("support_process: %s" % support_process)
+    except Exception as error:
+        log.error("get process config failed ,error: %s" % error)
+    return  support_process
+
+
+def result_formatter(data=None, message="default success message", success=1):
+    '''格式化请求返回'''
+    result = {"message": message,
+              "success": success,
+              "data":data}
+    return result
+
 
 

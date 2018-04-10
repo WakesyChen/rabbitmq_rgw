@@ -6,7 +6,7 @@
 
 
 
-class BaseProcesser(object):
+class BaseProcessor(object):
     '''后处理'''
 
 
