@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="10.10.7.151" showNewOnSourceInSync="false">
+  <component name="PublishConfigData" serverName="10.10.7.153" showNewOnSourceInSync="false">
     <serverData>
       <paths name="10.10.7.151">
         <serverdata>
@@ -9,7 +9,7 @@
           </mappings>
         </serverdata>
       </paths>
-      <paths name="10.10.7.152">
+      <paths name="10.10.7.153">
         <serverdata>
           <mappings>
             <mapping deploy="/opt/task_projects/background_process" local="$PROJECT_DIR$" web="/" />

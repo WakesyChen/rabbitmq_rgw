@@ -9,8 +9,13 @@ import os
 import configobj
 from flask_restful import Resource, request
 from config import log
+from utils import proc_cmd
 from constant import BACK_PROC_CONF
 
+
+# 接收文件的存放目录
+DOWNLOAD_DIR = os.path.join(os.path.abspath(os.path.dirname(__file__)), "file_recieved")
+BP_CONF_NAME = "back_process.conf"
 
 class BackProcess(Resource):
 
@@ -29,7 +34,7 @@ class BackProcess(Resource):
             log.info("Upload file success, filename: %s" % file.filename)
             message, success = update_bp_config(file)
         else:
-            message, success = "Only file is excepted, keyname:file", 0
+            message, success = "Expected keyname:'file', type: 'tar.gz', contains: 'back_process.conf' ", 0
 
         return result_formatter(message=message, success=success)
 
@@ -38,12 +43,11 @@ class BackProcess(Resource):
 def update_bp_config(file):
     '''更新后处理的配置文件'''
     try:
-        # 接收文件，并保存
-        download_dir = os.path.join(os.path.abspath(os.path.dirname(__file__)), "file_recieved")
-        file_path = os.path.join(download_dir, file.filename)
-        file.save(file_path)
 
-        success, new_conf = get_new_conf(file_path)
+        file_path = os.path.join(DOWNLOAD_DIR, file.filename)
+        file.save(file_path)
+        success = 0
+        new_conf,  message = get_new_conf(file.filename, file_path)
         if os.path.isfile(new_conf):
             bp_obj_now  = configobj.ConfigObj(BACK_PROC_CONF)
             bp_obj_new  = configobj.ConfigObj(new_conf)
@@ -53,24 +57,36 @@ def update_bp_config(file):
             bp_conf_now.update(bp_conf_new)
             bp_obj_now.write()
             message, success = "Update back process config SUCCESS!", 1
-        else:
-            message, success = "Update back process config FAILED!", 0
+
     except Exception as error:
+        log.error("Update back process config ERROR: %s" % error)
         message, success = "Update back process config ERROR: %s" % error, -1
 
     return message, success
 
 
-def get_new_conf(file_path):
+def get_new_conf(file_name, file_path):
     '''从接收到的文件中，获取配置文件'''
-    # todo:从压缩包中解压
-    success, conf_path = False, ''
+    new_conf, message= '', ''
     if os.path.isfile(file_path):
-        if file_path.endswith('.conf'):   # 先只考虑接收的是配置文件的情况
-            success, conf_path = True, file_path
+        if file_name == BP_CONF_NAME:         # 接收的是配置文件
+            new_conf = file_path
+        elif file_path.endswith('.tar.gz'):   # 接收的是tar.gz压缩包
+            is_succeed, stdout = proc_cmd("tar -xzf %s -C %s" % (file_path, DOWNLOAD_DIR))
+            if is_succeed:
+                conf_path_in = os.path.join(file_path.strip('.tar.gz'), BP_CONF_NAME) # back_process.conf在压缩包里面
+                conf_path_out = os.path.join(DOWNLOAD_DIR, BP_CONF_NAME)              # back_process.conf在压缩包外面
+                if os.path.isfile(conf_path_in):
+                    new_conf = conf_path_in
+                elif os.path.isfile(conf_path_out):
+                    new_conf = conf_path_out
+                else:
+                    message = "Update back process config FAILED, file doesn't contain 'back_process.conf'"
+            else:
+                message = "Update back process config FAILED, tar -xzf file failed: %s" % file_name
         else:
-            pass
-    return success, conf_path
+            message = "Update back process config FAILED, expected file type: tar.gz"
+    return new_conf, message
 
 
 def get_support_process():

@@ -1,0 +1,23 @@
+
+# libreoffice：提供word转pdf功能的工具
+【使用方法】
+  libreoffice --headless --convert-to  pdf    *.doc
+
+# libreoffice_dep_rpms: 安装libreoffice所需要的rpm包
+yum install -y  *.rpm
+
+
+# fonts: 包含了window下面的中文字体，linux下一般不具备，没有的话转pdf会出现乱码
+字体存放地址：
+centos: /usr/share/fonts
+window:   C:\Windows\Fonts
+更新用fonts下的字体linux的，执行以下指令
+    避开cp提示，/bin/cp -rf fonts/* /usr/share/fonts/
+    cd /usr/share/fonts/
+    mkfontscale
+    mkfontdir //这两条命令是生成字体的索引信息
+    fc-cache   //更新字体缓存
+
+
+卸载：rpm -qa |grep libreoffice|xargs rpm -e
+无视依赖：rpm -e **.rpm --nodeps

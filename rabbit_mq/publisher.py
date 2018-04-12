@@ -76,7 +76,7 @@ class MQPublisher(object):
         content = {}
         message = ''
         try:
-            content['start_time']   = str(time.time())   # 产生时间
+            content['publish_time']   = str(time.time())   # 产生时间
             content['event_id']     = str(uuid.uuid1())  # 事件的唯一标识
             content['notify_url']   = ''                 # 审核结果通知地址
             content['action_type']  = 'convert_to_pdf'   # 后处理类型，转换类型如："convert_to_pdf";审核类型如："check_is_sexy"
