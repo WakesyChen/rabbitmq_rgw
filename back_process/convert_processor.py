@@ -34,8 +34,10 @@ class ConvertProcessor(BaseProcessor):
                                                  generate_path=generate_path, generate_dir=local_dir)
         if os.path.isfile(generate_file_path):
             if s3_operator.upload_to_s3(new_object_key, generate_file_path):  # 上传到s3中
-                return True
 
+                return True
+            # 删除生成的文件
+            os.remove(generate_file_path)
         return False
 
 
@@ -62,7 +64,7 @@ class ConvertProcessor(BaseProcessor):
                 if is_word_file and operate_file == 'doc':
                     # word转pdf
                     convert_cmd = operate_cmd % (source_path, generate_dir)
-                    SUCCESS_TAG = "writer_pdf_Export"                         # 执行成功，输出结果会带这个字段
+                    SUCCESS_TAG = "writer_pdf_Export"                          # 执行成功，输出结果会带这个字段
                     is_succeed, stdout = proc_cmd(convert_cmd)
                     if is_succeed and SUCCESS_TAG in stdout:
                         generate_file_path = re.sub(r'.doc[x]{0,1}', '.pdf', source_path)

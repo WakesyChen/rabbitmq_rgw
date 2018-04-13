@@ -10,7 +10,7 @@ SDSOM_CONF=/var/lib/sdsom/etc/sdsom/sdsom.conf
 SYS_PATH_CONF=/etc/profile
 LIBREOFFICE_DEP_RPMS="${SH_ROOT_DIR}/tools/libreoffice/libreoffice_dep_rpms/"
 RABBITMQ_DEP_RPMS="${SH_ROOT_DIR}/tools/rabbitmq/mq_dep_rpms"
-
+SDSOM_CONF="/var/lib/sdsom/etc/sdsom/sdsom.conf"
 
 check_return_code()
 {
@@ -59,41 +59,45 @@ install_libreoffice(){
 
 }
 
-
+# pass
 config_rabbitmq(){
     echo "config rabitmq...."
     rabbitmq-server -detached                                 # 启动rabbitmq
-    rabbitmq-plugins  enable  rabbitmq_management             # 开启15672端口浏览器访问
+    sleep 3
     rabbitmqctl add_user root sandstone                       # 添加用户,密码
     rabbitmqctl set_permissions -p / root ".*" ".*" ".*"      # 授权/空间
     rabbitmqctl set_user_tags root administrator              # 设置管理员角色
     rabbitmqctl add_vhost sdsom                               # 添加空间sdsom
     rabbitmqctl set_permissions -p sdsom root ".*" ".*" ".*"  # 授权sdsom虚拟空间
+    rabbitmq-plugins  enable  rabbitmq_management             # 开启15672端口浏览器访问
+    sleep 2
     rabbitmqctl stop                                          # 重启生效
+    sleep 2
     rabbitmq-server -detached
+    echo "config rabbitmq complete."
 }
 
-
+# pass
 install_rabbitmq(){
     echo "Prepare to install rabbitmq..."
-#    echo "installing dependence rpms..."
-#    cd ${RABBITMQ_DEP_RPMS} && yum -y install ./*.rpm  &>/dev/null
-#    echo "install dependence rpms complete."
-#    cd "${SH_ROOT_DIR}/tools/rabbitmq" && tar -xf "otp_src_18.3.tar.gz"  &>dev/null
-#    cd "./otp_src_18.3"
-#    if [ ! -d "${SOURCE_INSTALL}/erlang" ];then
-#        mkdir -p "${SOURCE_INSTALL}/erlang"
-#    fi
-#    echo "installing erlang for mq, it needs some time..."
-#    ./configure --prefix="${SOURCE_INSTALL}/erlang" -with-ssl -enable-rhreads -enable-smp-support \
-#     -enable-kernel-poll -enable-hipe -without-javac  &>/dev/null
-#    make && make install
-#    check_return_code $? "install erlang for rabbitmq"
+    echo "installing dependence rpms..."
+    cd ${RABBITMQ_DEP_RPMS} && yum -y install ./*.rpm  &>/dev/null
+    echo "install dependence rpms complete."
+    cd "${SH_ROOT_DIR}/tools/rabbitmq" && tar -xf "otp_src_18.3.tar.gz"  &>/dev/null
+    cd "./otp_src_18.3"
+    if [ ! -d "${SOURCE_INSTALL}/erlang" ];then
+        mkdir -p "${SOURCE_INSTALL}/erlang"
+    fi
+    echo "installing erlang for mq, it needs some time..."
+    ./configure --prefix="${SOURCE_INSTALL}/erlang" -with-ssl -enable-rhreads -enable-smp-support \
+     -enable-kernel-poll -enable-hipe -without-javac  &>/dev/null
+    make && make install
+    check_return_code $? "install erlang for rabbitmq"
 
-#    echo "installing rabbitmq..."
-#    cd "${SH_ROOT_DIR}/tools/rabbitmq" && tar -xf "rabbitmq-server-generic-unix-3.6.1.tar" -C $SOURCE_INSTALL
-#    cd  $SOURCE_INSTALL && mv  rabbitmq_server-3.6.1  rabbitmq_server
-#    check_return_code $? "install rabbitmq"
+    echo "installing rabbitmq..."
+    cd "${SH_ROOT_DIR}/tools/rabbitmq" && tar -xf "rabbitmq-server-generic-unix-3.6.1.tar" -C $SOURCE_INSTALL
+    cd  $SOURCE_INSTALL && mv  rabbitmq_server-3.6.1  rabbitmq_server
+    check_return_code $? "install rabbitmq"
     echo "add some config in sys path..."
     /usr/bin/cp -rf $SYS_PATH_CONF  "${SYS_PATH_CONF}_bak"
     cat << EOF >> $SYS_PATH_CONF
@@ -107,13 +111,15 @@ EOF
     source $SYS_PATH_CONF
     check_return_code $? "install rabbitmq complete."
 
-#    config_rabbitmq
+    config_rabbitmq
 }
 
+
+# pass
 uninstall_rabbitmq(){
     echo "==========uninstalling rabbitmq========="
     echo "clean rabbitmq config...."
-    rabbitmqctl stop  2>/dev/null
+    rabbitmqctl stop  &>/dev/null
     sed -i '/^ERLANG_HOME=.*/d' $SYS_PATH_CONF
     sed -i '/^export PATH=$PATH:$ERLANG_HOME\/bin.*/d' $SYS_PATH_CONF
     sed -i '/^export ERLANG_HOME.*/d' $SYS_PATH_CONF
@@ -122,13 +128,27 @@ uninstall_rabbitmq(){
     echo "removing rabbitmq installed packages..."
     rm -rf "${SOURCE_INSTALL}/erlang"
     rm -rf "${SOURCE_INSTALL}/rabbitmq_server"
-    echo "==========uninstall rabbitmq finished========="
+    rm -f /usr/sbin/rabbitmq*
+    echo "======uninstall rabbitmq finished======="
 
 }
 
+config_backproc_url(){
+    echo "config back_process url for OM..."
+    cat <<EOF >> $SDSOM_CONF
+
+[back_process]
+back_proc_url = http://10.10.7.151:5050/api/v1/back_process
+EOF
+    echo "config complete."
+
+}
 
 echo '======START TO CREATE BACKGROUND PROCESS ENVIRONMENT======='
-install_rabbitmq
+#install_rabbitmq
+#uninstall_rabbitmq
+#config_backproc_url
+
+# todo:waiting for check
 #install_libreoffice
 #install_ffmpeg
-#uninstall_rabbitmq
