@@ -36,4 +36,11 @@ IMG_TYPES = [IMG_JPEG, IMG_GIF, IMG_PNG, IMG_RGB, IMG_PGM, IMG_PBM,
              IMG_PPM, IMG_TIFF, IMG_RAST,IMG_XBM, IMG_BMP]
 
 
+# 转换类型对应的文件后缀
+convert_postfix = {
+    "convert_to_pdf" :"pdf",
+    "convert_to_jpeg": "jpeg",
+    "convert_to_bmp" : "bmp",
+    "convert_to_gif" : "gif"
+}
 

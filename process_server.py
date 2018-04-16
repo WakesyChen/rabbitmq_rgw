@@ -84,9 +84,11 @@ class ProcessServer(MQConsumer):
             msg_args['s3_operator']   = s3_operator
             if self.back_processer:
                 if self.back_processer.back_process(**msg_args):
+                    # 处理结束后，删除源文件
+                    log.info("****remove source file:%s" % s3_local_file)
+                    os.remove(s3_local_file)
                     return True
-            # 处理结束后，删除源文件
-            os.remove(s3_local_file)
+
         except:
             log.error("Back process failed, error: %s, stop consuming." % traceback.format_exc())
             self.stop_recieve()

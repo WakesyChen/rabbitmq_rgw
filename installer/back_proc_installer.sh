@@ -7,10 +7,10 @@ SH_ROOT_DIR=$(cd $FILE_DIR;pwd)  #脚本根目录
 
 SOURCE_INSTALL=/opt/source_install     # 指定源码安装的路径
 SDSOM_CONF=/var/lib/sdsom/etc/sdsom/sdsom.conf
+CEPH_CONF=/var/lib/ceph/etc/ceph/ceph.conf
 SYS_PATH_CONF=/etc/profile
 LIBREOFFICE_DEP_RPMS="${SH_ROOT_DIR}/tools/libreoffice/libreoffice_dep_rpms/"
 RABBITMQ_DEP_RPMS="${SH_ROOT_DIR}/tools/rabbitmq/mq_dep_rpms"
-SDSOM_CONF="/var/lib/sdsom/etc/sdsom/sdsom.conf"
 
 check_return_code()
 {
@@ -48,16 +48,18 @@ install_ffmpeg(){
 
 install_libreoffice(){
     echo "Prepare to install libreoffice..."
-    /bin/cp -rf "${SH_ROOT_DIR}/tools/libreoffice/fonts/*"   /usr/share/fonts/
+    echo "Add window fonts to linux"
+    /usr/bin/cp -rf "${SH_ROOT_DIR}/tools/libreoffice/fonts/*"   /usr/share/fonts/
     cd /usr/share/fonts/
     mkfontscale
     mkfontdir   # 这两条命令是生成字体的索引信息
     fc-cache    # 更新字体缓存
-    echo "Update the linux fonts"
+    echo "install dependence rpms for libreoffice"
     yum -y install "${LIBREOFFICE_DEP_RPMS}/*.rpm"
     check_return_code $? "install libreoffice"
 
 }
+
 
 # pass
 config_rabbitmq(){
@@ -140,7 +142,20 @@ config_backproc_url(){
 [back_process]
 back_proc_url = http://10.10.7.151:5050/api/v1/back_process
 EOF
+# todo:待测
+    cat <<EOF >> $CEPH_CONF
+
+rgw_rabbit_mq_if_use_back_process = true
+mq_host = "10.10.7.151"
+
+EOF
+
+rgw_rabbit_mq_if_use_back_process = true
+mq_host = 10.10.7.151
+
     echo "config complete."
+
+
 
 }
 
@@ -150,5 +165,5 @@ echo '======START TO CREATE BACKGROUND PROCESS ENVIRONMENT======='
 #config_backproc_url
 
 # todo:waiting for check
-#install_libreoffice
+install_libreoffice
 #install_ffmpeg

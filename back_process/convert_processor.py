@@ -9,7 +9,7 @@ import re
 import traceback
 import configobj
 from base_processor import BaseProcessor
-from utils import get_img_type, is_word_type, proc_cmd
+from utils import get_img_type, is_word_type, proc_cmd, get_new_name_by_type
 from config import log
 from constant import CONVERT_TO_PDF, BACK_PROC_CONF
 
@@ -27,6 +27,9 @@ class ConvertProcessor(BaseProcessor):
         new_file_name    = kwargs['new_name']            # 转换之后保存的格式，如 'filename.pdf'
         object_dir     = '/'.join(object_key.split('/')[:-1])      # 对象的目录
         local_dir      = '/'.join(s3_local_file.split('/')[:-1])   # 本地保存的目录
+        if not new_file_name:
+            new_file_name = get_new_name_by_type(s3_local_file, action_type)
+
         generate_path  = os.path.join(local_dir, new_file_name)    # 转换生成的文件路径
         new_object_key = os.path.join(object_dir, new_file_name)   # 生成的文件对应s3上的key
 
@@ -34,10 +37,10 @@ class ConvertProcessor(BaseProcessor):
                                                  generate_path=generate_path, generate_dir=local_dir)
         if os.path.isfile(generate_file_path):
             if s3_operator.upload_to_s3(new_object_key, generate_file_path):  # 上传到s3中
-
+                # 删除生成的文件
+                log.info("****remove generate_file_path:%s" % generate_file_path)
+                os.remove(generate_file_path)
                 return True
-            # 删除生成的文件
-            os.remove(generate_file_path)
         return False
 
 
@@ -60,6 +63,7 @@ class ConvertProcessor(BaseProcessor):
             operate_cmd   = operate_info.get("operate_cmd")                    # 处理执行的指令，如:"ffmpeg  -i  %s  %s"
             operate_file  = operate_info.get("operate_file")                   # 操作的文件类型
             convert_cmd   = operate_cmd % (source_path, generate_path)
+            log.info("convert_cmd: %s" % convert_cmd)
             if action_type == CONVERT_TO_PDF:
                 if is_word_file and operate_file == 'doc':
                     # word转pdf

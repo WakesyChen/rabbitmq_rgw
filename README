@@ -1,0 +1,21 @@
+# 后处框架脚本注意事项
+
+1、配合mos版本，git分支：mos_back_process
+2、系统配置文件：common.conf
+3、后处理功能配置文件：back_process/back_process.conf
+4、安装工具：installer/tools,包含rabbitmq, ffmpeg, libreoffice依赖包
+5、其他：
+    1）一些python库还没带进去
+    2）前端界面，更新后处理功能的选项没有放开,修改文件：/var/lib/sdsom/webapp/content/sdsomweb/views/main.html
+    3）额外手动添加配置，
+      ①创建rgw服务后，在/var/lib/ceph/etc/ceph/ceph.conf
+        对应的下rgw服务配置中，如[client.radosgw.ct]，添加
+        rgw_rabbit_mq_if_use_back_process = true
+        rgw_back_process_req_header = HTTP_X_AMZ_META_BP
+        mq_host = 10.10.7.151
+      ② /var/lib/sdsom/etc/sdsom/sdsom.conf 添加配置：
+        [back_process]
+        back_proc_url = http://10.10.7.151:5050/api/v1/back_process
+    4）启动服务：
+       python api/start_api.py
+       python process_server.py

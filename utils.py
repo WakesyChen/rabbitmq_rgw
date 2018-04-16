@@ -12,7 +12,7 @@ import sys
 import imghdr
 reload(sys)
 sys.setdefaultencoding('utf-8')
-from constant import IMG_TYPES
+from constant import IMG_TYPES, convert_postfix
 
 def proc_cmd(cmd):
     '''执行指令'''
@@ -87,9 +87,26 @@ def iterate_over_directory_process(source_path, process_method):
             iterate_over_directory_process(new_path, process_method)
 
 
+
+def get_new_name_by_type(local_file_path, convert_type):
+    # 根据文件转换类型，输出文件名
+    file_name = local_file_path.split("/")[-1]
+    new_file_name = file_name
+    if convert_type in convert_postfix:
+        new_postfix = convert_postfix[convert_type]
+        paths_list = file_name.split('.')
+        paths_list[-1] = new_postfix     # 替换之前的后缀
+        new_file_name = ".".join(paths_list)
+
+    return new_file_name
+
+
+
 if __name__ == '__main__':
 
-    source_path = '/opt/python_projects/resources/common_files'
+    source_path = '/opt/python_projects/resources/common_files/aap.jpg'
+    convert_type = "convert_to_bmp"
+    print get_new_name_by_type(source_path, convert_type)
     # iterate_over_directory_process(source_path, get_img_type)
 
 
