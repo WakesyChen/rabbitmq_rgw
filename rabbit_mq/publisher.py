@@ -37,7 +37,7 @@ class MQPublisher(object):
 
             if self.is_backup:
                 # 新建备份队列
-                backup_queue = self.queue + "_backup"
+                backup_queue = self.queue + "_bak"
                 self.channel.queue_declare(queue=backup_queue, durable=True)
                 self.channel.queue_bind(queue=backup_queue, exchange=self.exchange)
         except Exception as e:
@@ -52,10 +52,10 @@ class MQPublisher(object):
         try:
             properties = pika.BasicProperties(delivery_mode=2)  # 队列持久化，防止宕机消失
             publish_success = self.channel.basic_publish(exchange=self.exchange,
-                                       routing_key=self.routing_key,
-                                       body=body,
-                                       properties=properties
-                                       )
+                                                         routing_key=self.routing_key,
+                                                         body=body,
+                                                         properties=properties
+                                                         )
             if publish_success:
                 log.info('Publish message success, msg_content:%s' % body)
             else:

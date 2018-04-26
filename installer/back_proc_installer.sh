@@ -12,6 +12,7 @@ SYS_PATH_CONF=/etc/profile
 LIBREOFFICE_DEP_RPMS="${SH_ROOT_DIR}/tools/libreoffice/libreoffice_dep_rpms/"
 RABBITMQ_DEP_RPMS="${SH_ROOT_DIR}/tools/rabbitmq/mq_dep_rpms"
 
+
 check_return_code()
 {
     retcode="$1"
@@ -33,7 +34,8 @@ install_ffmpeg(){
     if [ ! -d "${SOURCE_INSTALL}/yasm" ];then
         mkdir -p "${SOURCE_INSTALL}/yasm"
     fi
-    cd "${SH_ROOT_DIR}/tools/ffmpeg/yasm-1.3.0" && ./configure --prefix="${SOURCE_INSTALL}/yasm" && make && make install
+    #todo:如指定安装，则需要添加到/etc/source中
+    cd "${SH_ROOT_DIR}/tools/ffmpeg/yasm-1.3.0" && ./configure  && make && make install
     check_return_code $? "install yasm-1.3.0"
 
     cd "${SH_ROOT_DIR}/tools/ffmpeg" && tar -xf  "ffmpeg-3.4.2.tar.bz2"
@@ -142,11 +144,14 @@ config_backproc_url(){
 [back_process]
 back_proc_url = http://10.10.7.151:5050/api/v1/back_process
 EOF
+
+
 # todo:待测
     cat <<EOF >> $CEPH_CONF
 
 rgw_rabbit_mq_if_use_back_process = true
 mq_host = "10.10.7.151"
+rgw_back_process_req_header = HTTP_X_AMZ_META_BP
 
 EOF
 

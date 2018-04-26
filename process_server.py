@@ -5,7 +5,7 @@
 # Email : chenxi@szsandstone.com
 import json
 from config import *
-from constant import BACK_PROC_CONF
+from constant import BACK_PROC_CONF, DOWNLOAD_DIR
 from copy import deepcopy
 from s3_operator.s3_operator import S3Operator
 from rabbit_mq.consumer  import MQConsumer
@@ -41,7 +41,6 @@ class ProcessServer(MQConsumer):
 
         if self.process(**msg_args):
             log.critical("NOTICE: back process SUCCESS, object_key: %s" % object_key)
-
             self.process_success_mq.publish_msg(**msg_args)
         else:
             log.critical("NOTICE: back process FAILED,  object_key: %s" % object_key)
@@ -51,6 +50,7 @@ class ProcessServer(MQConsumer):
 
     def process(self, **kwargs):
         try:
+            is_success = False
             msg_args = deepcopy(kwargs)
             s3_args = {}
             s3_args['access_key']  = S3_AK
@@ -65,34 +65,31 @@ class ProcessServer(MQConsumer):
             log.info("object_key:%s, process type: %s" % (object_key, action_type))
             if not os.path.isfile(s3_local_file):
                 log.warn("NOTICE: file downloaded from s3 does'nt exist: %s" % s3_local_file)
-                return False
-
+                return is_success
             if action_type not in ALL_PROCESS_SUPPORT:
                 log.warn("NOTICE: not support process type: %s" % action_type)
-                return False
+                return is_success
             elif action_type in CONVERT_TYPES:
-                # 转换处理类型
-                self.back_processer = ConvertProcessor()
+                self.back_processer = ConvertProcessor()  # 转换处理类型
             elif action_type in CHECK_TYPES:
-                # 审核处理类型，待完善
-                self.back_processer = CheckProcessor()
+                self.back_processer = CheckProcessor()    # 审核处理类型，待完善
             else:
-                # 其他处理类型，待完善
-                pass
+                pass   # 其他处理类型，待完善
 
             msg_args['s3_local_file'] = s3_local_file # 搭便车，多传两个参数过去
             msg_args['s3_operator']   = s3_operator
             if self.back_processer:
                 if self.back_processer.back_process(**msg_args):
-                    # 处理结束后，删除源文件
-                    log.info("****remove source file:%s" % s3_local_file)
-                    os.remove(s3_local_file)
-                    return True
+                    is_success = True
 
+            # 后处理成败都删除本地文件
+            log.info("****remove source file:%s" % s3_local_file)
+            os.remove(s3_local_file)
         except:
+            is_success = False
             log.error("Back process failed, error: %s, stop consuming." % traceback.format_exc())
             self.stop_recieve()
-        return False
+        return is_success
 
 
     def init_back_proc_config(self):

@@ -5,51 +5,41 @@
 # Email : chenxi@szsandstone.com
 
 import commands
-import os
-from config import log
-# import gevent, gevent.subprocess
-import sys
 import imghdr
+import time
+import subprocess
+import os
+import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
-from constant import IMG_TYPES, convert_postfix
+from config import log
+from constant import IMG_TYPES, CONVERT_POSTFIX
 
-def proc_cmd(cmd):
-    '''执行指令'''
-    #todo:设置超时，考虑完全
-    is_succeed, stdout = False, ''
+
+def proc_command(cmd="ping www.baidu.com", timeout=60):
+    '''
+    :param cmd: 执行的指令
+    :param timeout: 指令的超时时间
+    :return: is_succeed 执行是否执行成功，stdout指令结果的输出
+    '''
     try:
-        ret_code, stdout = commands.getstatusoutput(cmd)
-        is_succeed = True
-        log.info("Process cmd: [%s] successfully, ret_code: %s, ret_msg:%s" % (cmd, ret_code, stdout))
-    except Exception as e:
-        log.info("Process cmd: [%s] failed, error: %s" % (cmd, e))
-    return  is_succeed, stdout
+        p = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+        time_begin = time.time()
+        while True:
+            if p.poll() is not None:  # poll执行完返回0，未执行完返回None
+                break
+            time_passed = time.time() - time_begin
+            if time_passed > timeout:
+                p.terminate()
+                raise Exception("Timeout exception")
+            time.sleep(0.1)
+        is_succeed, stdout = True, p.stdout.read()  # 执行成功
+        log.info("Succeeded excuting cmd:[%s], ret_msg:%s" % (cmd, stdout))
+    except Exception as err:
+        log.error("Failed excuting cmd:[%s], error:%s" % (cmd, err))
+        is_succeed, stdout = False, "Failed excuting cmd:%s, error:%s" % (cmd, err)
+    return is_succeed, stdout
 
-
-# def proc_cmd2(logfunc, module, args, timeout=20, shell=False):
-#     logfunc("Module: %s, cmd: %s, begin", module, " ".join(args))
-#     proc = gevent.subprocess.Popen(args, shell=shell, close_fds=True,
-#                                    stdout=gevent.subprocess.PIPE,
-#                                    stderr=gevent.subprocess.PIPE)
-#     try:
-#         with gevent.Timeout(timeout, False):
-#             stdout, stderr = proc.communicate(input=None)
-#
-#         if proc.returncode == None:
-#             raise Exception("Timeout %s" % timeout)
-#
-#         logfunc("Module: %s, cmd: %s, retcode: %s, stdout: %s, stderr: %s",
-#                 module, " ".join(args), proc.returncode, stdout, stderr)
-#
-#         return proc.returncode, stdout, stderr
-#     except Exception, e:
-#         logfunc("Module: %s, cmd: %s, Exception: %s ", module, " ".join(args), str(e))
-#         if proc:
-#             proc.kill()
-#             proc.wait()
-#         raise
-#
 
 def is_word_type(file_path):
     '''判断文件是否是word文档类型'''
@@ -92,8 +82,8 @@ def get_new_name_by_type(local_file_path, convert_type):
     # 根据文件转换类型，输出文件名
     file_name = local_file_path.split("/")[-1]
     new_file_name = file_name
-    if convert_type in convert_postfix:
-        new_postfix = convert_postfix[convert_type]
+    if convert_type in CONVERT_POSTFIX:
+        new_postfix = CONVERT_POSTFIX[convert_type]
         paths_list = file_name.split('.')
         paths_list[-1] = new_postfix     # 替换之前的后缀
         new_file_name = ".".join(paths_list)
@@ -101,13 +91,9 @@ def get_new_name_by_type(local_file_path, convert_type):
     return new_file_name
 
 
-
 if __name__ == '__main__':
-
-    source_path = '/opt/python_projects/resources/common_files/aap.jpg'
-    convert_type = "convert_to_bmp"
-    print get_new_name_by_type(source_path, convert_type)
-    # iterate_over_directory_process(source_path, get_img_type)
+    is_success, ret_msg = proc_command("ipconfig",timeout=5)
+    print "is_success:%s, ret_msg:%s" % (is_success, ret_msg)
 
 
 

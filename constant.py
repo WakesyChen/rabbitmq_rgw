@@ -6,14 +6,20 @@
 import os
 import sys
 
-
 # 脚本的根目录
 ROOT_DIR = os.path.abspath(os.path.dirname(__file__))
 sys.path.append(ROOT_DIR)
 # 系统的配置文件
-COMMON_CONF = os.path.join(ROOT_DIR, "common.conf")
+COMMON_CONF    = os.path.join(ROOT_DIR, "common.conf")
 # 后处理的配置文件
 BACK_PROC_CONF = os.path.join(ROOT_DIR, "back_process/back_process.conf")
+# 本地下载目录
+DOWNLOAD_DIR   = os.path.abspath(os.path.join(ROOT_DIR, "download"))
+
+
+
+
+if(not os.path.isdir(DOWNLOAD_DIR)): os.mkdir(DOWNLOAD_DIR)
 # MQ连接url格式
 MQ_URL_FORMAT = "amqp://{user}:{password}@{host}:{port}/{vhost}?socket_timeout={timeout}"
 
@@ -37,7 +43,7 @@ IMG_TYPES = [IMG_JPEG, IMG_GIF, IMG_PNG, IMG_RGB, IMG_PGM, IMG_PBM,
 
 
 # 转换类型对应的文件后缀
-convert_postfix = {
+CONVERT_POSTFIX = {
     "convert_to_pdf" :"pdf",
     "convert_to_jpeg": "jpeg",
     "convert_to_bmp" : "bmp",

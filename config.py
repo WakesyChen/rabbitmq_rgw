@@ -7,19 +7,17 @@ import os
 import traceback
 import sys
 import configobj
-from constant import MQ_URL_FORMAT, COMMON_CONF, BACK_PROC_CONF
+from constant import MQ_URL_FORMAT, COMMON_CONF, ROOT_DIR
 import logging
 
 '''从配置文件中读取的配置信息，供全局使用'''
 
-log = None
 # S3配置
 S3_AK = ''
 S3_SK = ''
 S3_BUCKET = ''
 RGW_HOST  = ''
 RGW_PORT  = None
-DOWNLOAD_DIR = ''          # 下载的文件，本地存放目录
 
 # MQ配置
 MQ_CONN_URL        = ''    # MQ连接URL参数
@@ -32,41 +30,25 @@ PROCESS_FAILED_MQ  = ''    # 后处理失败的队列
 
 
 '''初始化日志'''
-def init_log_config():
-
-    try:
-        global log
-        process_conf_obj = configobj.ConfigObj(COMMON_CONF, encoding='utf-8')
-        log_conf = dict(process_conf_obj['logging'])
-        log_name = log_conf['log_name']
-        log_fmt = log_conf['log_format']
-        log_level = log_conf['log_level']
-        log_path = log_conf['log_path']
-        # 设置控制台日志输出
-        log = logging.getLogger(log_name)
-        formatter = logging.Formatter(log_fmt)
-        console_handler = logging.StreamHandler()
-        console_handler.setFormatter(formatter)
-        # 设置文件日志输出
-        file_handler = logging.FileHandler(log_path)
-        file_handler.setFormatter(formatter)
-        log.setLevel(level=log_level)
-        log.addHandler(file_handler)
-        # 加上console打印，测试用
-        log.addHandler(console_handler)
-        log.debug('init_log_config success')
-        return True
-    except :
-        print "init_log_config failed, error:%s" % traceback.format_exc()
-    return  False
+# 设置控制台日志输出
+log = logging.getLogger("process")
+formatter = logging.Formatter("[%(asctime)s][%(filename)s][line:%(lineno)d][%(levelname)s]: %(message)s")
+console_handler = logging.StreamHandler()
+console_handler.setFormatter(formatter)
+# 设置文件日志输出
+file_handler = logging.FileHandler(os.path.join(ROOT_DIR, "log/process_server.log"))
+file_handler.setFormatter(formatter)
+log.setLevel(level=logging.INFO)
+log.addHandler(file_handler)
+# 加上console打印，测试用
+log.addHandler(console_handler)
 
 
 '''获取mq配置'''
 def get_mq_config():
-
-    global MQ_CONN_URL, S3_UPLOADED_MQ, S3_BACKUP, S3_EXCHANGE
-    global S3_EXCHANGE_TYPE, PROCESS_SUCCESS_MQ, PROCESS_FAILED_MQ
     try:
+        global MQ_CONN_URL, S3_UPLOADED_MQ, S3_BACKUP, S3_EXCHANGE
+        global S3_EXCHANGE_TYPE, PROCESS_SUCCESS_MQ, PROCESS_FAILED_MQ
         process_conf_obj = configobj.ConfigObj(COMMON_CONF, encoding='utf-8')
         rabbitmq_conf = process_conf_obj['rabbitmq']
         mq_config     = {'host'    : rabbitmq_conf['mq_host'],
@@ -92,9 +74,8 @@ def get_mq_config():
 
 '''获取s3配置'''
 def get_s3_config():
-
-    global S3_AK, S3_SK, S3_BUCKET, RGW_HOST, RGW_PORT, DOWNLOAD_DIR
     try:
+        global S3_AK, S3_SK, S3_BUCKET, RGW_HOST, RGW_PORT
         process_conf_obj = configobj.ConfigObj(COMMON_CONF, encoding='utf-8')
         s3_conf = process_conf_obj['s3']
         S3_AK = s3_conf['access_key']
@@ -102,17 +83,11 @@ def get_s3_config():
         S3_BUCKET = s3_conf['bucket_name']
         RGW_HOST = s3_conf['rgw_host']
         RGW_PORT = int(s3_conf['rgw_port'])
-        DOWNLOAD_DIR = s3_conf['download_dir']  # 从s3上下载的文件，存放目录
         log.debug('get_s3_config success')
         return True
     except :
         log.error("get_s3_config failed, error:%s" % traceback.format_exc())
     return False
-
-
-# 初始化配置
-if not init_log_config():
-    sys.exit(-1)
 
 if not get_mq_config():
     sys.exit(-2)

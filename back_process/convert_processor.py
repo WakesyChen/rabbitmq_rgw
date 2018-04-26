@@ -9,7 +9,7 @@ import re
 import traceback
 import configobj
 from base_processor import BaseProcessor
-from utils import get_img_type, is_word_type, proc_cmd, get_new_name_by_type
+from utils import get_img_type, is_word_type, proc_command, get_new_name_by_type
 from config import log
 from constant import CONVERT_TO_PDF, BACK_PROC_CONF
 
@@ -19,6 +19,7 @@ class ConvertProcessor(BaseProcessor):
 
     def back_process(self, *args, **kwargs):
 
+        is_success = False
         super(ConvertProcessor, self).back_process(*args, **kwargs)
         s3_operator      = kwargs.pop('s3_operator')     # S3Operator实例,pop下车~~('_')~~
         s3_local_file    = kwargs.pop('s3_local_file')   # 文件从s3下载后，保存在本地文件的路径
@@ -29,19 +30,17 @@ class ConvertProcessor(BaseProcessor):
         local_dir      = '/'.join(s3_local_file.split('/')[:-1])   # 本地保存的目录
         if not new_file_name:
             new_file_name = get_new_name_by_type(s3_local_file, action_type)
-
         generate_path  = os.path.join(local_dir, new_file_name)    # 转换生成的文件路径
         new_object_key = os.path.join(object_dir, new_file_name)   # 生成的文件对应s3上的key
-
         generate_file_path = self.common_convert(action_type=action_type, source_path=s3_local_file,
                                                  generate_path=generate_path, generate_dir=local_dir)
         if os.path.isfile(generate_file_path):
             if s3_operator.upload_to_s3(new_object_key, generate_file_path):  # 上传到s3中
-                # 删除生成的文件
-                log.info("****remove generate_file_path:%s" % generate_file_path)
-                os.remove(generate_file_path)
-                return True
-        return False
+                is_success = True
+            # 删除生成的文件
+            log.info("****remove generate_file_path:%s" % generate_file_path)
+            os.remove(generate_file_path)
+        return is_success
 
 
     def common_convert(self, action_type='', source_path='', generate_path='', generate_dir=''):
@@ -69,13 +68,13 @@ class ConvertProcessor(BaseProcessor):
                     # word转pdf
                     convert_cmd = operate_cmd % (source_path, generate_dir)
                     SUCCESS_TAG = "writer_pdf_Export"                          # 执行成功，输出结果会带这个字段
-                    is_succeed, stdout = proc_cmd(convert_cmd)
+                    is_succeed, stdout = proc_command(convert_cmd, timeout=100)
                     if is_succeed and SUCCESS_TAG in stdout:
                         generate_file_path = re.sub(r'.doc[x]{0,1}', '.pdf', source_path)
             else:
                 if is_img_file and operate_file == 'image':
                     # 图片格式转换
-                    is_succeed, stdout = proc_cmd(convert_cmd)
+                    is_succeed, stdout = proc_command(convert_cmd, timeout=100)
                     if is_succeed:
                         generate_file_path = generate_path
         except:
