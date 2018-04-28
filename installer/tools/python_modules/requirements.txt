@@ -1,0 +1,13 @@
+
+Werkzeug>=0.7
+MarkupSafe>=0.23
+Jinja2>=2.4
+itsdangerous>=0.21
+click>=2.0
+Flask>=0.12.2
+aniso8601>=0.82
+six>=1.3.0
+pytz
+Flask-RESTful>=0.3.6
+Flask-Cors>=3.0.3
+pika>=0.11.2

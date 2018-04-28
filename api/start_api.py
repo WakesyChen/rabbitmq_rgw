@@ -5,12 +5,13 @@
 # Email : chenxi@szsandstone.com
 
 
+
 import sys
-import os
-sys.path.append((os.path.abspath('../')))
 from flask import Flask
 from flask_restful import Api
 from flask_cors import CORS
+from api_config import ROOT_DIR
+sys.path.append(ROOT_DIR)
 from back_process_api import BackProcess
 
 
@@ -20,11 +21,7 @@ api = Api(app)
 api.add_resource(BackProcess, '/api/back_process', '/api/v1/back_process')
 
 
-
-
 if __name__ == '__main__':
-
-
     app.run(host='0.0.0.0', port=5050)
 
 

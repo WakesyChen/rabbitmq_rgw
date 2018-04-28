@@ -5,7 +5,6 @@
 # Email : chenxi@szsandstone.com
 import os
 import sys
-
 # 脚本的根目录
 ROOT_DIR = os.path.abspath(os.path.dirname(__file__))
 sys.path.append(ROOT_DIR)
@@ -18,8 +17,6 @@ DOWNLOAD_DIR   = os.path.abspath(os.path.join(ROOT_DIR, "download"))
 
 
 
-
-if(not os.path.isdir(DOWNLOAD_DIR)): os.mkdir(DOWNLOAD_DIR)
 # MQ连接url格式
 MQ_URL_FORMAT = "amqp://{user}:{password}@{host}:{port}/{vhost}?socket_timeout={timeout}"
 

@@ -39,12 +39,16 @@ class BackProcess(Resource):
 
 
 def start_api():
+
     is_success, ret_msg = proc_command(START_API_CMD)
-    print is_success, ret_msg
+    if is_success:
+        log.info("Succeeded starting api")
+
 
 def stop_api():
     is_success, ret_msg = proc_command(STOP_API_CMD)
-    print is_success, ret_msg
+    if is_success:
+        log.info("Succeeded stopping api")
 
 
 #=============================功能代码================================

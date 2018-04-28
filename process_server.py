@@ -12,6 +12,7 @@ from rabbit_mq.consumer  import MQConsumer
 from rabbit_mq.publisher import MQPublisher
 from back_process.convert_processor import ConvertProcessor
 from back_process.check_processor   import CheckProcessor
+from api.back_process_api import start_api, stop_api
 
 # 后处理配置信息
 ALL_PROCESS_INFO    = None    # 所有后处理信息
@@ -26,6 +27,10 @@ class ProcessServer(MQConsumer):
         self.back_processer = None  # 根据消息中的后处理类型确定
         self.process_success_mq = MQPublisher(PROCESS_SUCCESS_MQ)
         self.process_failed_mq  = MQPublisher(PROCESS_FAILED_MQ)
+        start_api()
+
+    def __del__(self):
+        stop_api()
 
 
     def call_back(self, channel, method, properties, body):
@@ -61,6 +66,8 @@ class ProcessServer(MQConsumer):
             object_key    = msg_args['object_key']
             action_type   = msg_args['action_type']
             s3_operator   = S3Operator(**s3_args)
+            if (not os.path.isdir(DOWNLOAD_DIR)):
+                os.mkdir(DOWNLOAD_DIR)
             s3_local_file = s3_operator.download_from_s3(object_key, DOWNLOAD_DIR) # 从s3下载，默认存放到DOWNLOAD_DIR中
             log.info("object_key:%s, process type: %s" % (object_key, action_type))
             if not os.path.isfile(s3_local_file):
@@ -120,6 +127,7 @@ if __name__ == '__main__':
         process_server = ProcessServer(input_queue=S3_UPLOADED_MQ)
         process_server.start_recieve()
     except KeyboardInterrupt as error:
+        stop_api()
         log.info("Exit like a gentleman.error:%s" % error)
 
 
