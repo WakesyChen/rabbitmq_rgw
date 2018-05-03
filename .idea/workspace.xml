@@ -1,329 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f0381c76-9128-4d5e-897f-f6ab37b15bbe" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/ffmpeg/ffmpeg-3.4.2.tar.bz2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/ffmpeg/yasm-1.3.0.tar.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/abattis-cantarell/Cantarell-Bold.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/abattis-cantarell/Cantarell-BoldOblique.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/abattis-cantarell/Cantarell-Oblique.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/abattis-cantarell/Cantarell-Regular.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/cjkuni-uming/uming.ttc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/a010013l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/a010015l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/a010033l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/a010035l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/b018012l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/b018015l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/b018032l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/b018035l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/c059013l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/c059016l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/c059033l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/c059036l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/d050000l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n019003l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n019004l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n019023l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n019024l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n019043l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n019044l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n019063l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n019064l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n021003l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n021004l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n021023l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n021024l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n022003l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n022004l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n022023l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n022024l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/p052003l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/p052004l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/p052023l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/p052024l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/s050000l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/z003034l.pfb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/ghostscript/fhirw.pfm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/ghostscript/fkarw.pfm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/ghostscript/u003043t.pfm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/ghostscript/u004006t.pfm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/dejavu/DejaVuSans-Bold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/dejavu/DejaVuSans-BoldOblique.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/dejavu/DejaVuSans-ExtraLight.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/dejavu/DejaVuSans-Oblique.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/dejavu/DejaVuSans.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/dejavu/DejaVuSansCondensed-Bold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/dejavu/DejaVuSansCondensed-BoldOblique.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/dejavu/DejaVuSansCondensed-Oblique.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/dejavu/DejaVuSansCondensed.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/dejavu/DejaVuSansMono-Bold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/dejavu/DejaVuSansMono-BoldOblique.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/dejavu/DejaVuSansMono-Oblique.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/dejavu/DejaVuSansMono.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/dejavu/DejaVuSerif-Bold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/dejavu/DejaVuSerif-BoldItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/dejavu/DejaVuSerif-Italic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/dejavu/DejaVuSerif.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/dejavu/DejaVuSerifCondensed-Bold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/dejavu/DejaVuSerifCondensed-BoldItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/dejavu/DejaVuSerifCondensed-Italic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/dejavu/DejaVuSerifCondensed.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/gnu-free/FreeMono.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/gnu-free/FreeMonoBold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/gnu-free/FreeMonoBoldOblique.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/gnu-free/FreeMonoOblique.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/gnu-free/FreeSans.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/gnu-free/FreeSansBold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/gnu-free/FreeSansBoldOblique.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/gnu-free/FreeSansOblique.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/gnu-free/FreeSerif.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/gnu-free/FreeSerifBold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/gnu-free/FreeSerifBoldItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/gnu-free/FreeSerifItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/google-crosextra-caladea/Caladea-Bold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/google-crosextra-caladea/Caladea-BoldItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/google-crosextra-caladea/Caladea-Italic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/google-crosextra-caladea/Caladea-Regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/google-crosextra-carlito/Carlito-Bold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/google-crosextra-carlito/Carlito-BoldItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/google-crosextra-carlito/Carlito-Italic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/google-crosextra-carlito/Carlito-Regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/jomolhari/Jomolhari-alpha3c-0605331.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/khmeros/KhmerOS.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/khmeros/KhmerOS_content.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/khmeros/KhmerOS_sys.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/liberation/LiberationMono-Bold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/liberation/LiberationMono-BoldItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/liberation/LiberationMono-Italic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/liberation/LiberationMono-Regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/liberation/LiberationSans-Bold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/liberation/LiberationSans-BoldItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/liberation/LiberationSans-Italic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/liberation/LiberationSans-Regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/liberation/LiberationSerif-Bold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/liberation/LiberationSerif-BoldItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/liberation/LiberationSerif-Italic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/liberation/LiberationSerif-Regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/lklug/lklug.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/lohit-assamese/Lohit-Assamese.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/lohit-bengali/Lohit-Bengali.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/lohit-devanagari/Lohit-Devanagari.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/lohit-gujarati/Lohit-Gujarati.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/lohit-kannada/Lohit-Kannada.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/lohit-malayalam/Lohit-Malayalam.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/lohit-marathi/Lohit-Marathi.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/lohit-nepali/Lohit-Nepali.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/lohit-oriya/Lohit-Oriya.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/lohit-punjabi/Lohit-Punjabi.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/lohit-tamil/Lohit-Tamil.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/lohit-telugu/Lohit-Telugu.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/madan/madan.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/nhn-nanum/NanumGothic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/nhn-nanum/NanumGothicBold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/nhn-nanum/NanumGothicExtraBold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/open-sans/OpenSans-Bold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/open-sans/OpenSans-BoldItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/open-sans/OpenSans-ExtraBold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/open-sans/OpenSans-ExtraBoldItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/open-sans/OpenSans-Italic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/open-sans/OpenSans-Light.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/open-sans/OpenSans-LightItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/open-sans/OpenSans-Regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/open-sans/OpenSans-Semibold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/open-sans/OpenSans-SemiboldItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/opensymbol/opens___.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/overpass/Overpass-Bold-Italic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/overpass/Overpass-Bold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/overpass/Overpass-ExtraLight Italic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/overpass/Overpass-ExtraLight.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/overpass/Overpass-Light-Italic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/overpass/Overpass-Light.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/overpass/Overpass-Regular-Italic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/overpass/Overpass-Regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/paktype-naskh-basic/PakTypeNaskhBasic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/paratype-pt-sans/PTN57F.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/paratype-pt-sans/PTN77F.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/paratype-pt-sans/PTS55F.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/paratype-pt-sans/PTS56F.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/paratype-pt-sans/PTS75F.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/paratype-pt-sans/PTS76F.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/sil-abyssinica/AbyssinicaSIL-R.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/sil-nuosu/NuosuSIL.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/sil-padauk/Padauk-bold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/sil-padauk/Padauk.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/smc/Meera.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/stix/STIX-Bold.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/stix/STIX-BoldItalic.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/stix/STIX-Italic.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/stix/STIX-Regular.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/thai-scalable/Waree-Bold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/thai-scalable/Waree-BoldOblique.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/thai-scalable/Waree-Oblique.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/thai-scalable/Waree.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/vlgothic/VL-Gothic-Regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/wqy-microhei/wqy-microhei.ttc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/wqy-zenhei/wqy-zenhei.ttc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/libreoffice_dep_rpms/libreoffice-5.0.6.2-15.el7_4.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/libreoffice_dep_rpms/libreoffice-base-5.0.6.2-15.el7_4.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/libreoffice_dep_rpms/libreoffice-calc-5.0.6.2-15.el7_4.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/libreoffice_dep_rpms/libreoffice-core-5.0.6.2-15.el7_4.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/libreoffice_dep_rpms/libreoffice-draw-5.0.6.2-15.el7_4.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/libreoffice_dep_rpms/libreoffice-emailmerge-5.0.6.2-15.el7_4.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/libreoffice_dep_rpms/libreoffice-graphicfilter-5.0.6.2-15.el7_4.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/libreoffice_dep_rpms/libreoffice-impress-5.0.6.2-15.el7_4.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/libreoffice_dep_rpms/libreoffice-math-5.0.6.2-15.el7_4.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/libreoffice_dep_rpms/libreoffice-opensymbol-fonts-5.0.6.2-15.el7_4.noarch.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/libreoffice_dep_rpms/libreoffice-pdfimport-5.0.6.2-15.el7_4.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/libreoffice_dep_rpms/libreoffice-pyuno-5.0.6.2-15.el7_4.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/libreoffice_dep_rpms/libreoffice-ure-5.0.6.2-15.el7_4.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/libreoffice_dep_rpms/libreoffice-writer-5.0.6.2-15.el7_4.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/python_modules/pika-0.11.2.tar.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/cpp-4.8.5-16.el7_4.1.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/e2fsprogs-1.42.9-10.el7.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/e2fsprogs-libs-1.42.9-10.el7.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/gcc-4.8.5-16.el7_4.1.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/glibc-2.17-196.el7_4.2.i686.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/glibc-2.17-196.el7_4.2.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/glibc-common-2.17-196.el7_4.2.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/glibc-devel-2.17-196.el7_4.2.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/glibc-headers-2.17-196.el7_4.2.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/kernel-headers-3.10.0-693.17.1.el7.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/keyutils-libs-1.5.8-3.el7.i686.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/keyutils-libs-devel-1.5.8-3.el7.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/krb5-devel-1.15.1-8.el7.i686.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/krb5-devel-1.15.1-8.el7.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/krb5-libs-1.15.1-8.el7.i686.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/krb5-libs-1.15.1-8.el7.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libcom_err-1.42.9-10.el7.i686.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libcom_err-1.42.9-10.el7.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libcom_err-devel-1.42.9-10.el7.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libgcc-4.8.5-16.el7_4.1.i686.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libgcc-4.8.5-16.el7_4.1.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libgomp-4.8.5-16.el7_4.1.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libkadm5-1.15.1-8.el7.i686.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libkadm5-1.15.1-8.el7.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libmpc-1.0.1-3.el7.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libselinux-2.5-11.el7.i686.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libselinux-devel-2.5-11.el7.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libsepol-2.5-6.el7.i686.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libsepol-devel-2.5-6.el7.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libss-1.42.9-10.el7.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libstdc++-4.8.5-16.el7_4.1.i686.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libstdc++-4.8.5-16.el7_4.1.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libverto-0.2.5-4.el7.i686.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libverto-devel-0.2.5-4.el7.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/mpfr-3.1.1-4.el7.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/ncurses-5.9-14.20130511.el7_4.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/ncurses-base-5.9-14.20130511.el7_4.noarch.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/ncurses-devel-5.9-14.20130511.el7_4.i686.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/ncurses-devel-5.9-14.20130511.el7_4.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/ncurses-libs-5.9-14.20130511.el7_4.i686.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/ncurses-libs-5.9-14.20130511.el7_4.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/nspr-4.13.1-1.0.el7_3.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/nss-softokn-freebl-3.28.3-8.el7_4.i686.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/nss-softokn-freebl-3.28.3-8.el7_4.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/openssl-devel-1.0.2k-8.el7.i686.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/openssl-devel-1.0.2k-8.el7.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/openssl-libs-1.0.2k-8.el7.i686.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/pcre-8.32-17.el7.i686.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/pcre-8.32-17.el7.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/pcre-devel-8.32-17.el7.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/zlib-1.2.7-17.el7.i686.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/zlib-1.2.7-17.el7.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/zlib-devel-1.2.7-17.el7.i686.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/zlib-devel-1.2.7-17.el7.x86_64.rpm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/otp_src_18.3.tar.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/rabbitmq-server-generic-unix-3.6.1.tar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/back_proc_installer.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/install_local.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/README" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/a010013l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/a010015l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/a010033l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/a010035l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/b018012l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/b018015l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/b018032l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/b018035l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/c059013l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/c059016l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/c059033l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/c059036l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/d050000l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/fonts.dir" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/fonts.scale" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n019003l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n019004l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n019023l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n019024l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n019043l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n019044l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n019063l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n019064l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n021003l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n021004l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n021023l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n021024l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n022003l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n022004l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n022023l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/n022024l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/p052003l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/p052004l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/p052023l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/p052024l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/s050000l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/Type1/z003034l.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/ghostscript/fcyr.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/ghostscript/fcyr.gsf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/ghostscript/fcyri.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/ghostscript/fcyri.gsf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/ghostscript/fhirw.gsf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/ghostscript/fkarw.gsf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/ghostscript/fonts.dir" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/ghostscript/fonts.scale" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/ghostscript/putb.pfa" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/ghostscript/putbi.pfa" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/ghostscript/putr.pfa" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/ghostscript/putri.pfa" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/ghostscript/u003043t.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/ghostscript/u003043t.gsf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/ghostscript/u004006t.afm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/default/ghostscript/u004006t.gsf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/liberation/fonts.dir" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/liberation/fonts.scale" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/ucs-miscfixed/10x20.bdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/ucs-miscfixed/4x6.bdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/ucs-miscfixed/5x7.bdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/ucs-miscfixed/5x8.bdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/ucs-miscfixed/6x10.bdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/ucs-miscfixed/6x12.bdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/ucs-miscfixed/6x13.bdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/ucs-miscfixed/6x13B.bdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/ucs-miscfixed/6x13O.bdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/ucs-miscfixed/6x9.bdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/ucs-miscfixed/7x13.bdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/ucs-miscfixed/7x13B.bdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/ucs-miscfixed/7x13O.bdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/ucs-miscfixed/7x14.bdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/ucs-miscfixed/7x14B.bdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/ucs-miscfixed/8x13.bdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/ucs-miscfixed/8x13B.bdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/ucs-miscfixed/8x13O.bdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/ucs-miscfixed/9x15.bdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/ucs-miscfixed/9x15B.bdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/ucs-miscfixed/9x18.bdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/ucs-miscfixed/9x18B.bdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/libreoffice/fonts/ucs-miscfixed/clR6x12.bdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms_list.txt" />
+    <list default="true" id="f0381c76-9128-4d5e-897f-f6ab37b15bbe" name="Default" comment="1、脚本安装python依赖库；&#10;2、脚本添加api配置和rgw配置；&#10;3、启动process_server时，后台运行start_api;&#10;4、download目录，动态指定；&#10;5、log配置移出common.conf">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/gcc-c++-4.8.5-16.el7_4.1.x86_64.rpm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/kernel-devel-3.10.0-693.17.1.el7.x86_64.rpm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libgomp-4.8.5-16.el7_4.1.i686.rpm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libstdc++-devel-4.8.5-16.el7_4.1.i686.rpm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/m4-1.4.16-10.el7.x86_64.rpm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/make-3.82-23.el7.x86_64.rpm" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/cpp-4.8.5-16.el7_4.1.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/e2fsprogs-1.42.9-10.el7.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/e2fsprogs-libs-1.42.9-10.el7.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/glibc-2.17-196.el7_4.2.i686.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/glibc-2.17-196.el7_4.2.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/glibc-common-2.17-196.el7_4.2.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/glibc-devel-2.17-196.el7_4.2.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/glibc-headers-2.17-196.el7_4.2.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/kernel-headers-3.10.0-693.17.1.el7.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/keyutils-libs-1.5.8-3.el7.i686.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/keyutils-libs-devel-1.5.8-3.el7.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/krb5-devel-1.15.1-8.el7.i686.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/krb5-devel-1.15.1-8.el7.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/krb5-libs-1.15.1-8.el7.i686.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/krb5-libs-1.15.1-8.el7.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libcom_err-1.42.9-10.el7.i686.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libcom_err-1.42.9-10.el7.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libcom_err-devel-1.42.9-10.el7.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libgcc-4.8.5-16.el7_4.1.i686.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libgcc-4.8.5-16.el7_4.1.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libgomp-4.8.5-16.el7_4.1.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libkadm5-1.15.1-8.el7.i686.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libkadm5-1.15.1-8.el7.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libmpc-1.0.1-3.el7.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libselinux-2.5-11.el7.i686.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libselinux-devel-2.5-11.el7.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libsepol-2.5-6.el7.i686.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libsepol-devel-2.5-6.el7.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libss-1.42.9-10.el7.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libstdc++-4.8.5-16.el7_4.1.i686.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libstdc++-4.8.5-16.el7_4.1.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libverto-0.2.5-4.el7.i686.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/libverto-devel-0.2.5-4.el7.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/mpfr-3.1.1-4.el7.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/ncurses-5.9-14.20130511.el7_4.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/ncurses-base-5.9-14.20130511.el7_4.noarch.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/ncurses-libs-5.9-14.20130511.el7_4.i686.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/ncurses-libs-5.9-14.20130511.el7_4.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/nspr-4.13.1-1.0.el7_3.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/nss-softokn-freebl-3.28.3-8.el7_4.i686.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/nss-softokn-freebl-3.28.3-8.el7_4.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/openssl-libs-1.0.2k-8.el7.i686.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/pcre-8.32-17.el7.i686.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/pcre-8.32-17.el7.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/pcre-devel-8.32-17.el7.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/zlib-1.2.7-17.el7.i686.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/zlib-1.2.7-17.el7.x86_64.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/zlib-devel-1.2.7-17.el7.i686.rpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms/zlib-devel-1.2.7-17.el7.x86_64.rpm" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/webServers.xml" afterPath="$PROJECT_DIR$/.idea/webServers.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/back_process_api.py" afterPath="$PROJECT_DIR$/api/back_process_api.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/start_api.py" afterPath="$PROJECT_DIR$/api/start_api.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README" afterPath="$PROJECT_DIR$/README" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/installer/install_backproc.sh" afterPath="$PROJECT_DIR$/installer/install_backproc.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/installer/uninstall_backproc.sh" afterPath="$PROJECT_DIR$/installer/uninstall_backproc.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/process_server.py" afterPath="$PROJECT_DIR$/process_server.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rabbit_mq/publisher.py" afterPath="$PROJECT_DIR$/rabbit_mq/publisher.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -343,7 +83,9 @@
     <SUITE FILE_PATH="coverage/tupu_process$manager.coverage" NAME="manager Coverage Results" MODIFIED="1521894548563" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mq" />
     <SUITE FILE_PATH="coverage/tupu_process$upload_files__1_.coverage" NAME="upload_files (1) Coverage Results" MODIFIED="1521898401835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/s3_operator" />
     <SUITE FILE_PATH="coverage/tupu_process$convert_process.coverage" NAME="convert_process Coverage Results" MODIFIED="1522216936867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/background_process" />
+    <SUITE FILE_PATH="coverage/background_process$utils.coverage" NAME="utils Coverage Results" MODIFIED="1524726436356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/background_process$start_api.coverage" NAME="start_api Coverage Results" MODIFIED="1523241807992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/api" />
+    <SUITE FILE_PATH="coverage/background_process$api_config.coverage" NAME="api_config Coverage Results" MODIFIED="1524713752583" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/api" />
     <SUITE FILE_PATH="coverage/tupu_process$base_processer.coverage" NAME="base_processer Coverage Results" MODIFIED="1522403824647" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/background_process" />
     <SUITE FILE_PATH="coverage/tupu_process$config.coverage" NAME="config Coverage Results" MODIFIED="1522822567874" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tupu_process$check_process.coverage" NAME="check_process Coverage Results" MODIFIED="1522217712436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/background_process" />
@@ -367,83 +109,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config.py">
+      <file leaf-file-name="back_process_api.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/back_process_api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1995">
-              <caret line="110" column="0" lean-forward="false" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="process_server.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/process_server.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1900">
-              <caret line="108" column="15" lean-forward="false" selection-start-line="108" selection-start-column="15" selection-end-line="108" selection-end-column="15" />
+            <state relative-caret-position="209">
+              <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding>
-                <element signature="e#121#132#0" expanded="true" />
+                <element signature="e#122#131#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="publisher.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rabbit_mq/publisher.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="s3_operator.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/s3_operator/s3_operator.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2413">
-              <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="back_proc_installer.sh" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/installer/back_proc_installer.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="99" column="0" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mq_dep_rpms_list.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms_list.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-490">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="README" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/installer/tools/libreoffice/README">
+        <entry file="file://$PROJECT_DIR$/README">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+            <state relative-caret-position="133">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="install_local.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/installer/install_local.sh">
+      <file leaf-file-name="api_config.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/api_config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="757">
-              <caret line="311" column="0" lean-forward="false" selection-start-line="311" selection-start-column="0" selection-end-line="311" selection-end-column="0" />
+            <state relative-caret-position="247">
+              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding>
+                <element signature="e#122#131#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="install_backproc.sh" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/installer/install_backproc.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-277">
+              <caret line="43" column="11" lean-forward="true" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -452,8 +156,60 @@
       <file leaf-file-name="common.conf" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/common.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="133">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="module_list" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/installer/tools/python_modules/module_list">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/installer/tools/python_modules/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="uninstall_backproc.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/installer/uninstall_backproc.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1173">
+              <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="process_server.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/process_server.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="439">
+              <caret line="121" column="0" lean-forward="true" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+              <folding>
+                <element signature="e#121#132#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="check_processor.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/back_process/check_processor.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="13" column="8" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -470,16 +226,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>new_object_key</find>
-      <find>already exists</find>
-      <find>cmd_word2pdf</find>
-      <find>publish_msg</find>
-      <find>back_processer</find>
-      <find>process_success_mq</find>
-      <find>routing_key</find>
-      <find>error</find>
-      <find>s3_args</find>
-      <find>randint</find>
       <find>formatter</find>
       <find>bucket</find>
       <find>upload_client</find>
@@ -500,6 +246,16 @@
       <find>&amp;</find>
       <find>ERLANG_HOME</find>
       <find>$ERLANG_HOME</find>
+      <find>install_ffmpeg</find>
+      <find>log_path</find>
+      <find>log</find>
+      <find>proc_command</find>
+      <find>BP_CONF_NAME</find>
+      <find>DOWNLOAD_DIR</find>
+      <find>SOURCE_INSTALL</find>
+      <find>SDSOM_CONF</find>
+      <find>config_backproc_url</find>
+      <find>unistall_rgw_api</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -508,20 +264,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/upload_files.py" />
-        <option value="$PROJECT_DIR$/process_client.py" />
-        <option value="$PROJECT_DIR$/mq/__init__.py" />
-        <option value="$PROJECT_DIR$/s3_operator/__init__.py" />
-        <option value="$PROJECT_DIR$/background_process/check_process.py" />
-        <option value="$PROJECT_DIR$/background_process/base_process.py" />
-        <option value="$PROJECT_DIR$/background_process/convert_process.py" />
-        <option value="$PROJECT_DIR$/background_process/base_processer.py" />
-        <option value="$PROJECT_DIR$/background_process/check_processer.py" />
-        <option value="$PROJECT_DIR$/background_process/convert_processer.py" />
-        <option value="$PROJECT_DIR$/api/back_process.py" />
-        <option value="$PROJECT_DIR$/back_process.conf.py" />
-        <option value="$PROJECT_DIR$/background_process/base_processor.py" />
-        <option value="$PROJECT_DIR$/mq/publisher.py" />
         <option value="$PROJECT_DIR$/mq/manager.py" />
         <option value="$PROJECT_DIR$/mq/consumer.py" />
         <option value="$PROJECT_DIR$/background_process/convert_processor.py" />
@@ -538,27 +280,41 @@
         <option value="$PROJECT_DIR$/api/file_recieved/test1.conf" />
         <option value="$PROJECT_DIR$/api/config_merge.py" />
         <option value="$PROJECT_DIR$/api/file_recieved/test2.conf" />
-        <option value="$PROJECT_DIR$/common.conf" />
         <option value="$PROJECT_DIR$/api/back_process.conf.template" />
-        <option value="$PROJECT_DIR$/back_process/back_process.conf" />
-        <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/api/file_recieved/back_process.conf" />
         <option value="$PROJECT_DIR$/api/file_recieved/back_process.conf.template" />
         <option value="$PROJECT_DIR$/back_process/base_processor.py" />
         <option value="$PROJECT_DIR$/back_process/check_processor.py" />
-        <option value="$PROJECT_DIR$/constant.py" />
         <option value="$PROJECT_DIR$/upload_client.py" />
-        <option value="$PROJECT_DIR$/utils.py" />
-        <option value="$PROJECT_DIR$/back_process/convert_processor.py" />
-        <option value="$PROJECT_DIR$/process_server.py" />
         <option value="$PROJECT_DIR$/installer/tools/libreoffice/__init__.py" />
         <option value="$PROJECT_DIR$/installer/back_process_installer.sh" />
-        <option value="$PROJECT_DIR$/rabbit_mq/publisher.py" />
-        <option value="$PROJECT_DIR$/api/start_api.py" />
-        <option value="$PROJECT_DIR$/api/back_process_api.py" />
         <option value="$PROJECT_DIR$/installer/install_local.sh" />
         <option value="$PROJECT_DIR$/installer/tools/libreoffice/README" />
+        <option value="$PROJECT_DIR$/api/config.py" />
+        <option value="$PROJECT_DIR$/back_process/back_process.conf" />
+        <option value="$PROJECT_DIR$/config.py" />
+        <option value="$PROJECT_DIR$/common.conf" />
+        <option value="$PROJECT_DIR$/rabbit_mq/publisher.py" />
+        <option value="$PROJECT_DIR$/back_process/convert_processor.py" />
+        <option value="$PROJECT_DIR$/utils.py" />
+        <option value="$PROJECT_DIR$/api/test.py" />
+        <option value="$PROJECT_DIR$/api/start_api.py" />
+        <option value="$PROJECT_DIR$/api/api_config.py" />
+        <option value="$PROJECT_DIR$/constant.py" />
         <option value="$PROJECT_DIR$/installer/back_proc_installer.sh" />
+        <option value="$PROJECT_DIR$/installer/backproc_installer.sh" />
+        <option value="$PROJECT_DIR$/installer/backproc_uninstaller.sh" />
+        <option value="$PROJECT_DIR$/installer/backproc_installer2.sh" />
+        <option value="$PROJECT_DIR$/installer/tools/python_modules/requirments.txt" />
+        <option value="$PROJECT_DIR$/installer/tools/python_modules/module_list" />
+        <option value="$PROJECT_DIR$/installer/tools/python_modules/requirements.txt" />
+        <option value="$PROJECT_DIR$/installer/backproc_uninstall.sh" />
+        <option value="$PROJECT_DIR$/installer/backproc_install.sh" />
+        <option value="$PROJECT_DIR$/process_server.py" />
+        <option value="$PROJECT_DIR$/installer/uninstall_backproc.sh" />
+        <option value="$PROJECT_DIR$/api/back_process_api.py" />
+        <option value="$PROJECT_DIR$/README" />
+        <option value="$PROJECT_DIR$/installer/install_backproc.sh" />
       </list>
     </option>
   </component>
@@ -569,10 +325,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="34" />
-    <option name="y" value="115" />
+    <option name="x" value="508" />
+    <option name="y" value="284" />
     <option name="width" value="1292" />
-    <option name="height" value="687" />
+    <option name="height" value="682" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -592,7 +348,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -640,27 +395,38 @@
               <item name="background_process" type="462c0819:PsiDirectoryNode" />
               <item name="installer" type="462c0819:PsiDirectoryNode" />
               <item name="tools" type="462c0819:PsiDirectoryNode" />
+              <item name="python_modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="background_process" type="b2602c69:ProjectViewProjectNode" />
+              <item name="background_process" type="462c0819:PsiDirectoryNode" />
+              <item name="installer" type="462c0819:PsiDirectoryNode" />
+              <item name="tools" type="462c0819:PsiDirectoryNode" />
               <item name="rabbitmq" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="background_process" type="b2602c69:ProjectViewProjectNode" />
               <item name="background_process" type="462c0819:PsiDirectoryNode" />
-              <item name="rabbit_mq" type="462c0819:PsiDirectoryNode" />
+              <item name="installer" type="462c0819:PsiDirectoryNode" />
+              <item name="tools" type="462c0819:PsiDirectoryNode" />
+              <item name="rabbitmq" type="462c0819:PsiDirectoryNode" />
+              <item name="mq_dep_rpms" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="background_process" type="b2602c69:ProjectViewProjectNode" />
               <item name="background_process" type="462c0819:PsiDirectoryNode" />
-              <item name="s3_operator" type="462c0819:PsiDirectoryNode" />
+              <item name="log" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Python" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../数据迁移/comon_data_transfer" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
@@ -671,10 +437,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\work_space\近期任务\后处理框架\background_process\installer\tools\rabbitmq" />
-      <recent name="F:\work_space\近期任务\后处理框架\background_process\installer" />
-      <recent name="F:\work_space\近期任务\后处理框架\background_process\installer\tools\ffmpeg" />
       <recent name="F:\work_space\近期任务\后处理框架\background_process\installer\tools\python_modules" />
+      <recent name="F:\work_space\近期任务\后处理框架\background_process\installer" />
+      <recent name="F:\work_space\近期任务\后处理框架\background_process\installer\tools\rabbitmq" />
+      <recent name="F:\work_space\近期任务\后处理框架\background_process\installer\tools\ffmpeg" />
       <recent name="F:\work_space\近期任务\后处理框架\background_process\installer\tools\libreoffice" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -696,7 +462,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.start_api">
+  <component name="RunManager" selected="Python.utils">
     <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -838,38 +604,20 @@
       <option name="_new_target" value="&quot;&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
-    <configuration name="base_processer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="api_config" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/background_process" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/api" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tupu_process" />
+      <module name="background_process" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="F:\work_space\近期任务\图谱后处理\tupu_process\background_process\base_processor.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="check_processer" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/background_process" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tupu_process" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="F:\work_space\近期任务\图谱后处理\tupu_process\background_process\check_processor.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/api/api_config.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -928,20 +676,38 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
+    <configuration name="utils" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="background_process" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.check_processer" />
-      <item index="1" class="java.lang.String" itemvalue="Python.base_processer" />
-      <item index="2" class="java.lang.String" itemvalue="Python.convert_processer" />
-      <item index="3" class="java.lang.String" itemvalue="Python.config" />
-      <item index="4" class="java.lang.String" itemvalue="Python.start_api" />
+      <item index="0" class="java.lang.String" itemvalue="Python.convert_processer" />
+      <item index="1" class="java.lang.String" itemvalue="Python.config" />
+      <item index="2" class="java.lang.String" itemvalue="Python.start_api" />
+      <item index="3" class="java.lang.String" itemvalue="Python.utils" />
+      <item index="4" class="java.lang.String" itemvalue="Python.api_config" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.start_api" />
-        <item index="1" class="java.lang.String" itemvalue="Python.config" />
-        <item index="2" class="java.lang.String" itemvalue="Python.convert_processer" />
-        <item index="3" class="java.lang.String" itemvalue="Python.check_processer" />
-        <item index="4" class="java.lang.String" itemvalue="Python.base_processer" />
+        <item index="0" class="java.lang.String" itemvalue="Python.utils" />
+        <item index="1" class="java.lang.String" itemvalue="Python.api_config" />
+        <item index="2" class="java.lang.String" itemvalue="Python.start_api" />
+        <item index="3" class="java.lang.String" itemvalue="Python.config" />
+        <item index="4" class="java.lang.String" itemvalue="Python.convert_processer" />
       </list>
     </recent_temporary>
   </component>
@@ -1026,10 +792,45 @@
       <option name="project" value="LOCAL" />
       <updated>1523361096531</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="1、配置安装脚本">
+      <created>1523541816470</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1523541816470</updated>
+    </task>
+    <task id="LOCAL-00012" summary="1、检查了配置安装脚本rabbitmq安装和卸载部分；&#10;2、上传文件后，删除在本地的源文件和转换后的文件；">
+      <created>1523624770848</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1523624770848</updated>
+    </task>
+    <task id="LOCAL-00013" summary="1、上传文件后可以删除源文件和显示的文件；&#10;2、修正了上传处理后的文件，object_key不正确的问题；&#10;3、添加了一些python依赖包；&#10;4、添加了README备注说明；">
+      <created>1523850304107</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1523850304107</updated>
+    </task>
+    <task id="LOCAL-00014" summary="修改bug">
+      <created>1524736867284</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1524736867284</updated>
+    </task>
+    <task id="LOCAL-00015" summary="1、脚本安装python依赖库；&#10;2、脚本添加api配置和rgw配置；&#10;3、启动process_server时，后台运行start_api;&#10;4、download目录，动态指定；&#10;5、log配置移出common.conf">
+      <created>1524911032076</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1524911032076</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
-  <component name="TodoView">
+  <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -1041,15 +842,15 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.102285095" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13710555" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11316649" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23721436" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14798695" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1936888" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16974972" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25426438" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32462686" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1060,7 +861,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32752994" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1080,7 +881,12 @@
     <MESSAGE value="调整配置文件" />
     <MESSAGE value="1、调整配置文件，根据配置文件修改转换类型的后处理逻辑；&#10;2、添加了接口给前端操作" />
     <MESSAGE value="1、将后处理配置和系统配置分离；&#10;2、前端接口post请求上传配置文件，可以更新后处理配置；&#10;3、重新梳理后处理的分类逻辑，调通流程" />
-    <option name="LAST_COMMIT_MESSAGE" value="1、将后处理配置和系统配置分离；&#10;2、前端接口post请求上传配置文件，可以更新后处理配置；&#10;3、重新梳理后处理的分类逻辑，调通流程" />
+    <MESSAGE value="1、配置安装脚本" />
+    <MESSAGE value="1、检查了配置安装脚本rabbitmq安装和卸载部分；&#10;2、上传文件后，删除在本地的源文件和转换后的文件；" />
+    <MESSAGE value="1、上传文件后可以删除源文件和显示的文件；&#10;2、修正了上传处理后的文件，object_key不正确的问题；&#10;3、添加了一些python依赖包；&#10;4、添加了README备注说明；" />
+    <MESSAGE value="修改bug" />
+    <MESSAGE value="1、脚本安装python依赖库；&#10;2、脚本添加api配置和rgw配置；&#10;3、启动process_server时，后台运行start_api;&#10;4、download目录，动态指定；&#10;5、log配置移出common.conf" />
+    <option name="LAST_COMMIT_MESSAGE" value="1、脚本安装python依赖库；&#10;2、脚本添加api配置和rgw配置；&#10;3、启动process_server时，后台运行start_api;&#10;4、download目录，动态指定；&#10;5、log配置移出common.conf" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1089,154 +895,20 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://F:/Python27/Lib/logging/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="1297" column="8" lean-forward="false" selection-start-line="1297" selection-start-column="8" selection-end-line="1297" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/Python27/Lib/site-packages/flask/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="1046" column="33" lean-forward="false" selection-start-line="1046" selection-start-column="33" selection-end-line="1046" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/Python27/Lib/site-packages/flask/exthook.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="54" column="8" lean-forward="false" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/Python27/Lib/site-packages/flask/ext/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python27/site-packages/flask_restful/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="369" column="8" lean-forward="false" selection-start-line="369" selection-start-column="8" selection-end-line="369" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/Python27/Lib/site-packages/werkzeug/local.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1356">
-          <caret line="291" column="8" lean-forward="false" selection-start-line="291" selection-start-column="8" selection-end-line="291" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/Python27/Lib/site-packages/flask/globals.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/Python27/Lib/json/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="192" column="4" lean-forward="false" selection-start-line="192" selection-start-column="4" selection-end-line="192" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/Python27/Lib/site-packages/werkzeug/wrappers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="537" column="8" lean-forward="false" selection-start-line="537" selection-start-column="8" selection-end-line="537" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back_process/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="32" lean-forward="true" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rabbit_mq/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python27/site-packages/flask_cors/extension.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="125" column="8" lean-forward="false" selection-start-line="125" selection-start-column="8" selection-end-line="125" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/Python27/Lib/imghdr.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back_process/tools/other_converter.py" />
-    <entry file="file://$PROJECT_DIR$/back_process/tools/image_converter.py" />
-    <entry file="file://$PROJECT_DIR$/back_process/tools/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/log/process_server.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/s3_operator/multiupload.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/s3_operator/filechunkio.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-913">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/file_recieved/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/template_bp.conf" />
-    <entry file="file://$PROJECT_DIR$/api/file_recieved/test1.conf" />
     <entry file="file://$PROJECT_DIR$/api/file_recieved/test2.conf" />
     <entry file="file://$PROJECT_DIR$/api/file_recieved/back_process.conf.template" />
     <entry file="file://$PROJECT_DIR$/back_process/other_processor.py" />
     <entry file="file://$PROJECT_DIR$/api/update_config.py" />
     <entry file="file://$PROJECT_DIR$/api/back_process.conf.template" />
-    <entry file="file://$PROJECT_DIR$/back_process/base_processor.py">
+    <entry file="file://$PROJECT_DIR$/installer/tools/libreoffice/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms_list" />
+    <entry file="file://$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms_list.txt" />
+    <entry file="file://$PROJECT_DIR$/installer/install_local.sh" />
+    <entry file="file://$PROJECT_DIR$/api/file_recieved/back_process.conf" />
+    <entry file="file://$USER_HOME$/.PyCharm2017.2/system/python_stubs/1713590963/nt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rabbit_mq/manager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rabbit_mq/consumer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="52" column="52" lean-forward="true" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
+        <state relative-caret-position="246">
+          <caret line="296" column="4" lean-forward="false" selection-start-line="296" selection-start-column="4" selection-end-line="296" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -1247,17 +919,184 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/constant.py">
+    <entry file="file://$PROJECT_DIR$/s3_operator/filechunkio.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="-708">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/file_recieved/back_process.conf">
+    <entry file="file://$PROJECT_DIR$/s3_operator/multiupload.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="76" column="22" lean-forward="false" selection-start-line="76" selection-start-column="22" selection-end-line="76" selection-end-column="22" />
+        <state relative-caret-position="380">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rabbit_mq/consumer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/HZ$D.741.794/HZ$D.741.795/Flask-0.12.2/setup.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/HZ$D.887.165/HZ$D.887.166/Flask-RESTful-0.3.6/setup.py" />
+    <entry file="file://$PROJECT_DIR$/installer/tools/libreoffice/README">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/Python27/Lib/site-packages/configobj.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="656">
+          <caret line="1173" column="8" lean-forward="false" selection-start-line="1173" selection-start-column="8" selection-end-line="1173" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/Python27/Lib/logging/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="894" column="8" lean-forward="false" selection-start-line="894" selection-start-column="8" selection-end-line="894" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/Python27/Lib/subprocess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="447" column="8" lean-forward="false" selection-start-line="447" selection-start-column="8" selection-end-line="447" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rabbit_mq/manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="58" column="36" lean-forward="false" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rabbit_mq/publisher.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="71" column="15" lean-forward="true" selection-start-line="71" selection-start-column="15" selection-end-line="71" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/s3_operator/s3_operator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="46" column="8" lean-forward="false" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/test.py" />
+    <entry file="file://$PROJECT_DIR$/back_process/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/api.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/process_server.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rabbit_mq/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="37" column="10" lean-forward="false" selection-start-line="37" selection-start-column="10" selection-end-line="37" selection-end-column="10" />
+          <folding>
+            <element signature="e#121#130#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back_process/convert_processor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1254">
+          <caret line="73" column="17" lean-forward="false" selection-start-line="73" selection-start-column="17" selection-end-line="73" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/constant.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="741">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding>
+            <element signature="e#121#130#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/installer/backproc_installer2.sh" />
+    <entry file="file://$PROJECT_DIR$/installer/test.sh" />
+    <entry file="file://$PROJECT_DIR$/installer/backproc_installer2.sh" />
+    <entry file="file://$PROJECT_DIR$/api/start_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="e#123#133#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back_process/back_process.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back_process/base_processor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1265,129 +1104,84 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="13" column="8" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/back_process/convert_processor.py">
+    <entry file="file://$PROJECT_DIR$/api/api_config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="49" column="11" lean-forward="false" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
+        <state relative-caret-position="247">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="e#122#131#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/installer/tools/libreoffice/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/utils.py">
+    <entry file="file://$PROJECT_DIR$/common.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+        <state relative-caret-position="133">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/back_process/back_process.conf">
+    <entry file="file://$PROJECT_DIR$/installer/tools/python_modules/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="35" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="54" selection-end-column="15" />
+        <state relative-caret-position="171">
+          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/installer/tools/python_modules/module_list">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/back_process_api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
+        <state relative-caret-position="209">
           <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding>
-            <element signature="e#122#131#0" expanded="false" />
+            <element signature="e#122#131#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/start_api.py">
+    <entry file="file://$PROJECT_DIR$/README">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="e#122#132#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="133">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/process_server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1900">
-          <caret line="108" column="15" lean-forward="false" selection-start-line="108" selection-start-column="15" selection-end-line="108" selection-end-column="15" />
+        <state relative-caret-position="439">
+          <caret line="121" column="0" lean-forward="true" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
           <folding>
             <element signature="e#121#132#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rabbit_mq/publisher.py">
+    <entry file="file://$PROJECT_DIR$/installer/uninstall_backproc.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="1173">
+          <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/s3_operator/s3_operator.py">
+    <entry file="file://$PROJECT_DIR$/installer/install_backproc.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2413">
-          <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1995">
-          <caret line="110" column="0" lean-forward="false" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms_list">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/installer/tools/rabbitmq/mq_dep_rpms_list.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-490">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/installer/tools/libreoffice/README">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/installer/install_local.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="757">
-          <caret line="311" column="0" lean-forward="false" selection-start-line="311" selection-start-column="0" selection-end-line="311" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/installer/back_proc_installer.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="99" column="0" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+        <state relative-caret-position="-277">
+          <caret line="43" column="11" lean-forward="true" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="11" />
           <folding />
         </state>
       </provider>

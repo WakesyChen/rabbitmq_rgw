@@ -27,7 +27,7 @@ class ProcessServer(MQConsumer):
         self.back_processer = None  # 根据消息中的后处理类型确定
         self.process_success_mq = MQPublisher(PROCESS_SUCCESS_MQ)
         self.process_failed_mq  = MQPublisher(PROCESS_FAILED_MQ)
-        start_api()
+
 
     def __del__(self):
         stop_api()
@@ -120,10 +120,10 @@ class ProcessServer(MQConsumer):
         return False
 
 
-
 if __name__ == '__main__':
 
     try:
+        start_api()   # 开启后处理rest api
         process_server = ProcessServer(input_queue=S3_UPLOADED_MQ)
         process_server.start_recieve()
     except KeyboardInterrupt as error:

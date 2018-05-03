@@ -27,10 +27,10 @@ check_return_code()
 }
 
 
-
-# 配置
 config_rabbitmq(){
     echo "config rabitmq...."
+    ps -ef |grep -v grep |grep rabbitmq|awk '{print $2}'|xargs kill -9 &>/dev/null
+    sleep 2
     rabbitmq-server -detached                                 # 启动rabbitmq
     sleep 3
     rabbitmqctl add_user root sandstone                       # 添加用户,密码
@@ -48,7 +48,6 @@ config_rabbitmq(){
 
 
 
-# pass
 install_rabbitmq(){
     echo "Prepare to install rabbitmq..."
     echo "installing dependence rpms..."
@@ -59,12 +58,11 @@ install_rabbitmq(){
     if [ ! -d "${SOURCE_INSTALL}/erlang" ];then
         mkdir -p "${SOURCE_INSTALL}/erlang"
     fi
-    echo "installing erlang for mq, it needs some time..."
+    echo "installing erlang for mq, it may take some time..."
     ./configure --prefix="${SOURCE_INSTALL}/erlang" -with-ssl -enable-rhreads -enable-smp-support \
      -enable-kernel-poll -enable-hipe -without-javac  &>/dev/null
-    make && make install
+    make &>/dev/null && make install   &>/dev/null
     check_return_code $? "install erlang for rabbitmq"
-
     echo "installing rabbitmq..."
     cd "${SH_ROOT_DIR}/tools/rabbitmq" && tar -xf "rabbitmq-server-generic-unix-3.6.1.tar" -C $SOURCE_INSTALL
     cd  $SOURCE_INSTALL && mv  rabbitmq_server-3.6.1  rabbitmq_server
@@ -72,7 +70,6 @@ install_rabbitmq(){
     echo "add some config in sys path..."
     /usr/bin/cp -rf $SYS_PATH_CONF  "${SYS_PATH_CONF}_bak"
     cat << EOF >> $SYS_PATH_CONF
-
 # for rabbitmq
 ERLANG_HOME=/opt/source_install/erlang
 export PATH=\$PATH:\$ERLANG_HOME/bin
@@ -85,39 +82,38 @@ EOF
 }
 
 
-#==================install tools==========================
-
 install_ffmpeg(){
-    echo "Prepare to install ffmpeg..."
-    cd "${SH_ROOT_DIR}/tools/ffmpeg" && tar -xf  "yasm-1.3.0.tar.gz"
-    check_return_code $? "tar yasm-1.3.0.tar.gz"
-    if [ ! -d "${SOURCE_INSTALL}/yasm" ];then
-        mkdir -p "${SOURCE_INSTALL}/yasm"
-    fi
-    #todo:如指定安装，则需要添加到/etc/source中
-    cd "${SH_ROOT_DIR}/tools/ffmpeg/yasm-1.3.0" && ./configure  && make && make install
-    check_return_code $? "install yasm-1.3.0"
-
+    echo "<<install tool [ffmpeg] to convert image types>>"
+    cd "${SH_ROOT_DIR}/tools/ffmpeg" && tar -xzf  "yasm-1.3.0.tar.gz"
+    cd "${SH_ROOT_DIR}/tools/ffmpeg/yasm-1.3.0"
+    echo "installing yasm for ffmpeg..."
+    ./configure  &>/dev/null && make &>/dev/null && make install &>/dev/null
+    check_return_code $? "installing yasm for ffmpeg"
     cd "${SH_ROOT_DIR}/tools/ffmpeg" && tar -xf  "ffmpeg-3.4.2.tar.bz2"
-    check_return_code $? "tar ffmpef-3.4.2"
     if [ ! -d "${SOURCE_INSTALL}/ffmpeg" ];then
         mkdir -p "${SOURCE_INSTALL}/ffmpeg"
     fi
-    cd "${SH_ROOT_DIR}/tools/ffmpeg/ffmpeg-3.4.2" && ./configure --prefix="${SOURCE_INSTALL}/ffmpeg" && make && make install
-    check_return_code $? "install ffmpeg-3.4.2"
+    cd "${SH_ROOT_DIR}/tools/ffmpeg/ffmpeg-3.4.2"
+    echo "installing ffmpeg, it may take some time..."
+    ./configure --prefix="${SOURCE_INSTALL}/ffmpeg" &>/dev/null && make &>/dev/null && make install &>/dev/null
+    check_return_code $? "installing ffmpeg"
+    cat <<EOF >> $SYS_PATH_CONF
+export PATH=\$PATH:/opt/source_install/ffmpeg/bin
+EOF
+    source $SYS_PATH_CONF
 }
 
 
 install_libreoffice(){
-    echo "Prepare to install libreoffice..."
+    echo "<<install tool [libreoffice] to convert doc type to pdf>>"
     echo "Add window fonts to linux"
-    /usr/bin/cp -rf "${SH_ROOT_DIR}/tools/libreoffice/fonts/*"   /usr/share/fonts/
+    /usr/bin/cp -rf ${SH_ROOT_DIR}/tools/libreoffice/fonts/*   /usr/share/fonts/
     cd /usr/share/fonts/
     mkfontscale
     mkfontdir   # 这两条命令是生成字体的索引信息
     fc-cache    # 更新字体缓存
-    echo "install dependence rpms for libreoffice"
-    yum -y install "${LIBREOFFICE_DEP_RPMS}/*.rpm"
+    echo "installing libreoffice, it may take some time..."
+    yum -y install ${LIBREOFFICE_DEP_RPMS}/*.rpm &>/dev/null
     check_return_code $? "install libreoffice"
 }
 
@@ -134,10 +130,10 @@ config_rgw_api(){
 back_proc_url = http://${ip_addr}:5050/api/v1/back_process
 EOF
     service sdsom-httpd restart   # restart httpd
-    check_return_code $? "Config back_process for api"
+    echo "Config back_process for api"
 
-    # config ceph
-    /usr/bin/cp -rf $CEPH_CONF ${CEPH_CONF}_bak
+    # config ceph， must be rgw node.
+    /usr/bin/cp -rf  $CEPH_CONF  ${CEPH_CONF}_bak
     cat <<EOF >> $CEPH_CONF
 
 rgw_rabbit_mq_if_use_back_process = true
@@ -145,12 +141,9 @@ mq_host = $ip_addr
 rgw_back_process_req_header = HTTP_X_AMZ_META_BP
 
 EOF
-    ps -ef |grep radosgw|grep -v grep|awk '{print $2}'|xargs kill -9  # soon restart by rcm
-    check_return_code $? "Config back_process for rgw"
+    ps -ef |grep radosgw|grep -v grep|awk '{print $2}'|xargs kill -9  &>/dev/null # soon restart by rcm
+    echo "Config back_process for rgw"
 }
-
-sed
-
 
 
 install_python_modules(){
@@ -174,39 +167,36 @@ install_python_modules(){
 }
 
 
-main_install(){
+note_message(){
     echo '======START TO CREATE BACKGROUND PROCESS ENVIRONMENT======='
     echo "NOTES:"
-    echo "1、Please make sure the backprocess framework is installing on the first node."
-    echo "2、Created rgw service on this node.(y/n)"
-    read rgw_state
-    if   [ $rgw_state == 'y' ];then
-        echo "continue."
+    ps -ef |grep radosgw|grep -v grep  &>/dev/null
+    if   [ $? == '0' ];then
+        echo "1、Rgw service already created on this node, continue."
     else
-        echo "Please create rgw service on this node first."
+        echo "1、Please create rgw service on this node first."
         exit -1
     fi
-    echo "3、Please input the ip address of the rgw service on this node:"
+    echo "2、Please input the ip address of the rgw service on this node:"
     read rgw_ip
-    ping -c 3 $rgw_ip &>/dev/null
+    ping -c 3 $rgw_ip &>/dev/null   # simple check
     if [ $? != '0' ];then
         echo "The ip adress is not correct!"
         exit -2
+    else
+        echo "rgw_ip:$rgw_ip."
     fi
-    echo "rgw_ip:$rgw_ip"
-    config_rgw_api $rgw_ip
-    #install_python_modules
-    #config_backproc_url
-    #install_rabbitmq
-
-    # todo:waiting for check
-    #install_ffmpeg
-    #install_libreoffice
-
 }
+source /etc/profile
+#note_message
+#rgw_ip=10.10.7.152
+#config_rgw_api $rgw_ip
+#install_python_modules
+#install_rabbitmq
+#install_ffmpeg
+#install_libreoffice
 
-
-main_install
+config_rabbitmq
 
 
 
