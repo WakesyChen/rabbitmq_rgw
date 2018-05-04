@@ -24,11 +24,11 @@ check_return_code()
 }
 
 
-# pass
 uninstall_rabbitmq(){
     echo "Uninstalling rabbitmq"
     echo "clean rabbitmq config...."
-    rabbitmqctl stop  &>/dev/null
+    echo "Stop backprocess service"
+    ps -ef |grep -v grep|grep rabbitmq |awk '{print $2}'|xargs kill -9  &>/dev/null
     sed -i '/^ERLANG_HOME=.*/d' $SYS_PATH_CONF
     sed -i '/^export PATH=$PATH:$ERLANG_HOME\/bin.*/d' $SYS_PATH_CONF
     sed -i '/^export ERLANG_HOME.*/d' $SYS_PATH_CONF
@@ -61,7 +61,7 @@ uninstall_libreoffice(){
 
 uninstall_python_modules(){
     cat $SH_ROOT_DIR/tools/python_modules/module_list|xargs pip uninstall  -y &>/dev/null
-    check_return_code $? "Uninstalling python modules"
+    echo "Uninstalling python modules completed."
 }
 
 
@@ -80,6 +80,7 @@ ps -ef |grep -v grep|grep start_api|awk '{print $2}'|xargs kill -9  &>/dev/null
 echo "Stop backprocess service"
 ps -ef |grep -v grep|grep process_server|awk '{print $2}'|xargs kill -9  &>/dev/null
 
+source /etc/profile
 uninstall_python_modules
 uninstall_rgw_api
 uninstall_rabbitmq

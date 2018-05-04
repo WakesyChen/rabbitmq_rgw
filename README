@@ -5,3 +5,18 @@
 3、修改配置文件，common.conf
 4、导入环境变量，source /etc/profile
 5、开启后处理服务：python process_server.py
+
+其他：
+默认使用已经创建了rgw服务的节点，在上面搭建后处理框架；
+如果使用其他节点的rgw服务，则该节点还要修改一些配置：
+1、/var/lib/sdsom/etc/sdsom/sdsom.conf,添加：
+[back_process]
+back_proc_url = http://${ip_addr}:5050/api/v1/back_process   # 指定后处理框架所在节点ip
+重启sdsom-httpd
+
+2、/var/lib/ceph/etc/ceph/ceph.conf,填在[client.radosgw..]下
+
+rgw_rabbit_mq_if_use_back_process = true
+mq_host = $ip_addr                                       # 指定后处理框架所在节点ip
+rgw_back_process_req_header = HTTP_X_AMZ_META_BP
+重启rgw服务

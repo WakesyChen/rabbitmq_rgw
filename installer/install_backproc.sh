@@ -53,7 +53,7 @@ install_rabbitmq(){
     echo "installing dependence rpms..."
     cd ${RABBITMQ_DEP_RPMS} && yum -y install ./*.rpm  &>/dev/null
     echo "install dependence rpms complete."
-    cd "${SH_ROOT_DIR}/tools/rabbitmq" && tar -xf "otp_src_18.3.tar.gz"  &>/dev/null
+    cd "${SH_ROOT_DIR}/tools/rabbitmq" && tar -xzf "otp_src_18.3.tar.gz"  &>/dev/null
     cd "./otp_src_18.3"
     if [ ! -d "${SOURCE_INSTALL}/erlang" ];then
         mkdir -p "${SOURCE_INSTALL}/erlang"
@@ -89,7 +89,7 @@ install_ffmpeg(){
     echo "installing yasm for ffmpeg..."
     ./configure  &>/dev/null && make &>/dev/null && make install &>/dev/null
     check_return_code $? "installing yasm for ffmpeg"
-    cd "${SH_ROOT_DIR}/tools/ffmpeg" && tar -xf  "ffmpeg-3.4.2.tar.bz2"
+    cd "${SH_ROOT_DIR}/tools/ffmpeg" && tar -xzf  "ffmpeg-3.4.2.tar.gz"
     if [ ! -d "${SOURCE_INSTALL}/ffmpeg" ];then
         mkdir -p "${SOURCE_INSTALL}/ffmpeg"
     fi
@@ -187,16 +187,13 @@ note_message(){
         echo "rgw_ip:$rgw_ip."
     fi
 }
-source /etc/profile
-#note_message
-#rgw_ip=10.10.7.152
-#config_rgw_api $rgw_ip
-#install_python_modules
-#install_rabbitmq
-#install_ffmpeg
-#install_libreoffice
 
-config_rabbitmq
+note_message
+config_rgw_api $rgw_ip
+install_python_modules
+install_rabbitmq
+install_ffmpeg
+install_libreoffice
 
 
 
